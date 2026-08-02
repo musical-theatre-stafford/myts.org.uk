@@ -18,15 +18,29 @@ Write every issue comment and question for a non-technical reader:
 - Keep the technical detail in the **PR description** (reviewers see that), not
   in the issue thread.
 
-**Content is marketing's to decide; anything technical is Roger's call.** Show
-details, blurbs, gallery photos, contact info and page copy are entirely within
-marketing's remit — just get on with those. But the moment an issue needs (or
-hints at) something technical — a new API key or secret, a third-party
-integration, an embed or script, a domain/DNS change, a new page type, a design
-or layout change, or anything on the "do not touch" list below — **loop Roger
-in**: add **@rogerfoxcroft** as an assignee on the issue and leave a short,
-plain-English comment explaining what's needed and why it's beyond a content
-change. Don't attempt the technical part yourself.
+**Marketing owns content and look-and-feel; Roger owns the technical plumbing.**
+Copy, blurbs, show and gallery entries, images, **page layout, components and
+styling/design** are all within marketing's remit — make those changes and open
+a PR. Building or restyling a component, restructuring a page, or retuning the
+colours is fine; you don't need to escalate design or layout work.
+
+Escalate to Roger **only** when a change needs something *technical set up or
+altered to work* — the kind of thing you wouldn't expect a marketing volunteer to
+know about:
+
+- a new API key, secret, or credential;
+- a third-party integration or external data source — e.g. a component that
+  **pulls from an API** or shows a live social feed;
+- an embed or script that needs configuring;
+- a new dependency, or a build-config change (`astro.config.mjs`, `package.json`);
+- a CI/workflow change (`.github/workflows/`);
+- a domain/DNS change.
+
+The test: *would this work as a pure content/design edit, or does it need
+wiring up to something technical first?* If the latter, **loop Roger in** — add
+**@rogerfoxcroft** as an assignee on the issue and leave a short, plain-English
+comment explaining what's needed — and do the parts you safely can (e.g. build
+the visual shell, and note that the live data needs Roger to wire up).
 
 ## The stack in one paragraph
 
@@ -127,10 +141,11 @@ sensible size (posters ≥ 800×1067, and not tens of megabytes).
 
 ## Safety rails
 
-- **Do not touch** the following without an explicit ask from Roger: layout
-  `.astro` files, CSS tokens in `src/styles/global.css`, `astro.config.mjs`,
-  `package.json`, or `.github/workflows/*`. Copy and content are fair game;
-  structural changes are not.
+- **Do not touch** these technical/build files without an explicit ask from
+  Roger — a content or design change should never need them: `astro.config.mjs`,
+  `package.json` / `package-lock.json`, `src/content.config.ts` (the content
+  schema), and `.github/workflows/*`. Layout `.astro` files, components, and
+  styling (including `src/styles/global.css`) ARE fair game for design changes.
 
 - **Do not delete** past-show markdown files. When a show ends, its status
   auto-derives to `past` — that's the archive.
@@ -138,10 +153,11 @@ sensible size (posters ≥ 800×1067, and not tens of megabytes).
 - **Do not add** analytics, tracking scripts, embedded fonts, or third-party
   JavaScript. This is a static marketing site and should stay light.
 
-- If an issue asks for anything beyond content (a code change, a new page type,
-  a feature, a design change, or anything technical — see "Who you're talking
-  to"), don't attempt it: assign the issue to **@rogerfoxcroft** and leave a
-  short, plain-English comment explaining what's needed.
+- If a change needs technical plumbing to work — an integration, external
+  data/API, a secret, a new dependency, or a build/CI change (see "Who you're
+  talking to") — don't attempt that part: assign the issue to **@rogerfoxcroft**
+  and leave a short, plain-English comment explaining what's needed. Layout and
+  design changes don't need escalating — those are yours to make.
 
 ## Build check
 
