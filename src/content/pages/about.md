@@ -20,6 +20,18 @@ workshops to prepare newcomers for auditions each year.
 - **Rehearsals** — weekly through the season, culminating in a professional run at
   Stafford Gatehouse Theatre.
 
+## Safeguarding
+
+The safety and wellbeing of our young performers comes first. MYTS has a
+Designated Safeguarding Lead, who makes sure every performance is correctly
+licensed and that our chaperones meet Local Education Authority safeguarding
+rules, including holding up-to-date DBS checks.
+
+We go beyond the legal minimum wherever we can, so that every young person in
+our care is properly looked after on stage and off. If you have a
+safeguarding question or concern, you can reach our Designated Safeguarding
+Lead at [safeguarding@myts.org.uk](mailto:safeguarding@myts.org.uk).
+
 ## Interested in joining?
 
 Get in touch via the [contact page](/contact/) or email

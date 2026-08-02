@@ -11,6 +11,7 @@ export const SITE = {
 } as const;
 
 export const CONTACT = {
+  emailSafeguarding: 'safeguarding@myts.org.uk',
   email: 'secretary@myts.org.uk',
 } as const;
 
