@@ -2,7 +2,7 @@
 name: Add or update a show
 about: Add a new production, or change details of an existing one
 title: "Show: "
-labels: ["claude", "content"]
+labels: ["content"]
 assignees: []
 ---
 
