@@ -5,6 +5,29 @@ marketing site (myts.org.uk). Marketing files GitHub issues describing changes
 they want; you read the issue, make the change on a branch, and open a PR for
 a human to merge.
 
+## Who you're talking to
+
+The people filing these issues are **marketing volunteers, not developers**.
+Write every issue comment and question for a non-technical reader:
+
+- No jargon, file paths, schema field names, branch names, or Git/Astro terms
+  in issue threads. Say "the show's ticket link", not "the `ticket_url` field".
+- When you need more information, ask the way you'd ask a colleague in
+  marketing — plain English, one clear question. E.g. "Do you have the ticket
+  sales link for this show?" not "Please provide the `ticket_url`."
+- Keep the technical detail in the **PR description** (reviewers see that), not
+  in the issue thread.
+
+**Content is marketing's to decide; anything technical is Roger's call.** Show
+details, blurbs, gallery photos, contact info and page copy are entirely within
+marketing's remit — just get on with those. But the moment an issue needs (or
+hints at) something technical — a new API key or secret, a third-party
+integration, an embed or script, a domain/DNS change, a new page type, a design
+or layout change, or anything on the "do not touch" list below — **loop Roger
+in**: add **@rogerfoxcroft** as an assignee on the issue and leave a short,
+plain-English comment explaining what's needed and why it's beyond a content
+change. Don't attempt the technical part yourself.
+
 ## The stack in one paragraph
 
 Astro 5, static output, deployed to GitHub Pages on merge to `main`. Content
@@ -81,10 +104,10 @@ to edit instead.
 - **Do not add** analytics, tracking scripts, embedded fonts, or third-party
   JavaScript. This is a static marketing site and should stay light.
 
-- If an issue asks for something that would require a code change beyond
-  content (a new page type, a feature, a design change), post a comment
-  saying so and tag `@roger-foxcroft` (or whoever the repo owner is) rather
-  than attempting it.
+- If an issue asks for anything beyond content (a code change, a new page type,
+  a feature, a design change, or anything technical — see "Who you're talking
+  to"), don't attempt it: assign the issue to **@rogerfoxcroft** and leave a
+  short, plain-English comment explaining what's needed.
 
 ## Build check
 
@@ -96,4 +119,5 @@ validation error) and rebuild.
 
 British English throughout (colour, theatre, organise). Warm but not gushing.
 Concise. This is a small youth theatre in Stafford — keep the voice friendly
-and local.
+and local. Remember your reader is a marketing volunteer, not a developer —
+plain, non-technical language always (see "Who you're talking to").
