@@ -63,4 +63,4 @@ jobs:
           # curl is allowed so Claude can download images attached to issues
           # (GitHub serves them from user-attachments URLs) and save them into
           # src/content/**; the repo is public so no auth header is needed.
-          claude_args: "--allowedTools 'Bash(npm ci),Bash(npm install *),Bash(npm run *),Bash(git add:*),Bash(git commit:*),Bash(git rm:*),Bash(curl:*)'"
+          claude_args: "--debug --allowedTools 'Bash(npm ci),Bash(npm install *),Bash(npm run *),Bash(git add:*),Bash(git commit:*),Bash(git rm:*),Bash(curl:*)'"
