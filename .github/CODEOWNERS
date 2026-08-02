@@ -2,14 +2,15 @@
 #
 # GitHub auto-requests a review from these owners on any PR touching the matched
 # paths. With branch protection's "Require review from Code Owners" enabled,
-# their approval becomes REQUIRED to merge. This keeps the content-editing
-# automation (and marketing reviewers) from landing changes to CI, build config,
-# dependencies, or the design tokens — those are Roger's call. Mirrors the
-# "do not touch" list in CLAUDE.md.
+# their approval becomes REQUIRED to merge.
+#
+# Scope: TECHNICAL / build / CI files only — the plumbing a content or design
+# change should never need (see CLAUDE.md). Layout, components, styling and
+# content are deliberately NOT here: marketing can review and merge those.
 
 /.github/workflows/      @rogerfoxcroft
 /.github/CODEOWNERS      @rogerfoxcroft
 /astro.config.mjs        @rogerfoxcroft
 /package.json            @rogerfoxcroft
 /package-lock.json       @rogerfoxcroft
-/src/styles/global.css   @rogerfoxcroft
+/src/content.config.ts   @rogerfoxcroft
