@@ -32,7 +32,7 @@ const alumni = await Promise.all(
         <div class="alumni-grid">
           {alumni.map(({ data, Content }) => (
             <article class="alum">
-              {data.photo && (
+              {data.photo ? (
                 <Image
                   class="alum-photo"
                   src={data.photo}
@@ -41,6 +41,10 @@ const alumni = await Promise.all(
                   height={600}
                   loading="lazy"
                 />
+              ) : (
+                <div class="alum-photo alum-photo--placeholder" aria-hidden="true">
+                  <span>{data.name.split(' ').map(w => w[0]).join('').slice(0, 2)}</span>
+                </div>
               )}
               <div class="alum-body">
                 <h2>{data.name}</h2>
@@ -75,6 +79,18 @@ const alumni = await Promise.all(
     flex-direction: column;
   }
   .alum-photo { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+  .alum-photo--placeholder {
+    display: grid;
+    place-items: center;
+    background: var(--myts-primary);
+  }
+  .alum-photo--placeholder span {
+    font-family: var(--myts-font-display);
+    font-weight: 700;
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    color: var(--myts-accent);
+    letter-spacing: 0.03em;
+  }
   .alum-body { padding: 1.1rem 1.2rem 1.3rem; display: flex; flex-direction: column; gap: 0.5rem; }
   .alum-body h2 { margin: 0; font-size: 1.2rem; }
   .alum-known {
