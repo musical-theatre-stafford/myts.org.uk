@@ -25,20 +25,12 @@ const hasSocials = !!(SOCIALS.facebook || SOCIALS.instagram || SOCIALS.youtube |
         <h2>Details</h2>
         <ul>
           <li>
-            <span class="label">Enquiries</span>
-            <a href={`mailto:${CONTACT.emailEnquiries}`}>{CONTACT.emailEnquiries}</a>
-          </li>
-          <li>
-            <span class="label">Tickets</span>
-            <a href={`mailto:${CONTACT.emailTickets}`}>{CONTACT.emailTickets}</a>
+            <span class="label">Email</span>
+            <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
           </li>
           <li>
             <span class="label">Safeguarding</span>
             <a href={`mailto:${CONTACT.emailSafeguarding}`}>{CONTACT.emailSafeguarding}</a>
-          </li>
-          <li>
-            <span class="label">Phone</span>
-            <a href={`tel:${CONTACT.phone.replace(/\s+/g, '')}`}>{CONTACT.phone}</a>
           </li>
         </ul>
         {hasSocials && (
