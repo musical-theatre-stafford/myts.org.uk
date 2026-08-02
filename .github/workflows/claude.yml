@@ -60,23 +60,6 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ secrets.CLAUDE_GITHUB_TOKEN }}
-          # A standing prompt makes Claude act automatically on every triggering
-          # event (a newly opened issue, an @claude comment, a `claude` label /
-          # assignment) — without it, the action only runs when it spots @claude,
-          # so plain new issues silently no-op ("Context prompt: NO PROMPT").
-          prompt: |
-            You've been triggered on a GitHub issue (or a comment/mention on one)
-            in this repository. Follow CLAUDE.md exactly.
-
-            Read the triggering issue — its title, body, any attached images —
-            and any relevant comments, work out what the marketing team is
-            asking for, and carry it out on your working branch, then open a PR.
-            Address the reader in plain, non-technical language. If you're
-            missing something you need (a date, a link, an image), post one
-            friendly comment asking for it and stop — don't guess. If the request
-            includes anything technical, follow CLAUDE.md's escalation guidance
-            (assign @rogerfoxcroft with a short plain-English explanation) rather
-            than attempting that part yourself.
           # curl is allowed so Claude can download images attached to issues
           # (GitHub serves them from user-attachments URLs) and save them into
           # src/content/**; the repo is public so no auth header is needed.
