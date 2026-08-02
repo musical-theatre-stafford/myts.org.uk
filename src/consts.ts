@@ -13,6 +13,7 @@ export const SITE = {
 export const CONTACT = {
   emailEnquiries: 'enquiries@myts.org.uk',
   emailTickets: 'tickets@myts.org.uk',
+  emailSafeguarding: 'safeguarding@myts.org.uk',
   phone: '07847 049 129',
 } as const;
 
