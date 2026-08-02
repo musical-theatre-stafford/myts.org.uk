@@ -18,10 +18,10 @@ export const CONTACT = {
 
 export const SOCIALS = {
   // Fill these in as they become known. Empty strings hide the icon.
-  facebook: '',
-  instagram: '',
+  facebook: 'https://www.facebook.com/mytsStafford/',
+  instagram: 'https://www.instagram.com/myts_stafford/',
   youtube: '',
-  tiktok: '',
+  tiktok: 'https://www.tiktok.com/@myts_stafford',
 } as const;
 
 /**

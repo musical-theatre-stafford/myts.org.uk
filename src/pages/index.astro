@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import UpcomingShow from '../components/UpcomingShow.astro';
+import FollowPanel from '../components/FollowPanel.astro';
 import { SITE, CONTACT } from '../consts';
 
 const now = new Date();
@@ -98,6 +99,8 @@ const HomeContent = homeEntry ? (await render(homeEntry)).Content : null;
       )}
     </div>
   </section>
+
+  <FollowPanel />
 
   <section class="section section-alt">
     <div class="container contact-strip">
