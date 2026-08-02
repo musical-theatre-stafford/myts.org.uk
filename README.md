@@ -83,10 +83,13 @@ Repository settings should:
 4. **Custom domain**: same page, set `myts.org.uk`. GitHub will verify DNS —
    you'll need an A record (or CNAME for `www`) pointing at GitHub Pages IPs.
    [Docs](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site).
-5. **Add the Anthropic secret**: Settings → Secrets and variables → Actions →
-   New repository secret. Name `ANTHROPIC_API_KEY`, value = your Anthropic
-   API key (starts `sk-ant-…`). Or run `/install-github-app` inside Claude
-   Code to have it done automatically.
+5. **Add the workflow secrets**: Settings → Secrets and variables → Actions →
+   New repository secret. Add two:
+   - `CLAUDE_CODE_OAUTH_TOKEN` — generate with `claude setup-token`. This runs
+     the action on your Claude Max/Pro subscription rather than API credits.
+   - `CLAUDE_GITHUB_TOKEN` — a fine-grained GitHub PAT scoped to this repo with
+     **Contents**, **Pull requests** and **Issues** write. Used for checkout and
+     Claude's branch/PR/comment operations.
 6. **Invite marketing leads** as collaborators with **Write** role.
 7. **Test the workflow**: open an issue titled "Show: Test", body describing
    any fake show, and watch the Actions tab. Claude should comment on the
@@ -95,8 +98,9 @@ Repository settings should:
 ## Costs
 
 - **GitHub Pages** — free for public repos.
-- **Claude Code Action** — pay-as-you-go from your Anthropic account. Typical
-  content-edit issue costs a few cents.
+- **Claude Code Action** — runs on your Claude Max/Pro subscription via the
+  `CLAUDE_CODE_OAUTH_TOKEN`, so it doesn't draw down API credits. (Swap in an
+  `ANTHROPIC_API_KEY` secret if you'd rather pay per-issue from API billing.)
 
 ## Changing the look
 
