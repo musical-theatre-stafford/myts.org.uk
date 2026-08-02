@@ -1,0 +1,67 @@
+---
+import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const shows = await getCollection('shows');
+  return shows.map(s => ({ params: { slug: s.id }, props: { show: s } }));
+}
+
+const { show } = Astro.props;
+const { Content } = await render(show);
+
+const now = new Date();
+const start = show.data.dates_start;
+const end = show.data.dates_end ?? start;
+let status: 'upcoming' | 'current' | 'past' = show.data.status ?? 'past';
+if (!show.data.status) {
+  if (now < start) status = 'upcoming';
+  else if (now >= start && now <= new Date(end.getTime() + 24*60*60*1000)) status = 'current';
+  else status = 'past';
+}
+
+const fmt = (d: Date) => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+const dateLabel = end.getTime() !== start.getTime() ? `${fmt(start)} – ${fmt(end)}` : fmt(start);
+---
+<BaseLayout title={show.data.title} description={show.data.blurb ?? `${show.data.title} at ${show.data.venue}, ${dateLabel}`}>
+  <section class="section">
+    <div class="container detail">
+      {show.data.poster && (
+        <div class="poster">
+          <Image src={show.data.poster} alt={`${show.data.title} poster`} width={800} height={1067} />
+        </div>
+      )}
+      <div class="body">
+        <p class="eyebrow">{status === 'past' ? 'Past production' : status === 'current' ? 'On now' : 'Upcoming'}</p>
+        <h1>{show.data.title}</h1>
+        <p class="meta"><strong>{dateLabel}</strong> &middot; {show.data.venue}</p>
+        {show.data.blurb && <p class="lede">{show.data.blurb}</p>}
+        <div class="prose">
+          <Content />
+        </div>
+        {show.data.ticket_url && status !== 'past' && (
+          <p><a class="btn btn-primary" href={show.data.ticket_url} target="_blank" rel="noopener">Book tickets</a></p>
+        )}
+        <p style="margin-top:2rem;"><a href="/shows/">&larr; All shows</a></p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .detail {
+    display: grid;
+    grid-template-columns: minmax(0, 380px) 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+  @media (max-width: 780px) {
+    .detail { grid-template-columns: 1fr; }
+  }
+  .poster img { width: 100%; height: auto; border-radius: var(--myts-radius-lg); box-shadow: var(--myts-shadow-lg); }
+  .meta { color: var(--myts-muted); margin-bottom: 1rem; }
+  .lede { font-size: 1.15rem; }
+  .prose :global(p) { margin-bottom: 1rem; }
+  .body h1 { margin-top: 0.5rem; }
+</style>

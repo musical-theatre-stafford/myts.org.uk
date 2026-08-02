@@ -1,0 +1,97 @@
+---
+import { Image } from 'astro:assets';
+type Props = {
+  slug: string;
+  title: string;
+  dates_start: Date;
+  dates_end?: Date;
+  venue: string;
+  ticket_url?: string;
+  poster?: any;
+  blurb?: string;
+  status: 'upcoming' | 'current' | 'past';
+};
+const { slug, title, dates_start, dates_end, venue, ticket_url, poster, blurb, status } = Astro.props;
+
+const fmt = (d: Date) => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+const dateLabel = dates_end && dates_end.getTime() !== dates_start.getTime()
+  ? `${fmt(dates_start)} – ${fmt(dates_end)}`
+  : fmt(dates_start);
+
+const badgeLabel = status === 'current' ? 'On now' : status === 'upcoming' ? 'Upcoming' : 'Past production';
+---
+<article class={`show-card show-card--${status}`}>
+  <a href={`/shows/${slug}/`} class="card-media">
+    {poster ? (
+      <Image src={poster} alt={`${title} poster`} width={600} height={800} loading="lazy" />
+    ) : (
+      <div class="placeholder" aria-hidden="true">
+        <span>{title}</span>
+      </div>
+    )}
+    <span class={`badge badge--${status}`}>{badgeLabel}</span>
+  </a>
+  <div class="card-body">
+    <h3><a href={`/shows/${slug}/`}>{title}</a></h3>
+    <p class="meta">{dateLabel} &middot; {venue}</p>
+    {blurb && <p class="blurb">{blurb}</p>}
+    {ticket_url && status !== 'past' && (
+      <a href={ticket_url} class="btn btn-primary" target="_blank" rel="noopener">Book tickets</a>
+    )}
+  </div>
+</article>
+
+<style>
+  .show-card {
+    background: var(--myts-surface);
+    border-radius: var(--myts-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--myts-shadow);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .show-card:hover { transform: translateY(-3px); box-shadow: var(--myts-shadow-lg); }
+  .card-media {
+    position: relative;
+    display: block;
+    aspect-ratio: 3 / 4;
+    background: var(--myts-primary);
+    overflow: hidden;
+  }
+  .card-media img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .placeholder {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    color: var(--myts-accent);
+    font-family: var(--myts-font-display);
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 1rem;
+    background: linear-gradient(135deg, #5b1e40 0%, #3a1329 100%);
+  }
+  .badge {
+    position: absolute;
+    top: 0.8rem; left: 0.8rem;
+    background: var(--myts-accent);
+    color: var(--myts-text);
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .badge--past { background: rgba(255,255,255,0.85); color: var(--myts-muted); }
+  .badge--current { background: #d94f4f; color: #fff; }
+  .card-body { padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .card-body h3 { margin: 0; font-size: 1.15rem; }
+  .card-body h3 a { text-decoration: none; }
+  .meta { color: var(--myts-muted); margin: 0; font-size: 0.9rem; }
+  .blurb { margin: 0.2rem 0 0.5rem; }
+  .btn { align-self: flex-start; margin-top: 0.5rem; }
+</style>

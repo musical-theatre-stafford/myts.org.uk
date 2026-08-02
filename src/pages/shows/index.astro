@@ -1,0 +1,106 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ShowCard from '../../components/ShowCard.astro';
+
+const now = new Date();
+const raw = await getCollection('shows');
+const shows = raw.map(s => {
+  const start = s.data.dates_start;
+  const end = s.data.dates_end ?? start;
+  let status: 'upcoming' | 'current' | 'past' = s.data.status ?? 'past';
+  if (!s.data.status) {
+    if (now < start) status = 'upcoming';
+    else if (now >= start && now <= new Date(end.getTime() + 24*60*60*1000)) status = 'current';
+    else status = 'past';
+  }
+  return { ...s, status };
+});
+
+const current = shows.filter(s => s.status === 'current')
+  .sort((a, b) => a.data.dates_start.getTime() - b.data.dates_start.getTime());
+const upcoming = shows.filter(s => s.status === 'upcoming')
+  .sort((a, b) => a.data.dates_start.getTime() - b.data.dates_start.getTime());
+const past = shows.filter(s => s.status === 'past')
+  .sort((a, b) => b.data.dates_start.getTime() - a.data.dates_start.getTime());
+---
+<BaseLayout title="Shows" description="Current, upcoming and past productions from Musical Youth Theatre Stafford.">
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Productions</p>
+      <h1>Our shows</h1>
+
+      {current.length > 0 && (
+        <div class="group">
+          <h2>On now</h2>
+          <div class="card-grid">
+            {current.map(s => (
+              <ShowCard
+                slug={s.id}
+                title={s.data.title}
+                dates_start={s.data.dates_start}
+                dates_end={s.data.dates_end}
+                venue={s.data.venue}
+                ticket_url={s.data.ticket_url}
+                poster={s.data.poster}
+                blurb={s.data.blurb}
+                status={s.status}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {upcoming.length > 0 && (
+        <div class="group">
+          <h2>Coming up</h2>
+          <div class="card-grid">
+            {upcoming.map(s => (
+              <ShowCard
+                slug={s.id}
+                title={s.data.title}
+                dates_start={s.data.dates_start}
+                dates_end={s.data.dates_end}
+                venue={s.data.venue}
+                ticket_url={s.data.ticket_url}
+                poster={s.data.poster}
+                blurb={s.data.blurb}
+                status={s.status}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {past.length > 0 && (
+        <div class="group">
+          <h2>Past productions</h2>
+          <div class="card-grid">
+            {past.map(s => (
+              <ShowCard
+                slug={s.id}
+                title={s.data.title}
+                dates_start={s.data.dates_start}
+                dates_end={s.data.dates_end}
+                venue={s.data.venue}
+                ticket_url={s.data.ticket_url}
+                poster={s.data.poster}
+                blurb={s.data.blurb}
+                status={s.status}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {current.length === 0 && upcoming.length === 0 && past.length === 0 && (
+        <p>No shows to list yet. Check back soon &mdash; or <a href="/contact/">get in touch</a>.</p>
+      )}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .group { margin-top: 2.5rem; }
+  .group h2 { margin-bottom: 1.25rem; }
+</style>

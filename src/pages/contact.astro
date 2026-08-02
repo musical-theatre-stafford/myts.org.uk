@@ -1,0 +1,89 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+import { CONTACT, SOCIALS } from '../consts';
+
+const entry = (await getCollection('pages')).find(p => p.id === 'contact');
+const Content = entry ? (await render(entry)).Content : null;
+const hasSocials = !!(SOCIALS.facebook || SOCIALS.instagram || SOCIALS.youtube || SOCIALS.tiktok);
+---
+<BaseLayout title="Contact" description="Contact Musical Youth Theatre Stafford.">
+  <section class="section">
+    <div class="container contact-grid">
+      <div class="prose">
+        <p class="eyebrow">Contact</p>
+        <h1>Get in touch</h1>
+        {Content ? <Content /> : (
+          <p>
+            We&rsquo;d love to hear from you &mdash; whether you&rsquo;re a prospective
+            performer, a parent, or after tickets for an upcoming show.
+          </p>
+        )}
+      </div>
+      <aside class="contact-card">
+        <h2>Details</h2>
+        <ul>
+          <li>
+            <span class="label">Enquiries</span>
+            <a href={`mailto:${CONTACT.emailEnquiries}`}>{CONTACT.emailEnquiries}</a>
+          </li>
+          <li>
+            <span class="label">Tickets</span>
+            <a href={`mailto:${CONTACT.emailTickets}`}>{CONTACT.emailTickets}</a>
+          </li>
+          <li>
+            <span class="label">Phone</span>
+            <a href={`tel:${CONTACT.phone.replace(/\s+/g, '')}`}>{CONTACT.phone}</a>
+          </li>
+        </ul>
+        {hasSocials && (
+          <>
+            <h2 style="margin-top: 1.5rem;">Follow</h2>
+            <SocialLinks />
+          </>
+        )}
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: start;
+  }
+  @media (max-width: 780px) {
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+  .prose { max-width: 60ch; }
+  .contact-card {
+    background: var(--myts-surface);
+    border: 1px solid var(--myts-border);
+    border-radius: var(--myts-radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--myts-shadow);
+  }
+  .contact-card h2 {
+    font-size: 1.1rem;
+    color: var(--myts-primary);
+    margin: 0 0 0.75rem;
+  }
+  .contact-card ul { list-style: none; padding: 0; margin: 0; }
+  .contact-card li {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--myts-border);
+  }
+  .contact-card li:last-child { border-bottom: none; }
+  .label {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--myts-muted);
+    margin-bottom: 0.2rem;
+  }
+</style>

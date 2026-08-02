@@ -1,0 +1,68 @@
+---
+import { SITE, CONTACT, SOCIALS } from '../consts';
+import SocialLinks from './SocialLinks.astro';
+const year = new Date().getFullYear();
+const hasSocials = !!(SOCIALS.facebook || SOCIALS.instagram || SOCIALS.youtube || SOCIALS.tiktok);
+---
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-title">{SITE.title}</p>
+      <p class="footer-tag">{SITE.tagline}</p>
+    </div>
+    <div>
+      <p class="footer-heading">Contact</p>
+      <ul class="footer-list">
+        <li><a href={`mailto:${CONTACT.emailEnquiries}`}>{CONTACT.emailEnquiries}</a></li>
+        <li><a href={`mailto:${CONTACT.emailTickets}`}>{CONTACT.emailTickets}</a></li>
+        <li><a href={`tel:${CONTACT.phone.replace(/\s+/g, '')}`}>{CONTACT.phone}</a></li>
+      </ul>
+    </div>
+    {hasSocials && (
+      <div>
+        <p class="footer-heading">Follow</p>
+        <SocialLinks />
+      </div>
+    )}
+  </div>
+  <div class="container footer-legal">
+    <small>&copy; {year} {SITE.title}. Junior division of the Stafford &amp; District Operatic Society.</small>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--myts-primary);
+    color: var(--myts-primary-ink);
+    padding: 3rem 0 1.5rem;
+    margin-top: 4rem;
+  }
+  .site-footer a { color: var(--myts-accent); }
+  .site-footer a:hover { color: #ffffff; }
+  .footer-inner {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-bottom: 2rem;
+  }
+  .footer-title {
+    font-family: var(--myts-font-display);
+    font-size: 1.15rem;
+    margin: 0 0 0.4rem;
+  }
+  .footer-tag { color: rgba(255,255,255,0.75); margin: 0; font-size: 0.95rem; }
+  .footer-heading {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    color: var(--myts-accent);
+    margin: 0 0 0.6rem;
+  }
+  .footer-list { list-style: none; padding: 0; margin: 0; }
+  .footer-list li { margin-bottom: 0.35rem; }
+  .footer-legal {
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.65);
+  }
+</style>

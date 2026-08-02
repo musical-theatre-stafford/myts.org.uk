@@ -1,0 +1,123 @@
+/*
+ * MYTS brand tokens. Change values here to restyle the whole site.
+ * Palette is deliberately theatrical: a deep plum primary, warm gold accent,
+ * soft cream background. Swap freely when a real brand exists.
+ */
+:root {
+  --myts-primary: #5b1e40;      /* deep plum */
+  --myts-primary-ink: #ffffff;
+  --myts-accent: #e0a458;       /* warm gold */
+  --myts-bg: #faf7f2;           /* soft cream */
+  --myts-surface: #ffffff;
+  --myts-text: #1a1a1a;
+  --myts-muted: #6b6b6b;
+  --myts-border: #e8e2d7;
+
+  --myts-radius: 10px;
+  --myts-radius-lg: 18px;
+  --myts-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --myts-shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.08);
+
+  --myts-font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --myts-font-display: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, "URW Palladio L", serif;
+
+  --myts-container: 1120px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--myts-font-body);
+  color: var(--myts-text);
+  background: var(--myts-bg);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--myts-font-display);
+  color: var(--myts-primary);
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+}
+h1 { font-size: clamp(2rem, 4vw + 1rem, 3.5rem); }
+h2 { font-size: clamp(1.5rem, 2vw + 1rem, 2.25rem); }
+h3 { font-size: 1.25rem; }
+
+p { margin: 0 0 1em; }
+
+a {
+  color: var(--myts-primary);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--myts-accent); }
+
+img, svg { max-width: 100%; height: auto; display: block; }
+
+.container {
+  width: 100%;
+  max-width: var(--myts-container);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+.btn-primary {
+  background: var(--myts-primary);
+  color: var(--myts-primary-ink);
+}
+.btn-primary:hover {
+  background: var(--myts-accent);
+  color: var(--myts-text);
+  transform: translateY(-1px);
+}
+.btn-outline {
+  border: 2px solid var(--myts-primary);
+  color: var(--myts-primary);
+}
+.btn-outline:hover {
+  background: var(--myts-primary);
+  color: var(--myts-primary-ink);
+}
+
+.section {
+  padding: clamp(2.5rem, 6vw, 5rem) 0;
+}
+.section-alt { background: var(--myts-surface); }
+
+.eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  color: var(--myts-accent);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Card grid used for shows and gallery */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Screen-reader-only text */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}

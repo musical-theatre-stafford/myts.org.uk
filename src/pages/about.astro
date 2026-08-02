@@ -1,0 +1,23 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const entry = (await getCollection('pages')).find(p => p.id === 'about');
+const Content = entry ? (await render(entry)).Content : null;
+---
+<BaseLayout title="About" description="About Musical Youth Theatre Stafford (MYTS) — the junior division of the Stafford & District Operatic Society.">
+  <section class="section">
+    <div class="container prose">
+      <p class="eyebrow">About</p>
+      <h1>{entry?.data.title ?? 'About MYTS'}</h1>
+      {Content ? <Content /> : <p>Content coming soon.</p>}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose {
+    max-width: 68ch;
+  }
+  .prose :global(h2) { margin-top: 2rem; }
+</style>

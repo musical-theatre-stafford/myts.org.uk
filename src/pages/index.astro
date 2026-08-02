@@ -1,0 +1,130 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ShowCard from '../components/ShowCard.astro';
+import { SITE, CONTACT } from '../consts';
+
+const now = new Date();
+const showsAll = await getCollection('shows');
+const withStatus = showsAll.map(s => {
+  const start = s.data.dates_start;
+  const end = s.data.dates_end ?? start;
+  let status: 'upcoming' | 'current' | 'past' = s.data.status ?? 'past';
+  if (!s.data.status) {
+    if (now < start) status = 'upcoming';
+    else if (now >= start && now <= new Date(end.getTime() + 24*60*60*1000)) status = 'current';
+    else status = 'past';
+  }
+  return { ...s, status };
+});
+const upcoming = withStatus
+  .filter(s => s.status !== 'past')
+  .sort((a, b) => a.data.dates_start.getTime() - b.data.dates_start.getTime());
+
+const homeEntry = (await getCollection('pages')).find(p => p.id === 'home');
+const HomeContent = homeEntry ? (await render(homeEntry)).Content : null;
+---
+<BaseLayout>
+  <section class="hero">
+    <div class="container hero-inner">
+      <p class="eyebrow">Est. Stafford</p>
+      <h1>{SITE.title}</h1>
+      <p class="lede">{SITE.tagline}</p>
+      <div class="hero-cta">
+        <a href="/shows/" class="btn btn-primary">See our shows</a>
+        <a href="/about/" class="btn btn-outline">About MYTS</a>
+      </div>
+    </div>
+  </section>
+
+  {upcoming.length > 0 && (
+    <section class="section section-alt">
+      <div class="container">
+        <p class="eyebrow">What&rsquo;s on</p>
+        <h2>Upcoming productions</h2>
+        <div class="card-grid" style="margin-top: 1.5rem;">
+          {upcoming.slice(0, 3).map(s => (
+            <ShowCard
+              slug={s.id}
+              title={s.data.title}
+              dates_start={s.data.dates_start}
+              dates_end={s.data.dates_end}
+              venue={s.data.venue}
+              ticket_url={s.data.ticket_url}
+              poster={s.data.poster}
+              blurb={s.data.blurb}
+              status={s.status}
+            />
+          ))}
+        </div>
+        {upcoming.length > 3 && (
+          <p style="margin-top: 1.5rem;"><a href="/shows/">See all shows &rarr;</a></p>
+        )}
+      </div>
+    </section>
+  )}
+
+  <section class="section">
+    <div class="container prose">
+      {HomeContent ? <HomeContent /> : (
+        <>
+          <p class="eyebrow">Who we are</p>
+          <h2>Musical theatre for Stafford&rsquo;s young performers</h2>
+          <p>
+            MYTS is the junior division of the Stafford &amp; District Operatic Society. We
+            train young people aged 8&ndash;18 in singing, acting and dance, and stage a full
+            musical at Stafford Gatehouse Theatre each year.
+          </p>
+          <p><a href="/about/">Read more about MYTS &rarr;</a></p>
+        </>
+      )}
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container contact-strip">
+      <div>
+        <p class="eyebrow">Get in touch</p>
+        <h2>Interested in joining, or seeing a show?</h2>
+        <p>Drop us a line &mdash; we&rsquo;re happy to help.</p>
+      </div>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href={`mailto:${CONTACT.emailEnquiries}`}>Email us</a>
+        <a class="btn btn-outline" href="/contact/">Contact details</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #5b1e40 0%, #3a1329 100%);
+    color: var(--myts-primary-ink);
+    padding: clamp(3rem, 8vw, 6rem) 0;
+  }
+  .hero .eyebrow { color: var(--myts-accent); }
+  .hero h1 {
+    color: var(--myts-primary-ink);
+    margin: 0.5rem 0 1rem;
+  }
+  .lede {
+    font-size: clamp(1.1rem, 1.5vw + 0.5rem, 1.4rem);
+    color: rgba(255,255,255,0.9);
+    max-width: 46ch;
+  }
+  .hero-cta { display: flex; gap: 0.75rem; margin-top: 1.5rem; flex-wrap: wrap; }
+  .hero .btn-outline { color: var(--myts-primary-ink); border-color: var(--myts-primary-ink); }
+  .hero .btn-outline:hover { background: var(--myts-primary-ink); color: var(--myts-primary); }
+
+  .prose { max-width: 68ch; }
+  .contact-strip {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+  .contact-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  @media (max-width: 640px) {
+    .contact-strip { grid-template-columns: 1fr; }
+  }
+</style>
