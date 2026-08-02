@@ -1,0 +1,105 @@
+---
+import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const entries = await getCollection('alumni');
+// Newest leavers first; entries without a year fall to the end, then by name.
+entries.sort((a, b) =>
+  (b.data.year_left ?? 0) - (a.data.year_left ?? 0) ||
+  a.data.name.localeCompare(b.data.name)
+);
+const alumni = await Promise.all(
+  entries.map(async (e) => ({ data: e.data, Content: (await render(e)).Content }))
+);
+---
+<BaseLayout
+  title="Alumni"
+  description="Former Musical Youth Theatre Stafford members who've gone on to careers in musical theatre and the arts."
+>
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Alumni</p>
+      <h1>Where our young performers go next</h1>
+      <p class="lede">
+        Some of the young people who trained with MYTS have gone on to careers on
+        stage and screen. Here are a few of them.
+      </p>
+
+      {alumni.length === 0 ? (
+        <p>Alumni profiles are on their way.</p>
+      ) : (
+        <div class="alumni-grid">
+          {alumni.map(({ data, Content }) => (
+            <article class="alum">
+              {data.photo ? (
+                <Image
+                  class="alum-photo"
+                  src={data.photo}
+                  alt={`${data.name}`}
+                  width={480}
+                  height={600}
+                  loading="lazy"
+                />
+              ) : (
+                <div class="alum-photo alum-photo--placeholder" aria-hidden="true">
+                  <span>{data.name.split(' ').map(w => w[0]).join('').slice(0, 2)}</span>
+                </div>
+              )}
+              <div class="alum-body">
+                <h2>{data.name}</h2>
+                {data.known_for && <p class="alum-known">{data.known_for}</p>}
+                <div class="alum-bio"><Content /></div>
+                {data.link && (
+                  <p class="alum-link"><a href={data.link} rel="noopener">More about {data.name.split(' ')[0]} &rarr;</a></p>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .lede { color: var(--myts-muted); max-width: 60ch; margin: 0.5rem 0 0; }
+  .alumni-grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .alum {
+    background: var(--myts-surface);
+    border-radius: var(--myts-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--myts-shadow);
+    display: flex;
+    flex-direction: column;
+  }
+  .alum-photo { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+  .alum-photo--placeholder {
+    display: grid;
+    place-items: center;
+    background: var(--myts-primary);
+  }
+  .alum-photo--placeholder span {
+    font-family: var(--myts-font-display);
+    font-weight: 700;
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    color: var(--myts-accent);
+    letter-spacing: 0.03em;
+  }
+  .alum-body { padding: 1.1rem 1.2rem 1.3rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .alum-body h2 { margin: 0; font-size: 1.2rem; }
+  .alum-known {
+    margin: 0;
+    color: var(--myts-accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .alum-bio { color: var(--myts-text); font-size: 0.95rem; }
+  .alum-bio :global(p) { margin: 0.4rem 0 0; line-height: 1.55; }
+  .alum-link { margin: 0.2rem 0 0; font-size: 0.9rem; }
+</style>

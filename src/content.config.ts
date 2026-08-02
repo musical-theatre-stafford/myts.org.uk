@@ -57,4 +57,23 @@ const gallery = defineCollection({
     }),
 });
 
-export const collections = { shows, pages, gallery };
+/**
+ * Alumni: former MYTS members who've gone on to careers in musical theatre or
+ * the arts. One markdown file per person; the body is a short profile.
+ */
+const alumni = defineCollection({
+  loader: glob({ pattern: ['**/*.md', '!README.md'], base: './src/content/alumni' }),
+  schema: ({ image }) =>
+    z.object({
+      name: z.string(),
+      photo: image().optional(),
+      // What they're best known for since MYTS (shown under their name).
+      known_for: z.string().optional(),
+      // Year they were last with MYTS — used to order the list (newest first).
+      year_left: z.number().int().gte(1980).lte(2100).optional(),
+      // Optional link to a profile or their own site.
+      link: z.string().url().optional(),
+    }),
+});
+
+export const collections = { shows, pages, gallery, alumni };
