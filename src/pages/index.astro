@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ShowCard from '../components/ShowCard.astro';
+import UpcomingShow from '../components/UpcomingShow.astro';
 import { SITE, CONTACT } from '../consts';
 
 const now = new Date();
@@ -20,6 +20,14 @@ const withStatus = showsAll.map(s => {
 const upcoming = withStatus
   .filter(s => s.status !== 'past')
   .sort((a, b) => a.data.dates_start.getTime() - b.data.dates_start.getTime());
+const nextShow = upcoming[0];
+
+const fmt = (d: Date) => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+const nextShowDateLabel = nextShow
+  ? (nextShow.data.dates_end && nextShow.data.dates_end.getTime() !== nextShow.data.dates_start.getTime()
+      ? `${fmt(nextShow.data.dates_start)} – ${fmt(nextShow.data.dates_end)}`
+      : fmt(nextShow.data.dates_start))
+  : '';
 
 const homeEntry = (await getCollection('pages')).find(p => p.id === 'home');
 const HomeContent = homeEntry ? (await render(homeEntry)).Content : null;
@@ -42,9 +50,9 @@ const HomeContent = homeEntry ? (await render(homeEntry)).Content : null;
       <div class="container">
         <p class="eyebrow">What&rsquo;s on</p>
         <h2>Upcoming productions</h2>
-        <div class="card-grid" style="margin-top: 1.5rem;">
+        <div class="upcoming-list" style="margin-top: 1.5rem;">
           {upcoming.slice(0, 3).map(s => (
-            <ShowCard
+            <UpcomingShow
               slug={s.id}
               title={s.data.title}
               dates_start={s.data.dates_start}
@@ -53,7 +61,6 @@ const HomeContent = homeEntry ? (await render(homeEntry)).Content : null;
               ticket_url={s.data.ticket_url}
               poster={s.data.poster}
               blurb={s.data.blurb}
-              status={s.status}
             />
           ))}
         </div>
@@ -65,18 +72,29 @@ const HomeContent = homeEntry ? (await render(homeEntry)).Content : null;
   )}
 
   <section class="section">
-    <div class="container prose">
-      {HomeContent ? <HomeContent /> : (
-        <>
-          <p class="eyebrow">Who we are</p>
-          <h2>Musical theatre for Stafford&rsquo;s young performers</h2>
-          <p>
-            MYTS is the junior division of Musical Theatre Stafford. We
-            train young people aged 8&ndash;18 in singing, acting and dance, and stage a full
-            musical at Stafford Gatehouse Theatre each year.
-          </p>
-          <p><a href="/about/">Read more about MYTS &rarr;</a></p>
-        </>
+    <div class="container who-we-are">
+      <div class="prose">
+        {HomeContent ? <HomeContent /> : (
+          <>
+            <p class="eyebrow">Who we are</p>
+            <h2>Musical theatre for Stafford&rsquo;s young performers</h2>
+            <p>
+              MYTS is the junior division of Musical Theatre Stafford. We
+              train young people aged 8&ndash;18 in singing, acting and dance, and stage a full
+              musical at Stafford Gatehouse Theatre each year.
+            </p>
+            <p><a href="/about/">Read more about MYTS &rarr;</a></p>
+          </>
+        )}
+      </div>
+      {nextShow && (
+        <aside class="next-show-cta">
+          <p class="eyebrow">Coming up next</p>
+          <h3>{nextShow.data.title}</h3>
+          <p class="meta">{nextShowDateLabel} &middot; {nextShow.data.venue}</p>
+          {nextShow.data.blurb && <p>{nextShow.data.blurb}</p>}
+          <a href={`/shows/${nextShow.id}/`} class="btn btn-primary">Find out more</a>
+        </aside>
       )}
     </div>
   </section>
@@ -117,6 +135,33 @@ const HomeContent = homeEntry ? (await render(homeEntry)).Content : null;
   .hero .btn-outline:hover { background: var(--myts-primary-ink); color: var(--myts-primary); }
 
   .prose { max-width: 68ch; }
+
+  .upcoming-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .who-we-are {
+    display: grid;
+    grid-template-columns: 1fr minmax(240px, 320px);
+    gap: 2.5rem;
+    align-items: start;
+  }
+  .next-show-cta {
+    background: var(--myts-surface);
+    border: 1px solid var(--myts-border);
+    border-radius: var(--myts-radius-lg);
+    box-shadow: var(--myts-shadow);
+    padding: 1.5rem;
+  }
+  .next-show-cta h3 { margin: 0 0 0.35rem; }
+  .next-show-cta .meta { color: var(--myts-muted); margin: 0 0 0.5rem; font-size: 0.9rem; }
+  .next-show-cta .btn { margin-top: 0.5rem; }
+  @media (max-width: 780px) {
+    .who-we-are { grid-template-columns: 1fr; }
+  }
+
   .contact-strip {
     display: grid;
     gap: 1.5rem;
