@@ -1,40 +1,63 @@
 name: Claude handles issues
 
-# Marketing files a plain-English issue (or comments @claude on an existing one).
-# Claude reads the repo (guided by /CLAUDE.md), asks clarifying questions if
-# needed, then opens a PR with the changes.
+# Marketing files a plain-English issue (or comments @claude on an existing one,
+# or labels/assigns it "claude"). Claude reads the repo (guided by /CLAUDE.md),
+# asks clarifying questions if needed, then opens a PR with the changes.
 #
-# Requires repo secret ANTHROPIC_API_KEY (or use the /install-github-app command
-# from Claude Code, which sets it up automatically).
+# Auth:
+#   CLAUDE_CODE_OAUTH_TOKEN — Claude Max/Pro subscription token, generated with
+#     `claude setup-token` (uses the subscription, not API credits).
+#   CLAUDE_GITHUB_TOKEN — a fine-grained GitHub PAT scoped to this repo, used
+#     for checkout and Claude's branch/PR/comment operations.
+
 on:
   issues:
-    types: [opened, edited, assigned, labeled]
+    types: [opened, labeled, assigned]
   issue_comment:
     types: [created]
   pull_request_review_comment:
     types: [created]
+  pull_request_review:
+    types: [submitted]
 
-permissions:
-  contents: write
-  pull-requests: write
-  issues: write
-  id-token: write
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+concurrency:
+  group: claude-${{ github.event.issue.number || github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: false
 
 jobs:
   claude:
+    # Three documented ways to trigger, plus @claude on PR reviews:
+    #   1. Open any new issue.
+    #   2. Comment @claude on an issue or PR.
+    #   3. Label an issue `claude` or assign it to `claude`.
+    if: |
+      (github.event_name == 'issues' && github.event.action == 'opened') ||
+      (github.event_name == 'issues' && github.event.action == 'labeled' && github.event.label.name == 'claude') ||
+      (github.event_name == 'issues' && github.event.action == 'assigned' && github.event.assignee.login == 'claude') ||
+      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
+      (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude')) ||
+      (github.event_name == 'pull_request_review' && contains(github.event.review.body, '@claude'))
     runs-on: ubuntu-latest
-    # Fast-path: skip PR-comment events on PRs Claude itself opened, so it
-    # doesn't keep responding to its own comment threads.
-    if: ${{ !(github.event_name == 'issue_comment' && github.event.issue.pull_request && startsWith(github.head_ref, 'claude/')) }}
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+      actions: read
     steps:
-      - uses: actions/checkout@v4
-      - uses: anthropics/claude-code-action@v1
+      - name: Checkout repository
+        uses: actions/checkout@v6
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          trigger_phrase: "@claude"
-          # Also fire when an issue is assigned to a user named "claude" or
-          # labelled "claude", so marketing has three easy ways to invoke.
-          assignee_trigger: "claude"
-          label_trigger: "claude"
-          # Prefix Claude's PR branches so it's obvious in the branch list.
-          branch_prefix: "claude/"
+          fetch-depth: 1
+          token: ${{ secrets.CLAUDE_GITHUB_TOKEN }}
+
+      - name: Run Claude Code
+        id: claude
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.CLAUDE_GITHUB_TOKEN }}
+          claude_args: "--allowedTools 'Bash(npm ci),Bash(npm install *),Bash(npm run *),Bash(git add:*),Bash(git commit:*),Bash(git rm:*)'"
