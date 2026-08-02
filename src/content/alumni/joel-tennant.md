@@ -1,5 +1,6 @@
 ---
 name: Joel Tennant
+photo: ./images/joel-tennant.jpg
 known_for: Young Barnum in The Greatest Showman
 ---
 
