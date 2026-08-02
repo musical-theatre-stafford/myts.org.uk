@@ -2,7 +2,7 @@
 name: Update site copy or images
 about: Change wording on a page, swap a photo, update contact details, etc.
 title: "Update: "
-labels: ["claude", "content"]
+labels: ["content"]
 assignees: []
 ---
 

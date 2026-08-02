@@ -2,7 +2,7 @@
 name: Add gallery photos
 about: Add photos from a past production to the gallery
 title: "Gallery: "
-labels: ["claude", "content"]
+labels: ["content"]
 assignees: []
 ---
 

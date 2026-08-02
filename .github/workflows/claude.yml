@@ -28,13 +28,43 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # When a NEW issue is opened by someone with write access, add the `claude`
+  # label. Adding it with the PAT fires an `issues.labeled` event, which triggers
+  # the `claude` job below in tag mode (giving the proper branch+PR flow). This is
+  # what makes "just open an issue -> Claude runs" work without anyone typing
+  # @claude. The author permission check keeps random public-repo issues from
+  # triggering Claude runs. (Labels applied at creation time do NOT fire a
+  # trigger, which is why the `claude` label was removed from the issue
+  # templates — this job re-adds it fresh so the event fires.)
+  autolabel:
+    if: github.event_name == 'issues' && github.event.action == 'opened'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Add `claude` label if the issue author can write
+        env:
+          GH_TOKEN: ${{ secrets.CLAUDE_GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          ISSUE: ${{ github.event.issue.number }}
+          AUTHOR: ${{ github.event.issue.user.login }}
+        run: |
+          perm=$(gh api "repos/$REPO/collaborators/$AUTHOR/permission" -q '.permission' 2>/dev/null || echo none)
+          echo "Issue author $AUTHOR has '$perm' permission"
+          case "$perm" in
+            admin|write|maintain)
+              gh issue edit "$ISSUE" --repo "$REPO" --add-label claude
+              echo "Added 'claude' label — Claude will run." ;;
+            *)
+              echo "Author lacks write access; not triggering Claude." ;;
+          esac
+
   claude:
-    # Three documented ways to trigger, plus @claude on PR reviews:
-    #   1. Open any new issue.
+    # Ways to trigger:
+    #   1. Open a new issue (the autolabel job above adds `claude` -> fires here).
     #   2. Comment @claude on an issue or PR.
     #   3. Label an issue `claude` or assign it to `claude`.
     if: |
-      (github.event_name == 'issues' && github.event.action == 'opened') ||
       (github.event_name == 'issues' && github.event.action == 'labeled' && github.event.label.name == 'claude') ||
       (github.event_name == 'issues' && github.event.action == 'assigned' && github.event.assignee.login == 'claude') ||
       (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
