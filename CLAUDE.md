@@ -91,6 +91,40 @@ to edit instead.
    (e.g. wrote a blurb marketing didn't supply), call it out so reviewers can
    correct it.
 
+## Images and attachments
+
+Marketing usually adds images by **dragging them into the issue**. Those become
+GitHub attachment links (`https://github.com/user-attachments/assets/…`), and
+**they are not public — downloading one needs authentication.** Fetch it with the
+token provided to you as `$GH_ATTACHMENT_TOKEN`:
+
+```
+curl -sSL -H "Authorization: Bearer $GH_ATTACHMENT_TOKEN" -o <destination> "<attachment-url>"
+```
+
+A plain public image link that someone **pastes** (a normal `.jpg`/`.png`/`.svg`
+URL) is fetched with `curl` as usual — no header needed.
+
+**Check the asset is fit for purpose before using it.** If what's supplied is the
+wrong format or size for where it's going — e.g. a PDF, Word doc, or other
+non-image where a web image is expected; a very large multi-megabyte file; or an
+image too small/low-resolution for the job (a header logo or poster that would
+look blurry) — **do not just drop it in.** Post a friendly, plain-English comment
+to the marketing person explaining the snag and offering to sort it, then stop and
+wait for their answer. For example:
+
+- "That poster came through as a PDF — I can turn its first page into a
+  web-friendly JPEG, or you can attach a JPEG/PNG instead. Which would you prefer?"
+- "That logo is only 120px wide, so it'll look blurry in the header — do you have
+  a larger version?"
+
+Only convert it yourself once they've agreed (or when it's an obviously safe,
+lossless-enough fix like shrinking an over-large JPEG). You can resize/convert
+with `convert`/`magick` (ImageMagick) — e.g.
+`convert input.pdf[0] -quality 85 output.jpg`. Always say plainly in the PR what
+you converted and why. Prefer JPEG/PNG for photos and posters; keep web images a
+sensible size (posters ≥ 800×1067, and not tens of megabytes).
+
 ## Safety rails
 
 - **Do not touch** the following without an explicit ask from Roger: layout

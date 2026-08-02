@@ -57,10 +57,15 @@ jobs:
       - name: Run Claude Code
         id: claude
         uses: anthropics/claude-code-action@v1
+        env:
+          # Exposed to Claude's shell so it can download issue attachments, which
+          # live at github.com/user-attachments/... and require authentication
+          # (they are NOT public, even on a public repo). See CLAUDE.md.
+          GH_ATTACHMENT_TOKEN: ${{ secrets.CLAUDE_GITHUB_TOKEN }}
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ secrets.CLAUDE_GITHUB_TOKEN }}
-          # curl is allowed so Claude can download images attached to issues
-          # (GitHub serves them from user-attachments URLs) and save them into
-          # src/content/**; the repo is public so no auth header is needed.
-          claude_args: "--allowedTools 'Bash(npm ci),Bash(npm install *),Bash(npm run *),Bash(git add:*),Bash(git commit:*),Bash(git rm:*),Bash(curl:*)'"
+          # curl: download images (issue attachments need the auth header above;
+          #   pasted public URLs don't). convert/magick: resize or convert an
+          #   asset to a web-friendly format when marketing supplies the wrong one.
+          claude_args: "--allowedTools 'Bash(npm ci),Bash(npm install *),Bash(npm run *),Bash(git add:*),Bash(git commit:*),Bash(git rm:*),Bash(curl:*),Bash(convert:*),Bash(magick:*)'"
