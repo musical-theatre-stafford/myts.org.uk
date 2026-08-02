@@ -11,9 +11,7 @@ export const SITE = {
 } as const;
 
 export const CONTACT = {
-  emailEnquiries: 'enquiries@myts.org.uk',
-  emailTickets: 'tickets@myts.org.uk',
-  phone: '07847 049 129',
+  email: 'secretary@myts.org.uk',
 } as const;
 
 export const SOCIALS = {

@@ -23,7 +23,7 @@ workshops to prepare newcomers for auditions each year.
 ## Interested in joining?
 
 Get in touch via the [contact page](/contact/) or email
-[enquiries@myts.org.uk](mailto:enquiries@myts.org.uk).
+[secretary@myts.org.uk](mailto:secretary@myts.org.uk).
 
 > This copy is a starting point migrated from the previous myts.org.uk site.
 > Marketing can update it by opening a GitHub issue — see the repo README for how.

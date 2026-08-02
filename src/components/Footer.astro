@@ -13,9 +13,7 @@ const hasSocials = !!(SOCIALS.facebook || SOCIALS.instagram || SOCIALS.youtube |
     <div>
       <p class="footer-heading">Contact</p>
       <ul class="footer-list">
-        <li><a href={`mailto:${CONTACT.emailEnquiries}`}>{CONTACT.emailEnquiries}</a></li>
-        <li><a href={`mailto:${CONTACT.emailTickets}`}>{CONTACT.emailTickets}</a></li>
-        <li><a href={`tel:${CONTACT.phone.replace(/\s+/g, '')}`}>{CONTACT.phone}</a></li>
+        <li><a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></li>
       </ul>
     </div>
     {hasSocials && (
