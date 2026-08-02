@@ -6,7 +6,7 @@
 export const SITE = {
   title: 'Musical Youth Theatre Stafford',
   short: 'MYTS',
-  tagline: 'Stafford’s youth musical theatre — training the next generation of performers.',
+  tagline: 'Youth and experience in harmony',
   url: 'https://myts.org.uk',
 } as const;
 
