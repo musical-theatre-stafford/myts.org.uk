@@ -5,7 +5,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const entry = (await getCollection('pages')).find(p => p.id === 'about');
 const Content = entry ? (await render(entry)).Content : null;
 ---
-<BaseLayout title="About" description="About Musical Youth Theatre Stafford (MYTS) — the junior division of the Stafford & District Operatic Society.">
+<BaseLayout title="About" description="About Musical Youth Theatre Stafford (MYTS) — the junior division of Musical Theatre Stafford.">
   <section class="section">
     <div class="container prose">
       <p class="eyebrow">About</p>

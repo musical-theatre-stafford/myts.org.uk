@@ -1,10 +1,10 @@
 ---
 title: About MYTS
-updated: 2026-08-01
+updated: 2026-08-02
 ---
 
-Musical Youth Theatre Stafford (MYTS) is the junior division of the Stafford & District
-Operatic Society. We develop young performers' vocal, theatrical and dance abilities
+Musical Youth Theatre Stafford (MYTS) is the junior division of Musical Theatre
+Stafford. We develop young performers' vocal, theatrical and dance abilities
 through workshops, rehearsals and a full-scale annual musical.
 
 ## Who can join
