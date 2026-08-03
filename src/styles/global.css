@@ -1,17 +1,18 @@
 /*
  * MYTS brand tokens. Change values here to restyle the whole site.
- * Palette is deliberately theatrical: a deep plum primary, warm gold accent,
- * soft cream background. Swap freely when a real brand exists.
+ * Palette drawn from the logo: a bright turquoise primary and warm gold accent
+ * on a light, airy stage — energetic and youthful. Headings use the dark ink
+ * (not the teal) so they stay crisp; teal is for interactive bits and labels.
  */
 :root {
-  --myts-primary: #5b1e40;      /* deep plum */
+  --myts-primary: #0b8f9e;      /* logo turquoise */
   --myts-primary-ink: #ffffff;
-  --myts-accent: #e0a458;       /* warm gold */
-  --myts-bg: #faf7f2;           /* soft cream */
+  --myts-accent: #f6b323;       /* bright gold */
+  --myts-bg: #f1fbfc;           /* pale teal-tinted stage */
   --myts-surface: #ffffff;
-  --myts-text: #1a1a1a;
-  --myts-muted: #6b6b6b;
-  --myts-border: #e8e2d7;
+  --myts-text: #123339;         /* deep teal-charcoal ink */
+  --myts-muted: #5c7a80;
+  --myts-border: #d6ebee;
 
   --myts-radius: 10px;
   --myts-radius-lg: 18px;
@@ -39,7 +40,7 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--myts-font-display);
-  color: var(--myts-primary);
+  color: var(--myts-text);
   line-height: 1.2;
   margin: 0 0 0.5em;
 }
@@ -101,7 +102,7 @@ img, svg { max-width: 100%; height: auto; display: block; }
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 0.8rem;
-  color: var(--myts-accent);
+  color: var(--myts-primary);
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
