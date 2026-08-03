@@ -119,11 +119,14 @@ const HomeContent = homeEntry ? (await render(homeEntry)).Content : null;
 
 <style>
   .hero {
-    background: linear-gradient(135deg, #5b1e40 0%, #3a1329 100%);
+    background: linear-gradient(135deg, #0e9aa7 0%, #0a6b76 100%);
     color: var(--myts-primary-ink);
     padding: clamp(3rem, 8vw, 6rem) 0;
   }
   .hero .eyebrow { color: var(--myts-accent); }
+  /* Gold CTA so it pops on the teal hero (a teal button would blend in). */
+  .hero .btn-primary { background: var(--myts-accent); color: var(--myts-text); }
+  .hero .btn-primary:hover { background: #ffffff; color: var(--myts-primary); }
   .hero h1 {
     color: var(--myts-primary-ink);
     margin: 0.5rem 0 1rem;
