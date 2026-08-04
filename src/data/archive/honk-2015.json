@@ -1,0 +1,138 @@
+{
+  "$schema_version": 1,
+  "show": {
+    "title": "Honk!",
+    "year": 2015,
+    "organisation": "MYTS",
+    "venue": "Stafford Gatehouse Theatre",
+    "dates": "8-11 July 2015",
+    "book_lyrics": ["Anthony Drewe"],
+    "music": ["George Stiles"],
+    "based_on": "The Ugly Duckling by Hans Christian Andersen",
+    "notable": "Debuted at The Watermill Theatre in 1993; the West End production won the 2000 Olivier Award for Best Musical.",
+    "awards_context": "Won a NODA award for this production."
+  },
+  "source": {
+    "pdf": "programme.pdf",
+    "pdf_bytes": 14760307,
+    "extracted_from_pages": 20,
+    "extraction_method": "OCR (scanned PDF, no embedded text)",
+    "note": "Cast/ensemble names cross-referenced against the Footloose 2013 and Children of Eden 2011 archive programmes (same MYTS era) where OCR was ambiguous."
+  },
+  "cast": [
+    { "character": "Ugly", "performer": "Jack Anthony" },
+    { "character": "Ida", "performer": "Eleanor Walker" },
+    { "character": "Cat", "performer": "Josh Bennett" },
+    { "character": "Drake", "performer": "Josh Russell" },
+    { "character": "Maureen", "performer": "Lucy Palmer" },
+    { "character": "Grace", "performer": "Cassie Curno" },
+    { "character": "Henrietta", "performer": "Eleanor Turner" },
+    { "character": "Bullfrog", "performer": "Sam Simkin" },
+    { "character": "Barnacles", "performer": "Beatrice Wilkinson" },
+    { "character": "Snowy", "performer": "Freya Perry" },
+    { "character": "Pinkfoot", "performer": "Charlotte Toney" },
+    { "character": "Queenie", "performer": "Laura Pyatt" },
+    { "character": "Lowbutt", "performer": "Ellie Gilbert" },
+    { "character": "Greylag", "performer": "Aaron Mace" },
+    { "character": "Dot", "performer": "Zoe Lawton-Allen" },
+    { "character": "Penny", "performer": "Emily Chapman" },
+    { "character": "Mother Swan", "performer": "Cydney Beech" },
+    { "character": "Jack Daw", "performer": "Gus Espinosa" },
+    { "character": "The Turkey", "performer": "Alex Young" }
+  ],
+  "cast_notes": "The cast-list page had a two-column layout that OCR interleaved; role-to-performer order was reconstructed from matching list lengths and is high-confidence.",
+  "ensemble": [
+    "Isaac Curno", "George Brown", "Charlie Allan-Smith", "Matthew Murray",
+    "Olivia Wilson", "Phoebe Reynolds", "Eliza Wilkinson", "Stephanie Tomkinson",
+    "Carys Barker", "Lewis Warren", "Charlie Bishop", "Alfie Cortes-Pooler(?)",
+    "Maddison Seed", "Sofia Pownall", "Hannah Lilourne", "Samantha Blundy",
+    "Amelia Benoit", "Chloe Bradshaw", "Olivia Busby", "Evan Flynn",
+    "Jasmine Gardner", "Molly Hancock", "Aislinn Humphries", "Eve Keeling",
+    "Lydia Thomson", "Maia Till", "Rosie Wilkes", "Erica Withers",
+    "Isabella Beech", "Jennie Brunskill", "Lauren Curno", "Emilia Harrison",
+    "Tom Hawley", "Sophie Pearce", "Megan Richardson", "Jack Saunders",
+    "Charlotte Tatler"
+  ],
+  "ensemble_notes": "The programme grouped the ensemble as New Born Ducklings, Teenage Ducklings and Chorus (in that order above), but OCR column interleaving made the exact New Born/Teenage boundary uncertain, so all three groups are combined here. 'Alfie Cortes-Pooler' was OCR'd as 'Alicia'; corrected against the Footloose 2013 and Children of Eden 2011 programmes, which list an 'Alfie Cortes-Pooler' in the MYTS ensemble of this era.",
+  "band": {
+    "musicians": [
+      { "instrument": "Reed 1", "player": "Anna Lamplough" },
+      { "instrument": "Reed 2", "player": "Liz Oughton" },
+      { "instrument": "Horn", "player": "Bill Moss" },
+      { "instrument": "Trumpet / Flugel", "player": "Neil Fryer" },
+      { "instrument": "Guitar", "player": "Matt Wilkinson" },
+      { "instrument": "Keys", "player": "Roger Foxcroft" },
+      { "instrument": "Percussion", "player": "Ryan Barnes" },
+      { "instrument": "Cello", "player": "Graham Brown" },
+      { "instrument": "Bass", "player": "Jon Burr" }
+    ]
+  },
+  "production_team": [
+    { "role": "Director", "person": "Rachel Millar" },
+    { "role": "Musical Director", "person": "Matt Davis" },
+    { "role": "Choreographer", "person": "Rachel Millar", "note": "director also choreographed" },
+    { "role": "Ticket Sales", "people": ["Elaine Bennett", "Carolyn Chapman"] },
+    { "role": "Stage Manager", "person": "George Hawley" },
+    { "role": "Costume / Wardrobe", "people": ["Julie Perry", "Gaynor", "Clare"], "note": "and team" },
+    { "role": "Make-up", "person": "Mandy Slade", "note": "and team" },
+    { "role": "Properties", "person": "Kevin Bennett" },
+    { "role": "Scenery", "people": ["Ian Curno", "Mark Hawley"], "note": "and MYTS Parents" },
+    { "role": "Lighting", "person": "Stafford Gatehouse Theatre" },
+    { "role": "Sound", "person": "Five Towns Theatre" },
+    { "role": "Chaperones", "person": "Julie Perry", "note": "and team" },
+    { "role": "Raffle & Programmes", "person": "Elaine Bennett" },
+    { "role": "Original Artwork", "person": "Jamie Candlin" },
+    { "role": "Programme Design & Printing", "person": "KJB UK Ltd" },
+    { "role": "Rehearsal Pianist Support", "people": ["Liz Talbot", "Roger Foxcroft"] }
+  ],
+  "society_officers": {
+    "Chairperson": "Mark Hawley",
+    "Vice Chairperson": "Kevin Bennett",
+    "Secretary": "Sarah Bishop",
+    "Assistant Secretary": "Jan Lawton",
+    "Treasurer / Publicity": "Dave Slade",
+    "Ticket Secretary": "Elaine Bennett",
+    "Patron": "Andy Reiss",
+    "Committee Members": ["Carolyn Chapman", "Ian Curno", "Julie Perry", "Calum Robarts"]
+  },
+  "gatehouse_theatre_officials": [
+    { "role": "Artistic Programme Manager", "person": "Derrick Gask" },
+    { "role": "Operations Manager", "person": "Stuart Boyd" },
+    { "role": "Technical/Stage Manager", "person": "Macauley Blencowe" },
+    { "role": "Lighting", "person": "Mark Elkin" },
+    { "role": "Marketing and Publicity", "person": "Emma Hogan" }
+  ],
+  "musical_numbers": {
+    "act_1": [
+      { "title": "A Poultry Tale", "performers": ["Drake", "Ida", "Cat", "Henrietta", "Maureen", "Turkey", "Grace", "Ensemble"] },
+      { "title": "The Joy of Motherhood", "performers": ["Ida", "Maureen"] },
+      { "title": "Different (pre-reprise)", "performers": ["Ida"] },
+      { "title": "Hold Your Head Up High", "performers": ["Ida", "Ugly", "Fish (Ensemble)"] },
+      { "title": "Look At Him", "performers": ["Ida", "Drake", "Ugly", "Maureen", "Henrietta", "Turkey", "Ducklings", "Cat", "Grace", "Ensemble"] },
+      { "title": "Different", "performers": ["Ugly"] },
+      { "title": "You Can Play With Your Food", "performers": ["Cat", "Ugly"] },
+      { "title": "Lost", "performers": ["Ugly"] },
+      { "title": "The Elegy", "performers": ["Ensemble"] },
+      { "title": "Every Tear A Mother Cries", "performers": ["Ida"] },
+      { "title": "The Wild Goose Chase", "performers": ["Greylag", "Dot", "Cat", "Ugly", "Geese (Ensemble)"] },
+      { "title": "Hold Your Head Up High (Reprise)", "performers": ["Ida", "Ugly"] }
+    ],
+    "act_2": [
+      { "title": "It Takes All Sorts", "performers": ["Queenie", "Lowbutt"] },
+      { "title": "Together", "performers": ["Cat", "Queenie", "Lowbutt"] },
+      { "title": "The Collage", "performers": ["Drake", "Ida", "Ensemble"] },
+      { "title": "Now I've Seen You", "performers": ["Ugly"] },
+      { "title": "Warts and All", "performers": ["Bullfrog", "Ugly", "Froglets (Ensemble)"] },
+      { "title": "The Blizzard", "performers": ["Ensemble", "Ugly", "Cat"] },
+      { "title": "Transformation", "performers": ["Ugly", "Ida", "Penny"] },
+      { "title": "Melting Moggy", "performers": ["Cat"] },
+      { "title": "Look At Him (Reprise)", "performers": ["Ensemble"] },
+      { "title": "Warts And All (Reprise)", "performers": ["Ensemble"] }
+    ]
+  },
+  "context_notes": [
+    "This production won a NODA award (see the Children of Eden 2011 archive entry, which notes Honk! 2015 as the Society's other NODA win).",
+    "Rachel Millar (director/choreographer) and Matt Davis (musical director) were both making their production-team debuts with MYTS this year, though both were already long-standing MYTS collaborators.",
+    "Next productions trailed in the programme: Bugsy Malone (July 2016) and Legally Blonde (July 2017)."
+  ]
+}
