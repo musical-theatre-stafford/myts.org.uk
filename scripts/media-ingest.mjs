@@ -63,6 +63,9 @@ async function processShow(slug) {
   const files = allFiles.filter(isImage).sort();
   const pdf = allFiles.find((f) => /^programme\.pdf$/i.test(f)) ?? null;
   if (files.length === 0) return pdf ? { photos: [], pdf } : null;
+  // A folder with a digitised programme PDF and a single leftover image is a
+  // programme-only entry — that lone image is the show's poster, not a gallery.
+  if (pdf && files.length === 1) return { photos: [], pdf };
 
   const thumbDir = path.join(OUT, slug, 'thumb');
   const dispDir = path.join(OUT, slug, 'display');
