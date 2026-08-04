@@ -1,0 +1,147 @@
+{
+  "$schema_version": 1,
+  "show": {
+    "title": "West Side Story",
+    "year": 2014,
+    "organisation": "MYTS",
+    "venue": "Stafford Gatehouse Theatre",
+    "dates": "9-12 July 2014",
+    "dates_note": "Cover reads 'Wednesday 9th - Saturday 12th July' (OCR misread the digits); matches the show page's 9-12 July 2014 run.",
+    "book": ["Arthur Laurents"],
+    "music": ["Leonard Bernstein"],
+    "lyrics": ["Stephen Sondheim"],
+    "based_on": "William Shakespeare's Romeo and Juliet",
+    "notable": "Conception and original choreography by Jerome Robbins. David Reynolds' and Laura Foxcroft's fifth production for MYTS as Director and Musical Director respectively; first production for choreographer Marie Robinson-Wood."
+  },
+  "source": {
+    "pdf": "programme.pdf",
+    "pdf_bytes": 12838301,
+    "extracted_from_pages": 16,
+    "extraction_method": "OCR (scanned PDF, no embedded text)",
+    "note": "The committee list on the Appointments page (p.13) reads 'George Hawley, Chair', but the Chairman's welcome letter (p.3) is signed 'Mark Hawley, MYTS Chairman' and Mark Hawley is also named MYTS Chairman in the neighbouring 2013 Footloose programme — 'George Hawley' is most likely an OCR misread and 'Mark Hawley' is used here; worth a human check. Reed 4's surname ('Anna Lamplou') and the adult role billed as 'A Boy' (performer Charlie Allen-Smith) are also uncertain from the scan."
+  },
+  "cast": [
+    { "character": "Riff", "performer": "Alistair Peet" },
+    { "character": "Tony", "performer": "Josh Russell" },
+    { "character": "Action", "performer": "Lewis Warren" },
+    { "character": "A-Rab", "performer": "Jac Norris" },
+    { "character": "Baby John", "performer": "Sam Morris" },
+    { "character": "Snowboy", "performer": "Dan Toney" },
+    { "character": "Big Deal", "performer": "Jack Anthony" },
+    { "character": "Diesel", "performer": "Charlie Bishop" },
+    { "character": "Graziella", "performer": "Alex Smith" },
+    { "character": "Velma", "performer": "Amber Walton" },
+    { "character": "Minnie", "performer": "Nicola Blagg" },
+    { "character": "Clarice", "performer": "Jen Brunskill" },
+    { "character": "Anybodys", "performer": "Lauren Curno" },
+    { "character": "Bernardo", "performer": "Tom Slade" },
+    { "character": "Chino", "performer": "Josh Bennett" },
+    { "character": "Indio", "performer": "Josh Jones" },
+    { "character": "Luis", "performer": "Emily Hancock" },
+    { "character": "Anxious", "performer": "Euan Flynn" },
+    { "character": "Nibbles", "performer": "Eleanor Turner" },
+    { "character": "Pauline", "performer": "Maddison Seed" },
+    { "character": "Anita", "performer": "Becky Lyle" },
+    { "character": "Maria", "performer": "Holly Musgrave" },
+    { "character": "Rosalia", "performer": "Eleanor Walker" },
+    { "character": "Consuela", "performer": "Laura Pyatt" },
+    { "character": "Francisca", "performer": "Kelly Slade" },
+    { "character": "Margarita", "performer": "Holly Garratley" },
+    { "character": "A Boy", "performer": "Charlie Allen-Smith(?)", "note": "Role name as printed is uncertain from the scan." },
+    { "character": "Doc", "performer": "Abbie Venables" },
+    { "character": "Schrank", "performer": "Aaron Mace" },
+    { "character": "Krupke", "performer": "Sam Simkin" },
+    { "character": "Glad Hand", "performer": "Edward Innocent" }
+  ],
+  "ensemble": [
+    "Jamie Beddow", "Cydney Beech", "Amelia Benoit", "Katie Bishop", "Samantha Blundy",
+    "Chloe Bradshaw", "Natalie Bradshaw", "George Brown", "Emily Chapman",
+    "Alicia Cortes-Pooler", "Cassie Curno", "Isaac Curno", "Gus Espinosa",
+    "Jasmine Gardner", "Ellena Godwin", "Molly Hancock", "Emilia Harrison",
+    "Tom Hawley", "Charlotte Henshaw", "Rebecca Henshaw", "Phoebe Jones",
+    "Zoe Lawton-Allen", "Hannah Lilburne", "Katie Lord", "Pippa Munro",
+    "Lucy Palmer", "Sophie Pearce", "Freya Perry", "Sofia Pownall",
+    "Hannah Revell", "Phoebe Reynolds", "Holly Smith", "Charlotte Tatler",
+    "Maia Till", "Eliza Wilkinson", "Beatrice Wilkinson", "Erika Withers"
+  ],
+  "ensemble_notes": "Reconstructed from a two-column 'Company' list (p.12) that the OCR interleaved; cross-checked where possible but a few pairings may not be exactly as printed.",
+  "band": {
+    "musicians": [
+      { "instrument": "Reed 1 (Alto, Bb Clarinet, Flute, Piccolo)", "player": "Pete Godfrey" },
+      { "instrument": "Reed 2 (Alto, Bb+Eb Clarinet, Flute, Piccolo)", "player": "Liz Oughton" },
+      { "instrument": "Reed 3 (Bb Clarinet, Flute, Piccolo, Tenor)", "player": "Andy Smith" },
+      { "instrument": "Reed 4 (Bb Clarinet, Baritone, Bass Clarinet)", "player": "Anna Lamplou(?)" },
+      { "instrument": "Reed 5 (Bassoon)", "player": "Ron Buckley" },
+      { "instrument": "Trumpet 1", "player": "Neil Fryer" },
+      { "instrument": "Trumpet 2", "player": "Alan Holder" },
+      { "instrument": "Horn", "player": "Bill Moss" },
+      { "instrument": "Trombone", "player": "Mark Leigh" },
+      { "instrument": "Guitar (Classical/Electric)", "player": "Rich Rowley" },
+      { "instrument": "Bass", "player": "Jon Burr" },
+      { "instrument": "Drums", "player": "Matt Davis" },
+      { "instrument": "Percussion", "player": "Dan Haywood" },
+      { "instrument": "Piano", "player": "Roger Foxcroft" },
+      { "instrument": "Synthesizer", "player": "Ashley Mellor" },
+      { "instrument": "Violin", "player": "Sylvia Buckley" },
+      { "instrument": "Cello", "player": "Dan Bradbury" }
+    ]
+  },
+  "production_team": [
+    { "role": "Director", "person": "David Reynolds" },
+    { "role": "Musical Director", "person": "Laura Foxcroft" },
+    { "role": "Choreographer", "person": "Marie Robinson-Wood" },
+    { "role": "Rehearsal Pianist", "person": "Roger Foxcroft" },
+    { "role": "Costume/Wardrobe", "person": "Louise Lyle, Lisa Hawley, Gaynor Hancock and Mambo Dresses supplied by Sue Crawford" },
+    { "role": "Make up", "person": "Mandy Slade & Team" },
+    { "role": "Properties", "person": "Kevin Bennett" },
+    { "role": "Scenery", "people": ["Mark Hawley", "Ian Curno", "Clive Tatler", "John Flynn", "Paul Garratley"] },
+    { "role": "Lighting", "person": "Stafford Gatehouse Theatre" },
+    { "role": "Sound", "person": "Hilton Studios" },
+    { "role": "Chaperones", "person": "Julie Perry & Team" },
+    { "role": "Ticket Secretary", "people": ["Jo Golding", "Karen Walton"] },
+    { "role": "Original Artwork", "person": "Jamie Candlin" },
+    { "role": "Publicity and Finance", "person": "Dave Slade" },
+    { "role": "Programme Design & Printing", "person": "KJB UK Ltd" }
+  ],
+  "society_officers": {
+    "MYTS Chairman": "Mark Hawley",
+    "Vice Chair": "Kevin Bennett",
+    "Secretary": "Sarah Bishop",
+    "Treasurer": "Dave Slade",
+    "Committee Members": ["Jo Golding", "Jan Lawton", "Julie Perry", "Karen Walton", "Calum Robarts", "Roger Foxcroft", "Tim Downes", "Louise Lyle"]
+  },
+  "gatehouse_theatre_officials": [
+    { "role": "Artistic Programme Manager", "person": "Derrick Gask" },
+    { "role": "Operations Manager", "person": "Stuart Boyd" },
+    { "role": "Technical/Stage Manager", "person": "Matt Glass" },
+    { "role": "Lighting", "person": "Mark Elkin" }
+  ],
+  "musical_numbers": {
+    "act_1": [
+      { "title": "Prologue", "performers": ["Jets and Sharks"] },
+      { "title": "Jet Song", "performers": ["Riff", "Action", "Baby John", "A-Rab", "Snowboy and Jets"] },
+      { "title": "Something's Coming", "performers": ["Tony"] },
+      { "title": "Dance At The Gym", "performers": ["Jets and Sharks"] },
+      { "title": "Maria", "performers": ["Tony"] },
+      { "title": "America", "performers": ["Anita", "Rosalia", "Shark Girls"] },
+      { "title": "Balcony Scene (Tonight)", "performers": ["Tony and Maria"] },
+      { "title": "Cool", "performers": ["Riff and Jets"] },
+      { "title": "One Hand, One Heart", "performers": ["Tony and Maria"] },
+      { "title": "Tonight", "performers": ["Anita", "Tony", "Maria", "Bernardo", "Riff, Jets and Sharks"] },
+      { "title": "The Rumble", "performers": ["Jets and Sharks"] }
+    ],
+    "act_2": [
+      { "title": "Entr'acte" },
+      { "title": "I Feel Pretty", "performers": ["Maria", "Consuela", "Rosalia", "Francisca and Shark Girls"] },
+      { "title": "Ballet Sequence: Somewhere (Song and Dance); Procession and Nightmare", "performers": ["Tony and Maria", "Jets and Sharks"] },
+      { "title": "Gee, Officer Krupke", "performers": ["Action", "Snowboy", "A-Rab", "Diesel", "Baby John and the Jets"] },
+      { "title": "A Boy Like That / I Have A Love", "performers": ["Anita and Maria"] },
+      { "title": "Taunting Scene", "performers": ["Anita and Jets"] },
+      { "title": "Finale", "performers": ["Tony and Maria"] }
+    ]
+  },
+  "context_notes": [
+    "Laura Foxcroft (Musical Director) described this as her fifth production and a farewell in the welcome pages ('Thank you, MYTS, for five wonderful years, I shall miss you!'), though the Society's archive shows she later returned to MD further MYTS productions, including We Will Rock You in 2023.",
+    "MYTS won two NODA awards for Children of Eden (2011), noted in the Chairman's welcome as a highlight of the Society's recent history."
+  ]
+}

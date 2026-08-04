@@ -1,0 +1,163 @@
+{
+  "$schema_version": 1,
+  "show": {
+    "title": "Narnia the Musical",
+    "short_title": "Narnia",
+    "year": 2009,
+    "organisation": "MYTS",
+    "venue": "Stafford Gatehouse Theatre",
+    "dates": "8-11 July 2009",
+    "based_on": "The Lion, the Witch and the Wardrobe by C. S. Lewis (Chronicles of Narnia)",
+    "notable": "MYTS's third major production since the group was first formed in 2007."
+  },
+  "source": {
+    "pdf": "programme.pdf",
+    "pdf_bytes": 11071397,
+    "extracted_from_pages": 17,
+    "extraction_method": "OCR (scanned PDF, no embedded text), cross-checked by directly reading each page image for accuracy.",
+    "note": "Page 1 of the PDF is an unrelated advertisement flyer for SDOS's 'Annie Get Your Gun' (Autumn 2009) — the Narnia programme content runs from page 2 (front cover) onwards."
+  },
+  "cast": [
+    { "character": "Peter", "performer": "David Anderson" },
+    { "character": "Susan", "performer": "Abbie Venables" },
+    { "character": "Edmund", "performer": "Thomas Slade", "note": "Billed as 'Tom Slade' on the cast list; full name taken from his cast bio." },
+    { "character": "Lucy", "performer": "Amelia Shackleton" },
+    { "character": "Aslan", "performer": "Oliver Bennett" },
+    { "character": "Mrs Beaver", "performer": "Holly Musgrave" },
+    { "character": "Mr Beaver", "performer": "Scott Bagnall" },
+    { "character": "The Beaver Children", "performer": "Gemma Cairns-Smith", "note": "Shared role, played alongside Alicia Cortes-Pooler." },
+    { "character": "The Beaver Children", "performer": "Alicia Cortes-Pooler", "note": "Shared role, played alongside Gemma Cairns-Smith." },
+    { "character": "The White Witch", "performer": "Stephanie Golding" },
+    { "character": "Mr Tumnus", "performer": "Lewis Warren" },
+    { "character": "Fenris Ulf", "performer": "Alex Smith" },
+    { "character": "Dwarf", "performer": "Jordan Mace" },
+    { "character": "Father Christmas", "performer": "Sarah Russell" },
+    { "character": "Santa's Helper", "performer": "Joshua Bennett" },
+    { "character": "The Professor", "performer": "Imogen Bloxham" },
+    { "character": "Mrs Macready", "performer": "Rebecca Bate", "note": "Also one of the Singing Reindeer." }
+  ],
+  "ensemble": {
+    "singing_fauns": ["Ella Loveridge Foster", "Eve Phillips", "Kelly Slade"],
+    "singing_reindeer": ["Rebecca Bate", "Nicole Roberts"],
+    "white_stags": ["Amber Walton", "Eloise Beeching", "Charlie Bishop"],
+    "junior_myts": [
+      "Charlie Bishop", "Chloe Bradshaw", "Emily Cartmail", "Hannah Musgrave",
+      "Euan Flynn", "Kirsten Reade", "Amelia Shackleton", "Eve Phillips",
+      "Milly Yates", "Georgina Williams", "Thomas Hawley", "Hannah Lilburne",
+      "Gemma Cairns Smith", "Hannah Riley", "Ella Loveridge Foster", "Emma Brown",
+      "Rebecca Waldron", "Jacob Brown", "Lauren Ferguson", "Jennifer Ferguson",
+      "Jordan Mace", "Aaron Mace", "Charlotte Tatler", "Joshua Bennett",
+      "Ellena Godwin", "Sofia Pownall", "Alicia Cortes Pooler", "Joanna Mann",
+      "Sophie Hanlon", "Morgan O'Brien", "Lewis Warren", "Alex Stewart",
+      "Eleanor Walker"
+    ],
+    "senior_myts": [
+      "Holly Musgrave", "Natalie Bradshaw", "Sarah Russell", "Lucy Matthews",
+      "Amy Matthews", "Elizabeth Allcock", "Rebecca Bate", "Oliver Bennett",
+      "Niamh Flynn", "Hannah Hurley", "Tom Slade", "Kelly Slade",
+      "Stephanie Golding", "Amber Walton", "Scott Bagnall", "Emily Phillips",
+      "Lauren Moseley", "Amy Oakden", "Emily Kimber", "Imogen Bloxham",
+      "Eloise Beeching", "Emily Illingworth", "Alex Smith", "Samantha Wylie",
+      "David Anderson", "Abbie Venables", "Holly Garratley", "Nicole Roberts",
+      "Jonathon Luck", "Jasmine Erdwin"
+    ],
+    "note": "Junior/Senior MYTS lists are the full company breakdown printed alongside the cast list; several named principals also appear in these lists."
+  },
+  "band": {
+    "musicians": [
+      { "instrument": "Keyboard", "player": "Steve Crossland" },
+      { "instrument": "Trumpet", "player": "Neil Fryer" },
+      { "instrument": "Horn", "player": "Trevor Stacey" },
+      { "instrument": "Bass", "player": "Matthew Davis" },
+      { "instrument": "Flute/Sax", "player": "Calum Robarts" },
+      { "instrument": "Clarinet/Sax", "player": "Ellen Hanmer" },
+      { "instrument": "Percussion", "player": "Andrew Ridal" }
+    ]
+  },
+  "production_team": [
+    { "role": "Director", "person": "Victoria Roberts" },
+    { "role": "Music Director", "person": "Peter Godfrey" },
+    { "role": "Choreographer", "person": "Katie Hayes" },
+    { "role": "Assistant Director", "person": "Michelle Cox" },
+    { "role": "Stage Director", "person": "Helen Downes", "note": "and team" },
+    { "role": "Rehearsal Pianists", "people": ["Diane Bowen", "Steve Crossland", "Laura Foxcroft"] },
+    { "role": "Costumier & Assistants", "people": ["Tina Webb", "Katie Hayes", "Tim Downes", "Ruby Ashton"] },
+    { "role": "Make-Up", "person": "Ruby Ashton", "note": "and team" },
+    { "role": "Properties", "people": ["Kerry Roberts", "Mandy Allcock", "Michelle Cox"] },
+    { "role": "Audio/Visual", "person": "Michael Hayes" },
+    { "role": "Technical", "person": "Andrew Ridal" },
+    { "role": "Publicity", "people": ["Dave Slade", "Michelle Cox"] },
+    { "role": "Raffle Organiser", "person": "Cath Jackson" },
+    { "role": "Programme (compiled)", "person": "Claire Saunders" },
+    { "role": "Programme Photographs", "person": "Michelle Cox" },
+    { "role": "Programme Printing", "person": "John Leigh Printers, Stafford" }
+  ],
+  "society_officers": {
+    "MYTS Committee": {
+      "Chairman": "Tim Downes",
+      "Vice-Chairman": "Diane Bowen",
+      "Secretary": "Katie Hayes",
+      "Treasurer": "Dave Slade",
+      "Assistant Treasurer": "Michelle Cox",
+      "Committee Members": ["Ben Biddle", "Andrew Ridal", "Calum Robarts", "Mark Hawley"]
+    },
+    "SDOS (parent society)": {
+      "President": "Mavis Lockley",
+      "Chairman": "Sue Zurawiel",
+      "Vice-Chairman": "Sally Carr",
+      "Honorary Secretary": "Julia Waterfall",
+      "Assistant Secretary": "Stewart Bishop",
+      "Treasurer": "Helen Downes",
+      "Assistant Treasurer": "Ruby Ashton",
+      "Ticket Secretary": "Ron Jackson",
+      "Membership Secretary": "Sarah Bishop",
+      "Press Officer": "Andrew Ridal",
+      "Committee Members": ["Mark Sproston", "Katharine Paulus", "Calum Robarts", "Isobel Walter"]
+    },
+    "Patron": "John Wood"
+  },
+  "gatehouse_theatre_officials": [
+    { "role": "Administration & Development Manager", "person": "Lynn Elkin" },
+    { "role": "Artistic Programme Manager", "person": "Derrick Gask" },
+    { "role": "Operations Manager", "person": "Stuart Boyd" },
+    { "role": "Technical Manager", "person": "Matt Glass" },
+    { "role": "House Manager", "person": "Suzanne Bradbury" }
+  ],
+  "musical_numbers": {
+    "act_1": [
+      { "title": "Overture" },
+      { "title": "Doors and Windows" },
+      { "title": "Turkish Delight" },
+      { "title": "Narnia (You Can't Imagine)" },
+      { "title": "All of These" },
+      { "title": "Hot and Bothered" },
+      { "title": "At Last It's Christmas" },
+      { "title": "Wot a Bit a' Spring Can Do" },
+      { "title": "Cair Paravel" }
+    ],
+    "act_2": [
+      { "title": "Entr'acte" },
+      { "title": "Murder Today" },
+      { "title": "From the Inside Out" },
+      { "title": "Deep Magic" },
+      { "title": "A Field Of Flowers" },
+      { "title": "Catch Me If You Can" },
+      { "title": "To Make The World Right Again" },
+      { "title": "Reprise: Narnia (You Can't Imagine)" }
+    ]
+  },
+  "page_sponsors": [
+    "The Golding Family (good luck Steph!)",
+    "The Finance & Performance Staff at HMP Drake Hall",
+    "Katie Hayes",
+    "Dave and Mandy Slade",
+    "Mr Simms Olde Sweet Shoppe (Good Luck MYTS!)",
+    "Mews Music",
+    "The Reade Family",
+    "Mark and Debbie Lillburne"
+  ],
+  "context_notes": [
+    "MYTS's third major production since the group was first formed in 2007.",
+    "The company had to learn a large amount of unfamiliar music from scratch, as the show was not widely known even though the story (The Lion, the Witch and the Wardrobe) was very familiar (Chairman's welcome)."
+  ]
+}
