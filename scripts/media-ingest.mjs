@@ -44,7 +44,9 @@ const FORCE = !!args.force;
 
 const THUMB = 500, DISPLAY = 1800;
 const IMG_RE = /\.(jpe?g|png)$/i;
-const isImage = (f) => IMG_RE.test(f) && !f.startsWith('.') && !/^programme\./i.test(f);
+// Gallery photos only: skip dotfiles, the programme.* files, and poster
+// scans (a poster isn't a production photo — it already heads the show page).
+const isImage = (f) => IMG_RE.test(f) && !f.startsWith('.') && !/^programme\./i.test(f) && !/poster/i.test(f);
 
 async function listShows(root) {
   const entries = await readdir(root, { withFileTypes: true });
