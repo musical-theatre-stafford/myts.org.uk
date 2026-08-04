@@ -1,0 +1,78 @@
+{
+  "$schema_version": 1,
+  "show": {
+    "title": "Monty Python's Spamalot",
+    "short_title": "Spamalot",
+    "year": 2017,
+    "organisation": "MTS",
+    "venue": "Stafford Gatehouse Theatre",
+    "dates": null,
+    "book_lyrics": ["Eric Idle"],
+    "music": ["John Du Prez", "Eric Idle"],
+    "based_on": "Monty Python and the Holy Grail (1975 film) — original screenplay by Graham Chapman, John Cleese, Terry Gilliam, Eric Idle, Terry Jones, Michael Palin",
+    "licensor": "Josef Weinberger Ltd on behalf of Music Theatre International, New York"
+  },
+  "source": {
+    "pdf": "programme.pdf",
+    "pdf_created": "2017-05-16",
+    "extracted_from_pages": 16,
+    "extraction_method": "pypdf text extraction (embedded text)"
+  },
+  "cast": [
+    { "character": "King Arthur of Briton", "performer": "Tom Gosling" },
+    { "character": "Patsy", "performer": "Tracey Brough-Chesters" },
+    { "character": "Sir Lancelot the Homicidally Brave", "performer": "Mark Phizacklea" },
+    { "character": "Sir Galahad / Dennis", "performer": "Will Wood" },
+    { "character": "The Lady of the Lake", "performer": "Kellymarie Edwards" },
+    { "character": "The Historian & French Taunter 2", "performer": "Helene Sandy" }
+  ],
+  "ensemble": {
+    "knights_and_maidens": [
+      "Rob Mincher", "Jon Wilson", "Dave Phizacklea", "Heather Bates"
+    ],
+    "laker_girls": [
+      "Caroline Milan", "Samantha Green", "Michelle May"
+    ]
+  },
+  "band": {
+    "conductor": { "instrument": "Conductor", "player": "Calum Robarts" },
+    "musicians": [
+      { "instrument": "Reed I", "player": "Peter Godfrey" },
+      { "instrument": "Reed II", "player": "Anna Bourne" },
+      { "instrument": "Trumpet I", "player": "Neil Fryer" },
+      { "instrument": "Keyboard I", "player": "Roger Foxcroft" }
+    ],
+    "note": "Programme gave musicians mock-Arthurian titles ('Baron Roger of Foxcroft'); real names shown here."
+  },
+  "production_team": [
+    { "role": "Director", "person": "Rachel Millar" },
+    { "role": "Musical Director", "person": "Calum Robarts" },
+    { "role": "Choreographer", "person": "Rachel Millar", "note": "director also choreographed" },
+    { "role": "Backstage Crew", "people": ["Mike Hartley", "Neil Norman", "Rebecca Steed"] },
+    { "role": "Make-up", "people": ["Ruby Ashton", "Pauline Bradbury"], "note": "and team" }
+  ],
+  "society_officers": {
+    "President": "Mavis Lockley",
+    "Chairman": "Sue Zurawiel",
+    "Honorary Secretary": "Roger Foxcroft",
+    "Additional Committee Members": [
+      "Helen-Siân Tisdale", "Craig Chesters", "Calum Robarts"
+    ]
+  },
+  "musical_numbers": {
+    "act_1": [
+      { "title": "Overture", "performers": ["Orchestra"] },
+      { "title": "King Arthur's Song", "performers": ["King Arthur", "Patsy"] }
+    ],
+    "act_2": [
+      { "title": "Always Look on the Bright Side of Life", "performers": ["Patsy", "King Arthur", "Knights"] },
+      { "title": "Finale", "performers": ["Herbert", "Sir Robin", "King Arthur", "Lady of the Lake", "Chorus"] }
+    ]
+  },
+  "page_sponsors": [
+    "Gwyneth Salmon", "Ray Braziel", "The Phizacklea Family"
+  ],
+  "in_memoriam": [
+    { "name": "Bill Foster", "note": "Society member 1999–2002; passed away November 2016." }
+  ]
+}

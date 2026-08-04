@@ -1,0 +1,131 @@
+{
+  "$schema_version": 1,
+  "show": {
+    "title": "Legally Blonde: The Musical",
+    "short_title": "Legally Blonde",
+    "year": 2017,
+    "organisation": "MYTS",
+    "venue": "Stafford Gatehouse Theatre",
+    "dates": "5-8 July 2017",
+    "dates_note": "Confirmed by the Spamalot 2017 programme, which advertised Legally Blonde as 'on from 5th to 8th July'.",
+    "music_and_lyrics": ["Laurence O'Keefe", "Nell Benjamin"],
+    "book": ["Heather Hach"],
+    "based_on": "The film Legally Blonde (2001) and the novel by Amanda Brown",
+    "licensor": "Josef Weinberger Ltd on behalf of Music Theatre International, New York",
+    "awards_context": "Nominated for NODA Best Youth Musical."
+  },
+  "source": {
+    "pdf": "programme.pdf",
+    "pdf_bytes": 26399885,
+    "extracted_from_pages": 16,
+    "extraction_method": "OCR (scanned PDF, no embedded text). Cast page (5) was heavily obscured by design overlays — some performer names below carry (?) markers where OCR was uncertain."
+  },
+  "cast": [
+    { "character": "Elle Woods",              "performer": "Molly Harriman" },
+    { "character": "Emmett Forrest",          "performer": "Alex Young", "note": "Confirmed by 2018 HSM programme where Alex Young's bio references 'Emmet in Legally Blonde last year'." },
+    { "character": "Warner Huntington III",   "performer": "Jack Saunders" },
+    { "character": "Vivienne Kensington",     "performer": "Isabel Beech(?)" },
+    { "character": "Paulette",                "performer": "Lydia Thompson(?)", "note": "WITW/HSM cross-reference: Lydia (Thompson) 'played Paulette in Legally Blonde last year' — HSM 2018 programme." },
+    { "character": "Callahan",                "performer": "Jack (surname unclear from OCR)", "note": "HSM 2018 mentions 'Jack... played Callahan' in Legally Blonde." },
+    { "character": "Brooke Wyndham",          "performer": "Holly (surname unclear)" },
+    { "character": "Chutney Wyndham",         "performer": "Sophie Pearce" },
+    { "character": "Kate",                    "performer": "Jasmine Gardner" },
+    { "character": "Carlos",                  "performer": "James Tonge" },
+    { "character": "Nikos Argitakos",         "performer": "George Brown" },
+    { "character": "Grand Master Chad",       "performer": "Jaydan Hussein(?)" },
+    { "character": "Aaron Schultz",           "performer": "Matthew Murray(?)" },
+    { "character": "Winthrop",                "performer": "Molly Tams(?)" },
+    { "character": "Padamadan Salvatore Buonofonte", "performer": "Tae Tome(?)" },
+    { "character": "Pforzheimer",             "performer": "Charlie Tiernan" },
+    { "character": "Lowell",                  "performer": "Oscar Hill" },
+    { "character": "Serena",                  "performer": "Arissa Hussain(?)" },
+    { "character": "Margot",                  "performer": "Lucy Travers" },
+    { "character": "Pilar",                   "performer": "Megan Richardson" },
+    { "character": "Enid",                    "performer": null, "note": "listed in show but OCR could not identify performer clearly" },
+    { "character": "Whitney",                 "performer": null, "note": "listed in show but OCR could not identify performer clearly" },
+    { "character": "Judge",                   "performer": "Eve Keeling" },
+    { "character": "Mrs Woods",               "performer": "Hannah Stephenson" },
+    { "character": "Mr Woods",                "performer": "Jacob Brown(?)" },
+    { "character": "Dewey",                   "performer": "(surname unclear — possibly Tams or Tiernan)" }
+  ],
+  "cast_notes": "The character list on page 5 has severe OCR corruption; treat performer assignments as best-guess. Cross-referenced with cast bios from the 2018 High School Musical programme where possible.",
+  "ensemble_visible_in_photos": [
+    "Molly Harriman", "Alex Young", "Jack Saunders", "Lydia Thompson",
+    "Jack Foster", "Charlotte Cairns-Smith", "Holly Reid-Foulkes", "Greg Woods",
+    "Sophie Pearce", "Eve Keeling", "George Brown", "James Tonge",
+    "Olivia Atkinson", "Emma Fernyhough", "Charlie Tiernan", "Oscar Hill",
+    "Ava Holloway", "Megan Molinsay(?)", "Romily Tristam", "Isla McEwan",
+    "Evelyn Nicklin", "Claudia Robb", "Samuel Tincknell", "James Tincknell",
+    "Matthew Murray", "Hannah Stephenson", "Jacob Brown", "Molly Tams",
+    "Jasmine Gardner", "Tegan Humphries", "Jaydan Hussein",
+    "Alanna Mellors", "Tabby Carr", "Ainsley Ellin(?)", "Megan Pugh(?)",
+    "Murray Hotchkiss", "Samuel Lovelace", "Isabella Beech"
+  ],
+  "band": {
+    "musicians": [
+      { "instrument": "Reed 1",   "player": "Mike Read" },
+      { "instrument": "Reed 2",   "player": "Chloe Percy-Smith" },
+      { "instrument": "Trumpet 1","player": "Neil Fryer" },
+      { "instrument": "Trumpet 2","player": "Sam Parton" },
+      { "instrument": "Trombone", "player": "Dave Cunningham" },
+      { "instrument": "Guitar",   "player": "Rich Rowley" },
+      { "instrument": "Bass",     "player": "Jon Burr" },
+      { "instrument": "Drum Kit", "player": "Matt Davis" },
+      { "instrument": "Percussion","player": "Callum White" },
+      { "instrument": "Keys 1",   "player": "Laura Foxcroft" },
+      { "instrument": "Keys 2",   "player": "Roger Foxcroft" },
+      { "instrument": "Keys 3",   "player": "Giles Deacon" }
+    ]
+  },
+  "production_team": [
+    { "role": "Director",                 "person": "Hannah Morris" },
+    { "role": "Musical Director",         "person": "Laura Foxcroft" },
+    { "role": "Choreographer",            "person": "Ed Costello" },
+    { "role": "Assistant Director",       "person": "Sam Simkin" },
+    { "role": "Company Stage Manager",    "person": "Helen Downes" },
+    { "role": "Props",                    "people": ["Megan McGinley", "Isobel Walter"] },
+    { "role": "Costumes",                 "person": "Lauren Summers" },
+    { "role": "Wardrobe",                 "people": ["Catherine Gosling", "Becki Rodi", "Cath Jackson"] },
+    { "role": "Set",                      "person": "Stoke Youth Theatre" },
+    { "role": "Lighting",                 "person": "Gatehouse Theatre" },
+    { "role": "Sound",                    "person": "Five Towns Theatre" },
+    { "role": "Chaperone Co-ordinator",   "person": "Helen-Siân Tisdale" },
+    { "role": "Chaperones",               "person": "MYTS & MTS committee & MYTS Parents" },
+    { "role": "Original Artwork/Design & Printing", "person": "2can design & print media" },
+    { "role": "Dress Rehearsal Photography","person": "Will Fuller Photography" },
+    { "role": "Rehearsal Photography",    "person": "Jennifer Marshall" },
+    { "role": "Dogs",                     "person": "Sarah McEnhill" },
+    { "role": "Back Stage Crew",          "people": ["Calum Robarts", "Jane Steed", "Rebecca Steed"] }
+  ],
+  "society_officers": {
+    "President":                 "Mavis Lockley",
+    "Chairman":                  "Sue Zurawiel",
+    "Vice Chairman":             "Stewart Bishop",
+    "Honorary Secretary":        "Roger Foxcroft",
+    "Assistant Secretary":       "Jessica Smith",
+    "MYTS Secretary":            "Katie Phizacklea",
+    "Treasurer":                 "Sam Parton",
+    "Assistant / MYTS Treasurer":"Vicky Webb",
+    "Press & Publicity":         "Jennifer Marshall",
+    "Ticket Secretary":          "Hannah Morris",
+    "Membership Secretary":      "Jon Wilson",
+    "MYTS Committee Member":     "Diane Phizacklea",
+    "Additional Committee Members": [
+      "Helen-Siân Tisdale", "Craig Chesters", "Calum Robarts",
+      "Emily-Jayne Nicholls", "Isobel Walter"
+    ]
+  },
+  "musical_numbers": {
+    "note": "The musical-numbers page on page 5 could not be fully recovered from OCR — visible fragments include 'Want (Part 2)' — Elle, Ensemble and headers 'Emmett, Aaron, Enid'. Standard Legally Blonde running order (below) is included from the licensed script as reference; verify against the printed programme.",
+    "act_1_reference": [
+      "Omigod You Guys", "Serious", "Daughter of Delta Nu", "What You Want",
+      "The Harvard Variations", "Blood in the Water", "Positive", "Ireland",
+      "Serious (Reprise)", "Chip on My Shoulder", "So Much Better"
+    ],
+    "act_2_reference": [
+      "Whipped into Shape", "Take It Like a Man", "Bend and Snap",
+      "There! Right There! (Gay or European?)", "Legally Blonde",
+      "Legally Blonde Remix", "Scene of the Crime", "Find My Way / Finale"
+    ]
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "$schema_version": 1,
+  "show": {
+    "title": "Seussical the Musical",
+    "short_title": "Seussical",
+    "year": 2010,
+    "organisation": "MYTS",
+    "venue": "Stafford Gatehouse Theatre",
+    "dates": null,
+    "dates_note": "Programme does not clearly state the run dates. Historically MYTS's July show; this was MYTS's 4th annual production. If you know the exact dates, please fill in.",
+    "music": ["Stephen Flaherty"],
+    "lyrics": ["Lynn Ahrens"],
+    "book": ["Lynn Ahrens", "Stephen Flaherty"],
+    "co_conceived_by": "Eric Idle",
+    "based_on": "The works of Dr. Seuss (Theodor Seuss Geisel)",
+    "licensor": "Josef Weinberger Ltd (implied)"
+  },
+  "source": {
+    "pdf": "programme.pdf",
+    "pdf_bytes": 11053449,
+    "extracted_from_pages": 16,
+    "extraction_method": "OCR (scanned PDF, no embedded text). Note: Page 1 of the programme is actually an advertisement for SDOS's 'The King and I' (2010) — the Seussical content starts on page 2."
+  },
+  "cast": [
+    { "character": "The Cat in the Hat",           "performer": "Stephanie Golding" },
+    { "character": "Horton the Elephant",           "performer": "Oliver Bennett" },
+    { "character": "JoJo",                          "performer": "Thomas Slade" },
+    { "character": "Gertrude McFuzz",               "performer": "Kelly Slade" },
+    { "character": "Mayzie La Bird",                "performer": "Alex Smith" },
+    { "character": "Mr Mayor",                      "performer": "Amber Walton" },
+    { "character": "Mrs Mayor",                     "performer": "Abbie Venables" },
+    { "character": "The Sour Kangaroo",             "performer": "Holly Musgrave" },
+    { "character": "The Sour Kangaroo",             "performer": "Eden Baker", "note": "Two performers share the Sour Kangaroo role." },
+    { "character": "The Young Kangaroo 'Roo'",      "performer": "Jennifer Ferguson" },
+    { "character": "General Ghengis Khan Schmitz",  "performer": "Imogen Bloxham" },
+    { "character": "Judge Yertle",                  "performer": "Amelia Shackleton" },
+    { "character": "The Grinch",                    "performer": "Jordan Mace" },
+    { "character": "Vlad Vladikoff",                "performer": "Niamh Flynn" }
+  ],
+  "ensemble": {
+    "bird_girls": [
+      "Hannah Hurley", "Eleanor Walker", "Georgina Williams",
+      "Milly Yates", "Becky Lyle", "Holly Garratley"
+    ],
+    "wickersham_brothers": [
+      "Lewis Warren", "Carter Harrison", "Emilia Harrison",
+      "Joshua Bennett", "Jacob Brown", "Tom Hawley"
+    ],
+    "whos_and_citizens_of_the_jungle": [
+      "Elizabeth Alcock", "David Anderson", "Alex Baker", "Molly Barnes",
+      "Charlie Bishop", "Nicola Blagg", "Chloe Bradshaw", "Natalie Bradshaw",
+      "Emma Brown", "Jennie Brunskill", "Megan Cantrill", "Alicia Cortes-Pooler",
+      "Cassie Curnow", "Jasmine Erdwin", "Lauren Ferguson", "Euan Flynn",
+      "Sam Fullwood", "Ellena Godwin", "Charlotte Henshaw", "Lauren Hough",
+      "Megan Hough", "Emily Illingworth", "Pheobe Jones", "Suzie Lakin",
+      "Zoe Lawton Allen", "Hannah Lilburne", "Jonathon Luck", "Aaron Mace",
+      "Amy Matthews", "Katie Matthews", "Lucy Matthews", "Joel McFarlane",
+      "Lauren Moseley", "Hannah Musgrave", "Amy Oakden", "Freya Perry",
+      "Emily Phillips", "Eve Phillips", "Sophia Pownall", "Hannah Revell",
+      "Hannah Riley", "Nicole Roberts", "Sarah Russell", "Charlotte Smith",
+      "Hannah Smith", "Alex Stewart", "Shani Swift", "Charlotte Tatler",
+      "Rebecca Waldron", "Georgina Walker", "Beatrice Wilkinson", "Samantha Wylie"
+    ]
+  },
+  "band": {
+    "note": "Band panel on page 8 was partially obscured; the instrument-to-player alignment for a few lines could not be fully recovered from OCR.",
+    "musicians": [
+      { "instrument": "Reed 3",     "player": "Neil Fryer" },
+      { "instrument": "Reed (1 or 2)","player": "Tanya Harrison(?)" },
+      { "instrument": "Reed (1 or 2)","player": "Glyn Adams(?)" },
+      { "instrument": "Keyboard 1", "player": "Roger Foxcroft" },
+      { "instrument": "Keyboard 2", "player": "Tim Sagar" },
+      { "instrument": "unclear",    "player": "Tim Waring(?)" },
+      { "instrument": "Bass(?)",    "player": "Jon Burr" },
+      { "instrument": "unclear",    "player": "Chris Regnauld(?)" },
+      { "instrument": "Percussion", "player": "Andrew Ridal" }
+    ]
+  },
+  "production_team": [
+    { "role": "Director",              "person": "David Reynolds" },
+    { "role": "Musical Director",      "person": "Laura Foxcroft" },
+    { "role": "Choreographer",         "person": "Katie Hayes" },
+    { "role": "Assistant Director",    "person": "Michelle Cox" },
+    { "role": "Stage Director",        "person": "Helen Downes", "note": "and team" },
+    { "role": "Rehearsal Pianist",     "person": "Roger Foxcroft" },
+    { "role": "Wardrobe",              "person": "Jean Cox" },
+    { "role": "Make-Up",               "person": "Ruby Ashton", "note": "and team" },
+    { "role": "Properties",            "people": ["Michelle Cox", "Kerry Roberts", "Mandy Alcock"] },
+    { "role": "Publicity",             "person": "Dave Slade", "note": "and Publicity Team" },
+    { "role": "Set",                   "person": "George Hawley" },
+    { "role": "Raffle Organiser",      "person": "Cath Jackson" },
+    { "role": "Programme (compiled)",  "person": "Claire Saunders" },
+    { "role": "Programme Photographs", "person": "Michelle Cox" },
+    { "role": "Programme Printing",    "person": "John Leigh Printers, Stafford" }
+  ],
+  "society_officers": {
+    "MYTS Committee": {
+      "Chairman":       "Tim Downes",
+      "Vice-Chairman":  "Diane Phizacklea",
+      "Secretary":      "Katie Hayes",
+      "Treasurer":      "Dave Slade",
+      "Committee Members": [
+        "Ben Biddle", "Michelle Cox", "Calum Robarts", "Jo Golding",
+        "George Hawley", "Anne-Marie Ferguson"
+      ]
+    },
+    "SDOS (parent society)": {
+      "President":            "Mavis Lockley",
+      "Honorary Secretary":   "Julia Waterfall",
+      "Assistant Secretary":  "Stewart Bishop",
+      "Treasurer":            "Helen Downes",
+      "Assistant Treasurer":  "Ruby Ashton",
+      "Ticket Secretary":     "Ron Jackson",
+      "Membership Secretary": "Sarah Bishop",
+      "Press Officer":        "Calum Robarts",
+      "Committee Members":    ["Isobel Walter", "Andrew Ridal", "Maltese-Preston(?)"]
+    },
+    "Patron":  "John Wood",
+    "Chairman (SDOS)": "Sue Zurawiel"
+  },
+  "gatehouse_theatre_officials": [
+    { "role": "Artistic Programme Manager", "person": "Derrick Gask" },
+    { "role": "Operations Manager",         "person": "Stuart Boyd" },
+    { "role": "Technical Manager",          "person": "Matt Glass" },
+    { "role": "House Manager",              "person": "Suzanne Bradbury" },
+    { "role": "Administration Assistant",   "person": "Denise Tomlin" }
+  ],
+  "musical_numbers": {
+    "act_1": [
+      { "title": "Oh, the Thinks You Can Think" },
+      { "title": "Horton Hears a Who" },
+      { "title": "Biggest Blame Fool" },
+      { "title": "Here on Who" },
+      { "title": "Oh, the Thinks You Can Think (Reprise)" },
+      { "title": "It's Possible" },
+      { "title": "How to Raise a Child" },
+      { "title": "The Military" },
+      { "title": "Alone in the Universe" },
+      { "title": "The One-Feather Tail of Miss Gertrude McFuzz" },
+      { "title": "Amayzing Mayzie" },
+      { "title": "Monkey Around" },
+      { "title": "Chasing the Whos" },
+      { "title": "How Lucky You Are" },
+      { "title": "Notice Me, Horton" },
+      { "title": "Act I Finale" }
+    ],
+    "act_2": [
+      { "title": "Our Story Resumes" },
+      { "title": "Egg, Nest and Tree" },
+      { "title": "The Circus McGurkus" },
+      { "title": "Mayzie in Palm Beach" },
+      { "title": "Amayzing Horton", "note": "referenced in synopsis" },
+      { "title": "Solla Sollew" },
+      { "title": "Green Eggs and Ham II" },
+      { "title": "Into the Whos' Christmas Pageant" },
+      { "title": "The Butter Battle", "note": "referenced in synopsis" },
+      { "title": "JoJo Alone in the Universe" },
+      { "title": "Havin' a Hunch" },
+      { "title": "All for You" },
+      { "title": "The People Versus Horton the Elephant" },
+      { "title": "Oh, the Thinks You Can Think (Finale Act II)" },
+      { "title": "Green Eggs and Ham" }
+    ]
+  },
+  "context_notes": [
+    "MYTS's 4th annual production (formed 2007).",
+    "First show musically directed by Laura Foxcroft for MYTS.",
+    "The company that year was the largest to date — auditions were 'indeed difficult with so many great performances to choose from' (Chairman's letter)."
+  ]
+}
