@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import NodaBadge from './NodaBadge.astro';
 type Props = {
   slug: string;
   title: string;
@@ -10,8 +11,9 @@ type Props = {
   poster?: any;
   blurb?: string;
   status: 'upcoming' | 'current' | 'past';
+  noda?: 'nominated' | 'awarded' | null;
 };
-const { slug, title, dates_start, dates_end, venue, ticket_url, poster, blurb, status } = Astro.props;
+const { slug, title, dates_start, dates_end, venue, ticket_url, poster, blurb, status, noda } = Astro.props;
 
 const fmt = (d: Date) => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 const dateLabel = dates_end && dates_end.getTime() !== dates_start.getTime()
@@ -29,7 +31,10 @@ const badgeLabel = status === 'current' ? 'On now' : status === 'upcoming' ? 'Up
         <span>{title}</span>
       </div>
     )}
-    <span class={`badge badge--${status}`}>{badgeLabel}</span>
+    <div class="badges">
+      <span class={`badge badge--${status}`}>{badgeLabel}</span>
+      {noda && <NodaBadge status={noda} />}
+    </div>
   </a>
   <div class="card-body">
     <h3><a href={`/shows/${slug}/`}>{title}</a></h3>
@@ -74,9 +79,16 @@ const badgeLabel = status === 'current' ? 'On now' : status === 'upcoming' ? 'Up
     padding: 1rem;
     background: linear-gradient(135deg, #0e9aa7 0%, #0a6b76 100%);
   }
-  .badge {
+  .badges {
     position: absolute;
     top: 0.8rem; left: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    z-index: 1;
+  }
+  .badge {
     background: var(--myts-accent);
     color: var(--myts-text);
     padding: 0.25rem 0.65rem;

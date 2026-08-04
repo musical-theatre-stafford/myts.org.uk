@@ -129,6 +129,16 @@ the on-page programme, or both.
 Programmes are transcribed from scans, so keep any `(?)`-marked uncertain names
 the skill flags and call them out in the PR for a human to check.
 
+## NODA award badges
+
+Shows can carry a **NODA award bubble** on their page and card — silver for a
+nomination, gold (with a star) for a win. NODA results come in long after the
+production, so they're kept out of the show details and live in a simple manual
+list: `src/data/noda.json`, mapping a show's slug to `"nominated"` or
+`"awarded"`. To add or change one, edit that file — e.g.
+`"honk-2015": "awarded"`. Nothing else to touch; the badge appears automatically.
+(The slug is the show's filename in `src/content/shows/` without `.md`.)
+
 ## Images and attachments
 
 Marketing usually adds images by **dragging them into the issue**. Those become
