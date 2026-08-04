@@ -120,8 +120,12 @@ jobs:
       # empty unless Claude actually created a branch, so nothing opens on a no-op
       # (e.g. a question-only reply). Issue title/number go through env vars, not
       # inline ${{ }}, so a crafted issue title can't inject shell.
-      # Uses the built-in GITHUB_TOKEN (the job grants pull-requests: write) — the
-      # fine-grained PAT can't create PRs ("Resource not accessible ... createPullRequest").
+      # Opening a PR from a workflow needs ONE of: (a) repo setting
+      # "Allow GitHub Actions to create and approve pull requests" ON (for the
+      # built-in GITHUB_TOKEN used here), or (b) a PAT with Pull requests: write
+      # (our fine-grained PAT currently lacks it). Until one is in place this step
+      # is a NO-OP-on-failure: it logs a warning but does not fail the run, and the
+      # action's own "Create PR" link in Claude's comment still works.
       - name: Open the pull request for Claude's branch
         if: steps.claude.outputs.branch_name != '' && (github.event_name == 'issues' || github.event_name == 'issue_comment')
         env:
@@ -137,4 +141,5 @@ jobs:
           fi
           gh pr create --repo "$REPO" --base main --head "$BRANCH" \
             --title "$TITLE" \
-            --body "Automated PR for #${ISSUE}. See Claude's summary on the issue for what changed and any judgment calls to check before merging. Fixes #${ISSUE}."
+            --body "Automated PR for #${ISSUE}. See Claude's summary on the issue for what changed and any judgment calls to check before merging. Fixes #${ISSUE}." \
+            || echo "::warning::Couldn't auto-open the PR (needs 'Allow GitHub Actions to create and approve pull requests' in Settings → Actions → General, or a PAT with Pull requests: write). Branch $BRANCH is pushed and the 'Create PR' link on the issue still works."
