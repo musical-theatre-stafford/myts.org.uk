@@ -57,8 +57,10 @@ async function listShows(root) {
 
 async function processShow(slug) {
   const dir = path.join(ROOT, slug);
-  const files = (await readdir(dir)).filter(isImage).sort();
-  if (files.length === 0) return null;
+  const allFiles = await readdir(dir);
+  const files = allFiles.filter(isImage).sort();
+  const pdf = allFiles.find((f) => /^programme\.pdf$/i.test(f)) ?? null;
+  if (files.length === 0) return pdf ? { photos: [], pdf } : null;
 
   const thumbDir = path.join(OUT, slug, 'thumb');
   const dispDir = path.join(OUT, slug, 'display');
@@ -94,8 +96,8 @@ async function processShow(slug) {
     const h = meta.orientation && meta.orientation >= 5 ? meta.width : meta.height;
     photos.push({ name, ext, w, h });
   }
-  console.log(`  ${slug}: ${photos.length} photos (${made} generated, ${skipped} already done)`);
-  return { photos };
+  console.log(`  ${slug}: ${photos.length} photos (${made} generated, ${skipped} already done)${pdf ? ' +programme.pdf' : ''}`);
+  return pdf ? { photos, pdf } : { photos };
 }
 
 async function loadManifest() {
