@@ -5,6 +5,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Programme from '../../components/Programme.astro';
 import Gallery from '../../components/Gallery.astro';
 import photoManifest from '../../data/photo-manifest.json';
+import { MEDIA } from '../../consts';
 
 const programmeFiles = import.meta.glob('../../data/archive/*.json', { eager: true });
 
@@ -20,6 +21,8 @@ const slug = show.id;
 const programme: any =
   (Object.entries(programmeFiles).find(([k]) => k.endsWith(`/${slug}.json`))?.[1] as any)?.default ?? null;
 const photos: any[] = (photoManifest as any).shows?.[slug]?.photos ?? [];
+const pdf: string | null = (photoManifest as any).shows?.[slug]?.pdf ?? null;
+const pdfUrl = pdf ? `${MEDIA.base}/${slug}/${pdf}` : null;
 
 const now = new Date();
 const start = show.data.dates_start;
@@ -56,6 +59,13 @@ const dateLabel = end.getTime() !== start.getTime() ? `${fmt(start)} – ${fmt(e
       </div>
     </div>
 
+    {pdfUrl && (
+      <div class="container">
+        <p class="prog-pdf">
+          <a class="btn btn-primary" href={pdfUrl} target="_blank" rel="noopener">Download the programme (PDF)</a>
+        </p>
+      </div>
+    )}
     {programme && (
       <div class="container">
         <Programme data={programme} />

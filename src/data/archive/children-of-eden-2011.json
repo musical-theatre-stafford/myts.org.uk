@@ -1,0 +1,148 @@
+{
+  "$schema_version": 1,
+  "show": {
+    "title": "Children of Eden",
+    "short_title": "Children of Eden",
+    "year": 2011,
+    "organisation": "MYTS",
+    "venue": "Stafford Gatehouse Theatre",
+    "dates": "6-8 July 2011",
+    "dates_note": "Wednesday 6th to Friday 8th July 2011.",
+    "music_and_lyrics": ["Stephen Schwartz"],
+    "book": ["John Caird"],
+    "notable": "Won NODA Award for Best Junior Musical Production in the region — one of two NODA wins for MYTS (the other being Honk! 2015)."
+  },
+  "source": {
+    "pdf": "programme.pdf",
+    "note": "Rebuilt from the show-photo images in this folder (the images were actually scans of the programme pages, not performance photos); Roger merged them into a single PDF.",
+    "extracted_from_pages": 16,
+    "extraction_method": "OCR (scanned image PDF, no embedded text)"
+  },
+  "cast": [
+    { "character": "Father",       "performer": "Andrew Ridal" },
+    { "character": "Adam",         "performer": "Oliver Dickson", "note": "Also spelled 'Dixon' in the ensemble list — OCR uncertainty; verify against printed page." },
+    { "character": "Eve",          "performer": "Stephanie Golding" },
+    { "character": "Cain",         "performer": "Tom Slade" },
+    { "character": "Abel",         "performer": "Lewis Warren" },
+    { "character": "Young Cain",   "performer": "Joshua Bennett" },
+    { "character": "Young Abel",   "performer": "Euan Flynn" },
+    { "character": "Noah",         "performer": "Oliver Bennett" },
+    { "character": "Mama Noah",    "performer": "Holly Musgrave" },
+    { "character": "Japheth",      "performer": "Josh Russell" },
+    { "character": "Yonah",        "performer": "Alex Smith" },
+    { "character": "Ham",          "performer": "Becky Bates" },
+    { "character": "Aphra / Snake","performer": "Kelly Slade" },
+    { "character": "Aysha",        "performer": "Eden Baker" },
+    { "character": "Shem / Snake", "performer": "Abigail Venables" },
+    { "character": "Snake",        "performer": "Holly Garratley" },
+    { "character": "Snake",        "performer": "Becky Lyle" },
+    { "character": "Snake",        "performer": "Susie Lakin" },
+    { "character": "Soloist",      "performer": "Eve Phillips" },
+    { "character": "Soloist",      "performer": "Roxanne Warrilow" },
+    { "character": "Soloist",      "performer": "Sarah Russell" }
+  ],
+  "ensemble": {
+    "note": "The company/storytellers page (page 6) was heavily obscured by layout artefacts in OCR; names below are partial and best-guess.",
+    "performers": [
+      "Alex Baker", "Eden Baker", "Molly Barnes", "Rebecca Bate",
+      "Joshua Bennett", "Oliver Bennett", "Charlie Bishop", "Nicola Blagg",
+      "Bethany Boulton", "Chloe Bradshaw", "Natalie Bradshaw",
+      "George Brown", "Jacob Brown", "Jennie Brunskill", "Alfie Cortes-Pooler",
+      "Cassie Curno", "Lauren Curno", "Oliver Dixon", "Euan Flynn", "Niamh Flynn",
+      "Holly Garratley", "Ellena Godwin", "Stephanie Golding",
+      "Emily Hancock", "Carter Harrison", "Emilia Harrison",
+      "Charlotte Henshaw", "Rebecca Henshaw", "Hannah Hurley",
+      "Susie Lakin", "Zoe Lakin(?)", "Hannah Lilburne", "Katie Lord", "Becky Lyle",
+      "Aaron Mace", "Jordan Mace",
+      "Amy Matthews", "K. Matthews(?)", "Lucy Matthews",
+      "Hannah Musgrave", "Holly Musgrave",
+      "Jac Norris", "Alex Osborne", "Eve Phillips(?)",
+      "Sofia Pownall", "Hannah Revell", "Josh Russell", "Sarah Russell",
+      "Kelly Slade", "Tom Slade", "Alex Smith", "Charlotte Smith", "Hannah Smith",
+      "Phoebe Squires", "Alex Stewart", "Charlotte (?)",
+      "Eleanor Turner", "Abigail Venables", "Rebecca Waldron", "Eleanor Walker",
+      "Lewis Warren", "Roxanne Warrilow", "Beatrice Wilkinson", "Erika Withers"
+    ],
+    "non_performing_members": [
+      "Erdwin(?)", "Lauren Hough", "Shackleton(?)", "Shani Swift", "Amber (?)", "Millie Yates"
+    ]
+  },
+  "band": {
+    "note": "The Band panel was heavily overlaid with the following-page bio, so instrument-to-player mapping could not be recovered from OCR with confidence. Calum Robarts is legible as one of the players (possibly conductor/keys).",
+    "instruments_listed": ["Bass", "Cello", "Drums", "French Horn", "Guitar", "Keyboard 1", "Keyboard 2", "Reed 1", "Reed 2", "Reed 3"],
+    "players_visible": ["Calum Robarts"]
+  },
+  "production_team": [
+    { "role": "Director",              "person": "David Reynolds" },
+    { "role": "Musical Director",      "person": "Laura Foxcroft" },
+    { "role": "Choreographer (staging)","person": "Dave Reynolds" },
+    { "role": "Stage Manager",         "person": "Mark Hawley" },
+    { "role": "Rehearsal Pianist",     "person": "Roger Foxcroft" },
+    { "role": "Wardrobe",              "person": "Helen Phillips", "note": "and team" },
+    { "role": "Make-up",               "person": "Mandy Slade", "note": "and team" },
+    { "role": "Properties",            "people": ["Peter Brown", "Pauline Brown"] },
+    { "role": "Publicity & Sponsorship","person": "Dave Slade" },
+    { "role": "Set",                   "person": "Mark Hawley" },
+    { "role": "Front of House, Raffle & Programmes", "people": ["Jan Lawton", "Julie Perry"], "note": "and teams" },
+    { "role": "Programme (compiled)",  "person": "Claire Saunders" },
+    { "role": "Programme Printing",    "person": "John Leigh Printers, Stafford" }
+  ],
+  "society_officers": {
+    "MYTS Chairman":  "Tim Downes",
+    "MYTS Secretary": "Diane Phizacklea",
+    "SDOS Chairman":  "Sue Zurawiel",
+    "SDOS President": "Mavis Lockley",
+    "Patron":         "John Wood",
+    "Committee Members": [
+      "Sarah Bishop", "Jan Lawton", "Julie Perry", "Calum Robarts", "Kevin Bennett"
+    ]
+  },
+  "gatehouse_theatre_officials": [
+    { "role": "Artistic Programme Manager", "person": "Derrick Gask" }
+  ],
+  "musical_numbers": {
+    "act_1": [
+      { "title": "Let There Be", "performers": ["Father"], "note": "referenced in synopsis; not in main song list — Act 1 opening number" },
+      { "title": "The Tree of Knowledge", "note": "referenced in synopsis" },
+      { "title": "The Naming", "note": "referenced in synopsis" },
+      { "title": "Perfect", "note": "referenced in synopsis" },
+      { "title": "Grateful Children", "performers": ["Adam", "Eve"] },
+      { "title": "Father's Day", "performers": ["Father", "Storytellers"] },
+      { "title": "The Spark of Creation", "performers": ["Eve"] },
+      { "title": "In Pursuit of Excellence", "performers": ["Snake", "Eve"] },
+      { "title": "The End of a Perfect Day", "note": "referenced in synopsis" },
+      { "title": "A World Without You", "performers": ["Adam"] },
+      { "title": "The Expulsion", "performers": ["Father", "Storytellers"] },
+      { "title": "The Wasteland", "performers": ["Storytellers"] },
+      { "title": "The Spark of Creation (Reprise)", "note": "referenced in synopsis" },
+      { "title": "Lost in the Wilderness", "performers": ["Cain"] },
+      { "title": "Close to Home", "performers": ["Adam", "Eve", "Abel", "Young Cain", "Young Abel"] },
+      { "title": "A Ring of Stones", "performers": ["Cain", "Eve", "Abel", "Adam"] },
+      { "title": "Clash of Generations", "note": "referenced in synopsis" },
+      { "title": "The Mark of Cain", "performers": ["Father", "Storytellers"] },
+      { "title": "Children of Eden", "performers": ["Eve", "Storytellers"] }
+    ],
+    "act_2": [
+      { "title": "Generations", "performers": ["Storytellers"] },
+      { "title": "The Gathering Storm", "note": "referenced in synopsis" },
+      { "title": "A Piece of Eight", "performers": ["Storytellers", "Noah", "Yonah", "Japheth", "Family"] },
+      { "title": "Stranger to the Rain", "performers": ["Yonah"] },
+      { "title": "In Whatever Time We Have", "performers": ["Japheth", "Yonah"] },
+      { "title": "The Flood", "performers": ["Father", "Storytellers"] },
+      { "title": "What Is He Waiting For?", "performers": ["Noah", "Family"] },
+      { "title": "Sailor of the Skies", "performers": ["Yonah"] },
+      { "title": "The Hardest Part of Love", "performers": ["Noah", "Father"] },
+      { "title": "Ain't It Good?", "performers": ["Mama Noah", "Family", "Storytellers"] },
+      { "title": "Precious Children", "performers": ["Father"], "note": "referenced in synopsis" },
+      { "title": "In the Beginning", "performers": ["Company"] }
+    ],
+    "note": "Main song list (page 7) confirms the sung numbers; italic titles cross-referenced from the synopsis text (pages 8-9) added where a distinct musical number is named."
+  },
+  "sponsors_and_thanks": [
+    "The Express and Star", "Stafford Railway Building Society",
+    "Stafford County Council Heritage and Arts", "The Mayor's Fund",
+    "Stafford Disaster Recovery", "Quick Shine Windows", "Esporta Health Club",
+    "Roger Hinton (grant)", "John Wheeldon School (rehearsal venue)",
+    "Golden Orient Buffet Restaurant"
+  ]
+}
