@@ -84,6 +84,16 @@ jobs:
           fetch-depth: 1
           token: ${{ secrets.CLAUDE_GITHUB_TOKEN }}
 
+      # OCR toolchain for the `programme-metadata` skill (.claude/skills/…),
+      # which turns a scanned programme PDF into on-page cast/crew data.
+      # poppler-utils = pdftoppm/pdftotext, tesseract = OCR, pypdf = embedded-text.
+      # Pre-installed here so Claude never needs apt/pip at runtime.
+      - name: Install programme-OCR tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils tesseract-ocr tesseract-ocr-eng python3-pip
+          pip3 install --break-system-packages pypdf
+
       - name: Run Claude Code
         id: claude
         uses: anthropics/claude-code-action@v1
@@ -98,4 +108,7 @@ jobs:
           # curl: download images (issue attachments need the auth header above;
           #   pasted public URLs don't). convert/magick: resize or convert an
           #   asset to a web-friendly format when marketing supplies the wrong one.
-          claude_args: "--allowedTools 'Bash(npm ci),Bash(npm install *),Bash(npm run *),Bash(git add:*),Bash(git commit:*),Bash(git rm:*),Bash(curl:*),Bash(convert:*),Bash(magick:*)'"
+          # pdftoppm/pdftotext/tesseract/python3 + the skill's extract-text.sh:
+          #   the programme-metadata OCR skill. Without these on the allow-list,
+          #   the Action blocks them (no interactive approval in CI) and OCR fails.
+          claude_args: "--allowedTools 'Bash(npm ci),Bash(npm install *),Bash(npm run *),Bash(git add:*),Bash(git commit:*),Bash(git rm:*),Bash(curl:*),Bash(convert:*),Bash(magick:*),Bash(pdftoppm:*),Bash(pdftotext:*),Bash(tesseract:*),Bash(python3:*),Bash(.claude/skills/programme-metadata/scripts/extract-text.sh:*)'"
