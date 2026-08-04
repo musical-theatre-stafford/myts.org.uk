@@ -2,6 +2,11 @@
 import { getCollection, render } from 'astro:content';
 import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Programme from '../../components/Programme.astro';
+import Gallery from '../../components/Gallery.astro';
+import photoManifest from '../../data/photo-manifest.json';
+
+const programmeFiles = import.meta.glob('../../data/archive/*.json', { eager: true });
 
 export async function getStaticPaths() {
   const shows = await getCollection('shows');
@@ -10,6 +15,11 @@ export async function getStaticPaths() {
 
 const { show } = Astro.props;
 const { Content } = await render(show);
+
+const slug = show.id;
+const programme: any =
+  (Object.entries(programmeFiles).find(([k]) => k.endsWith(`/${slug}.json`))?.[1] as any)?.default ?? null;
+const photos: any[] = (photoManifest as any).shows?.[slug]?.photos ?? [];
 
 const now = new Date();
 const start = show.data.dates_start;
@@ -43,8 +53,22 @@ const dateLabel = end.getTime() !== start.getTime() ? `${fmt(start)} – ${fmt(e
         {show.data.ticket_url && status !== 'past' && (
           <p><a class="btn btn-primary" href={show.data.ticket_url} target="_blank" rel="noopener">Book tickets</a></p>
         )}
-        <p style="margin-top:2rem;"><a href="/shows/">&larr; All shows</a></p>
       </div>
+    </div>
+
+    {programme && (
+      <div class="container">
+        <Programme data={programme} />
+      </div>
+    )}
+    {photos.length > 0 && (
+      <div class="container">
+        <Gallery slug={slug} photos={photos} />
+      </div>
+    )}
+
+    <div class="container">
+      <p style="margin-top:2.5rem;"><a href="/shows/">&larr; All shows</a></p>
     </div>
   </section>
 </BaseLayout>

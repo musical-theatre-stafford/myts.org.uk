@@ -1,0 +1,131 @@
+{
+  "$schema_version": 1,
+  "show": {
+    "title": "Footloose - The Musical",
+    "short_title": "Footloose",
+    "year": 2013,
+    "organisation": "MYTS",
+    "venue": "Stafford Gatehouse Theatre",
+    "dates": "10-13 July 2013",
+    "dates_note": "Wednesday 10th - Saturday 13th July 2013, 7:30pm; Saturday 13th July matinee 2:30pm.",
+    "stage_adaptation": ["Dean Pitchford", "Walter Bobbie"],
+    "music": ["Tom Snow"],
+    "lyrics": ["Dean Pitchford"],
+    "licensor": "Josef Weinberger Ltd. on behalf of Music Theatre International, New York"
+  },
+  "source": {
+    "pdf": "programme.pdf",
+    "note": "There are TWO scans of this same programme in the archive: MTS/footloose-2016/Footloose-2016-Programme.pdf (13 pages) and MYTS/footloose-2013/Footloose-2016-Programme-1.pdf (14 pages — includes a West Side Story teaser page at the end). Despite the '2016' in both filenames, this is the MYTS 2013 production. The MTS/footloose-2016 folder is a mis-classification and its PDF is a duplicate.",
+    "extracted_from_pages": 14,
+    "extraction_method": "OCR (scanned PDF, no embedded text)"
+  },
+  "cast": [
+    { "character": "Ren McCormack",     "performer": "Tom Slade" },
+    { "character": "Ethel McCormack",   "performer": "Jennie Brunskill" },
+    { "character": "Reverend Shaw Moore","performer": "Will Berrington" },
+    { "character": "Vi Moore",          "performer": "Abbie Venables" },
+    { "character": "Ariel Moore",       "performer": "Becky Lyle" },
+    { "character": "Lulu Warnicker",    "performer": "Holly Garratley" },
+    { "character": "Wes Warnicker",     "performer": "Jacob Brown" },
+    { "character": "Coach Roger Dunbar","performer": "Jac Norris" },
+    { "character": "Eleanor Dunbar",    "performer": "Nicola Blagg" },
+    { "character": "Rusty",             "performer": "Alex Smith" },
+    { "character": "Urleen",            "performer": "Kelly Slade" },
+    { "character": "Wendy Jo",          "performer": "Amber Walton" },
+    { "character": "Chuck Cranston",    "performer": "Josh Russell" },
+    { "character": "Lyle",              "performer": "Sam Morris" },
+    { "character": "Travis",            "performer": "Alistair Peet" },
+    { "character": "A Cop",             "performer": "Josh Jones" },
+    { "character": "Betty Blast",       "performer": "Alex Osborne" },
+    { "character": "Willard Hewitt",    "performer": "Sam Simkin" },
+    { "character": "Principal Harry Clark", "performer": "Lucy Palmer" },
+    { "character": "Jeter",             "performer": "Lewis Warren" },
+    { "character": "Bickle",            "performer": "Josh Bennett" },
+    { "character": "Garvin",            "performer": "Charlie Bishop" },
+    { "character": "Cowboy Bobbie",     "performer": "Roxy Warrilow" }
+  ],
+  "cast_band": {
+    "musicians": [
+      { "instrument": "Guitar 2",    "player": "Jack Anthony" },
+      { "instrument": "Keyboard 1",  "player": "Tom Hawley" },
+      { "instrument": "Keyboard 2",  "player": "Katie Lord" },
+      { "instrument": "Reeds",       "player": "Hannah Smith" },
+      { "instrument": null,          "player": "Alex Stewart" },
+      { "instrument": null,          "player": "Eleanor Walker" },
+      { "instrument": null,          "player": "Emilia Harrison" },
+      { "instrument": null,          "player": "Jac Norris" },
+      { "instrument": null,          "player": "Sarah Russell" },
+      { "instrument": null,          "player": "Roxy Warrilow" }
+    ],
+    "note": "The 'Cast Band' section listed people alongside instruments; the OCR order suggests some names may not have instrument labels aligned — verify against the printed page."
+  },
+  "orchestra": {
+    "musicians": [
+      { "instrument": "Bass",       "player": "Jon Burr" },
+      { "instrument": "Drums",      "player": "Jack Groom" },
+      { "instrument": "Percussion", "player": "Matt Davis" },
+      { "instrument": "Guitar 1",   "player": "Rich Rowley" },
+      { "instrument": "Piano/Repetiteur/MD support", "person_names": ["Doug McMillan", "Roger Foxcroft", "Abbey Ovens", "Calum Robarts"], "note": "Names appeared under the orchestra block but their specific instruments are ambiguous in the OCR." }
+    ]
+  },
+  "production_team": [
+    { "role": "Director",         "person": "David Reynolds" },
+    { "role": "Musical Director", "person": "Laura Foxcroft" },
+    { "role": "Choreographer",    "person": "Katie Farrier-Ray" }
+  ],
+  "society_officers": {
+    "MYTS Chairman": "Mark Hawley",
+    "Patron":        "Andy Reiss"
+  },
+  "gatehouse_theatre_officials": [
+    { "role": "Artistic Programme Manager", "person": "Derrick Gask" },
+    { "role": "Operations Manager",         "person": "Stuart Boyd" },
+    { "role": "Technical/Stage Manager",    "person": "Matt Glass" },
+    { "role": "Lighting",                   "person": "Mark Elkin" }
+  ],
+  "ensemble_partial": [
+    "Aaron Mace", "Abbie Venables", "Alex Baker", "Alex Osborne", "Alex Smith",
+    "Alex Stewart", "Alfie Cortes-Pooler", "Alistair Peet", "Amber Walton",
+    "Beatrice Wilkinson", "Becky Lyle", "Bethany Boulton", "Cassie Curno",
+    "Charlotte Tatler", "Charlie Bishop", "Charlotte Henshaw", "Charlotte Smith",
+    "Chloe Bradshaw", "Eleanor Turner", "Eleanor Walker", "Elena Godwin",
+    "Emily Chapman", "Emily Hancock", "Emilia Harrison", "Erika Withers",
+    "Euan Flynn", "Eve Phillips", "Freya Perry", "George Brown",
+    "Georgia Holloway", "Hannah Hurley", "Hannah Lilburne", "Hannah Revell",
+    "Hannah Smith", "Holly Garratley", "Jac Norris", "Jack Anthony", "Jacob Brown",
+    "James Beddow", "Jasmine Gardner", "Jennie Brunskill", "Jordan Mace",
+    "Josh Bennett", "Josh Jones", "Josh Russell", "Katie Bishop", "Katie Lord",
+    "Kelly Slade", "Lauren Curno", "Leah Parker", "Lewis Warren", "Lucy Palmer",
+    "Maddison Seed", "Molly Barnes", "Natalie Bradshaw", "Nicola Blagg",
+    "Pippa Munro", "Rebecca Henshaw", "Roxy Warrilow", "Sam Morris", "Sam Simkin",
+    "Sarah Russell", "Sean Pownall", "Sophie Pearce", "Tom Hawley", "Tom Slade"
+  ],
+  "ensemble_notes": "Names reconstructed from the OCR of the pictorial ensemble spread on pages 9-11; several are corrupted by page layout artefacts and may need correction.",
+  "musical_numbers": {
+    "act_1_scenes": [
+      { "scene": 1, "title": "Footloose" },
+      { "scene": 1, "title": "On Any Sunday" },
+      { "scene": 3, "title": "The Girl Gets Around" },
+      { "scene": 4, "title": "I Can't Stand Still" },
+      { "scene": 5, "title": "Learning to be Silent" },
+      { "scene": 6, "title": "Holding Out for a Hero" },
+      { "scene": 7, "title": "Somebody's Eyes" },
+      { "scene": 7, "title": "Somebody's Eyes (Reprise)" },
+      { "scene": 8, "title": "Somebody's Eyes" },
+      { "scene": 8, "title": "Heaven Help Me" },
+      { "scene": 9, "title": "I'm Free / Heaven Help Me" }
+    ],
+    "act_2_scenes": [
+      { "scene": 1, "title": "Still Rockin'" },
+      { "scene": 1, "title": "Let's Hear It for the Boy" },
+      { "scene": 2, "title": "Can You Find It in Your Heart?" },
+      { "scene": 3, "title": "Dancing Is Not a Crime" },
+      { "scene": 3, "title": "Mama Says (You Can't Back Down)" },
+      { "scene": 4, "title": "Almost Paradise" },
+      { "scene": 6, "title": "Heaven Help Me (Reprise)" },
+      { "scene": 6, "title": "Can You Find It in Your Heart? (Reprise)" },
+      { "scene": 7, "title": "Footloose Finale" },
+      { "scene": null, "title": "Megamix" }
+    ]
+  }
+}

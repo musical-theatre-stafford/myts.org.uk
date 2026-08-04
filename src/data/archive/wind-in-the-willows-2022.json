@@ -1,0 +1,143 @@
+{
+  "$schema_version": 1,
+  "show": {
+    "title": "The Wind in the Willows",
+    "short_title": "Wind in the Willows",
+    "year": 2022,
+    "organisation": "MYTS",
+    "venue": "Stafford Gatehouse Theatre",
+    "dates": null,
+    "dates_note": "Originally scheduled July 2020; delayed by COVID-19 and finally staged 2022. Programme mentions 'The Addams Family, opening October 19th' as the next MTS show, so this show ran in summer 2022 (before October).",
+    "book": ["Julian Fellowes"],
+    "music": ["George Stiles"],
+    "lyrics": ["Anthony Drewe"],
+    "based_on": "The Wind in the Willows by Kenneth Grahame",
+    "original_production_producer": "Jamie Hendry"
+  },
+  "source": {
+    "pdf": "WITW-Programme.pdf",
+    "pdf_created": "2022-08-05",
+    "extracted_from_pages": 16,
+    "extraction_method": "OCR (scanned PDF, no embedded text)"
+  },
+  "cast": [
+    { "character": "Toad",              "performer": "Charlie Allan-Smith" },
+    { "character": "Mole",              "performer": "Will Astley" },
+    { "character": "Ratty",             "performer": "Erin Gibbons" },
+    { "character": "Badger",            "performer": "Sophie Pearce" },
+    { "character": "Mrs. Otter",        "performer": "Hattie Molineux-Wilkes" },
+    { "character": "Portia",            "performer": "Xanthe Gowodo" },
+    { "character": "Chief Weasel",      "performer": "Libby Wilson" },
+    { "character": "Lesser Weasel",     "performer": "Sam Rodi" },
+    { "character": "Sheryl Stoat",      "performer": "Evelyn Nicklin" },
+    { "character": "Mrs. Hedgehog",     "performer": "Izzy Draycott" },
+    { "character": "Mr. Hedgehog",      "performer": "Harry Saint-Dunn" },
+    { "character": "Girl Hedgehog",     "performer": "Maria Kelly" },
+    { "character": "Girl Hedgehog",     "performer": "Esme Rust" },
+    { "character": "Swallow",           "performer": "Lydia Brough-Chesters" },
+    { "character": "Swallow",           "performer": "Heidi Lee" },
+    { "character": "Swallow",           "performer": "Annie Connell" },
+    { "character": "Horse",             "performer": "Harmony Phizacklea-Hayes" },
+    { "character": "Horse",             "performer": "Milly Green" },
+    { "character": "Head Rabbit Butler","performer": "Joel Tennant" },
+    { "character": "Rabbit Butler",     "performer": "Poppy Roberts-Walton" },
+    { "character": "Rabbit Butler",     "performer": "Nuala McDonald" },
+    { "character": "Rabbit Butler",     "performer": "Ruby Munday-Crates" },
+    { "character": "Car Driver",        "performer": "Lydia Brough-Chesters" },
+    { "character": "Police Officer",    "performer": "Amy Read" },
+    { "character": "Police Officer",    "performer": "Tegan Humphries" },
+    { "character": "Chief Magistrate",  "performer": "Aoife Kerr" },
+    { "character": "Gaoler's Daughter", "performer": "Lola Foster" },
+    { "character": "Barge Woman",       "performer": "Annie Connell" },
+    { "character": "Train Driver",      "performer": "Jayden Morning" },
+    { "character": "Stoat Guard",       "performer": "Elizabeth Tomkinson" },
+    { "character": "Stoat Guard",       "performer": "Eryn Moore" },
+    { "character": "Dancer",            "performer": "Scarlett Draycott" },
+    { "character": "Dancer",            "performer": "Rosie Prince" },
+    { "character": "Head Chorister",    "performer": "Maya Thomas" },
+    { "character": "1st Chorister",     "performer": "Skye Carrigan" }
+  ],
+  "band": {
+    "musicians": [
+      { "instrument": "Keys 1",   "player": "Ian Stephenson" },
+      { "instrument": "Keys 2",   "player": "Roger Foxcroft" },
+      { "instrument": "Guitar 1", "player": "Billy Proctor" },
+      { "instrument": "Guitar 2", "player": "Chris Godhard" },
+      { "instrument": "Kit",      "player": "Dave Shipley" },
+      { "instrument": "Reed 1",   "player": "Alice Windsor" },
+      { "instrument": "Reed 2",   "player": "Anna Lamplough" },
+      { "instrument": "Reed 3",   "player": "Anna Bourne" },
+      { "instrument": "Horn",     "player": "Sophie Bell" },
+      { "instrument": "Trumpet",  "player": "Craig Stevens" },
+      { "instrument": "Trombone", "player": "Josh Cargill" },
+      { "instrument": "Violin",   "player": "Judith Cowdy" },
+      { "instrument": "Cello",    "player": "Alec Smith" },
+      { "instrument": "Bass",     "player": "Laurie Olphin" }
+    ]
+  },
+  "production_team": [
+    { "role": "Director",              "person": "Sam Simkin" },
+    { "role": "Musical Director",      "person": "Joe Hearson" },
+    { "role": "Choreographer",         "person": "Becky Crookes" },
+    { "role": "Company Stage Manager", "people": ["Sam Parton", "Craig Chesters"] },
+    { "role": "Keyboard Programming",  "person": "Roger Foxcroft" },
+    { "role": "Wardrobe",              "person": "Jennifer Marshall" },
+    { "role": "Costumes",              "person": "Saffron Waldon Musical Theatre Company, Stone Revellers & company's own" },
+    { "role": "Lighting",              "person": "Gatehouse Theatre" },
+    { "role": "Sound",                 "person": "Five Towns Theatre" },
+    { "role": "Chaperones",            "person": "Committee & parents" },
+    { "role": "Publicity",             "person": "Jennifer Marshall" },
+    { "role": "Original Artwork & Design", "person": "Delineate Design & Marketing" },
+    { "role": "Programme Photography", "person": "GCG Photography & GCG Events" }
+  ],
+  "society_officers": {
+    "MYTS": {
+      "President": "Sue Zurawiel",
+      "Chairman": "Roger Foxcroft",
+      "MYTS Secretary": "Craig Chesters",
+      "Treasurer": "Sam Parton",
+      "MYTS Press & Publicity": "Jennifer Marshall",
+      "Committee Members": ["Diane Phizacklea", "Rebecca Birch"],
+      "Patron": "Ashley Brough"
+    }
+  },
+  "musical_numbers": {
+    "act_1_and_2_flat": [
+      { "title": "Spring", "performers": ["Portia", "Mole", "Company"] },
+      { "title": "Messing About in a Boat", "performers": ["Mole", "Rat"] },
+      { "title": "Speed Is of the Essence", "performers": ["Mrs Otter", "Rat"] },
+      { "title": "Messing About in a Boat (Reprise)", "performers": ["Mole", "Rat"] },
+      { "title": "One Swallow Does Not a Summer Make", "performers": ["Swallows"] },
+      { "title": "Toad's Big Entrance", "performers": ["Company"] },
+      { "title": "The Open Road", "performers": ["Toad", "Rat", "Mole", "Horses"] },
+      { "title": "Speed Is of the Essence (Reprise)", "performers": ["Toad"] },
+      { "title": "The Hedgehog's Nightmare", "performers": ["Hedgehogs"] },
+      { "title": "The Amazing Mr. Toad", "performers": ["Toad", "Company"] },
+      { "title": "The Wild Wooders", "performers": ["Chief Weasel", "Lesser Weasel", "Sheryl Stoat", "Company"] },
+      { "title": "Autumn", "performers": ["Ensemble"] },
+      { "title": "The Wild Wooders (Reprise)", "performers": ["Company"] },
+      { "title": "A Friend Is Still a Friend", "performers": ["Badger", "Mole", "Rat"] },
+      { "title": "Toad's Escape", "performers": ["Toad", "Car Driver"] },
+      { "title": "As If in a Dream", "performers": ["Toad", "Mole", "Rat", "Badger", "Mrs Otter", "Company"] },
+      { "title": "We're Taking Over the Hall", "performers": ["Chief Weasel", "Company"] },
+      { "title": "To Be a Woman", "performers": ["Gaoler's Daughter", "Toad"] },
+      { "title": "A Place to Come Back To", "performers": ["Mole"] },
+      { "title": "The Wassailing Mice", "performers": ["Mice", "Company"] },
+      { "title": "The Greatest Great Escape", "performers": ["Company"] },
+      { "title": "We're Taking Over the Hall (Reprise)", "performers": ["Car Driver", "Company"] },
+      { "title": "Hush!", "performers": ["Badger", "Toad", "Mole", "Rat", "Mrs Otter"] },
+      { "title": "The Fight", "performers": ["Company"] },
+      { "title": "Finale", "performers": ["Company"] }
+    ],
+    "note": "Programme did not split the numbers into Act I / Act II; listed as a single running order."
+  },
+  "farewells": [
+    { "name": "Sophie Pearce", "role": "Badger", "note": "Should have finished 2020; stayed through COVID delay. Joined MYTS 2012 for Footloose." },
+    { "name": "Charlie Allan-Smith", "role": "Mr. Toad", "note": "Joined MYTS aged 8 in 2012 for Footloose; a full decade with the group." }
+  ],
+  "context_notes": [
+    "MYTS's 15th anniversary programme (2007-2022).",
+    "Show was cast and rehearsed for July 2020; cancelled at short notice due to COVID lockdown; finally staged after a 1096-day gap (last MYTS show was Godspell, closed 13 July 2019).",
+    "Roger Foxcroft was Chairman of both MTS and MYTS at the time of this production."
+  ]
+}
