@@ -1,0 +1,120 @@
+{
+  "$schema_version": 1,
+  "show": {
+    "title": "We Will Rock You",
+    "year": 2023,
+    "organisation": "MYTS",
+    "venue": "Stafford Gatehouse Theatre",
+    "dates": "19-22 July 2023",
+    "book": ["Ben Elton"],
+    "music_and_lyrics": ["Queen"],
+    "licensor": "Theatrical Rights Worldwide (TRW), 122-124 Regent Street, 5th floor, London W1B 5SA",
+    "programme_type": "Souvenir Programme",
+    "notable": "Young@Part edition, adapted by Marc Tumminelli and originally workshopped at Broadway Workshop in NYC. MYTS negotiated a live band for this production rather than the usual Young@Part backing tracks."
+  },
+  "source": {
+    "pdf": "programme.pdf",
+    "pdf_bytes": 16251259,
+    "extracted_from_pages": 16,
+    "extraction_method": "OCR (scanned PDF, no embedded text)"
+  },
+  "cast": [
+    { "character": "Galileo", "performer": "Kenzie Tyler-Reynolds" },
+    { "character": "Scaramouche", "performer": "Erin Gibbons" },
+    { "character": "Killer Queen", "performer": "Lydia Brough-Chesters" },
+    { "character": "Khashoggi", "performer": "Toby Hassall" },
+    { "character": "Brit", "performer": "Toby Foetu-Foster" },
+    { "character": "Oz", "performer": "Annie Connell" },
+    { "character": "Buddy", "performer": "Sam Tincknell" },
+    { "character": "Globalsoft Manager", "performer": "Gabrielle Preece" },
+    { "character": "GaGa Student 1", "performer": "Daisy Lazenby" },
+    { "character": "GaGa Student 2", "performer": "Milly Green" },
+    { "character": "Sixx (Bohemian)", "performer": "Amy Read" },
+    { "character": "Quatro (Bohemian)", "performer": "Rhea Skews" },
+    { "character": "Aretha (Bohemian)", "performer": "Rosie Prince" },
+    { "character": "Bruce (Bohemian)", "performer": "Libby Wilson" },
+    { "character": "Madonna (Bohemian)", "performer": "Xanthe Gowodo" },
+    { "character": "Michael (Bohemian)", "performer": "Issy Draycott" },
+    { "character": "John (Bohemian)", "performer": "Lola Foster" },
+    { "character": "Paul (Bohemian)", "performer": "Joel Tennant" },
+    { "character": "George (Bohemian)", "performer": "Alex Birch" },
+    { "character": "Ringo (Bohemian)", "performer": "Jamie Gardner" },
+    { "character": "Jagger (Bohemian)", "performer": "Skye Carrigan" },
+    { "character": "Puff (Bohemian)", "performer": "Eryn Moore" }
+  ],
+  "ensemble": [
+    "Scarlett Draycott", "Maya Thomas", "Harry Saint-Dunn", "Izzy Parks", "Maria Kelly",
+    "Elizabeth Tomkinson", "Heidi Lee", "Emma Ferneyhough", "Harmony Phizacklea-Hayes",
+    "Sebastian Barron", "Ruby Monday-Crates", "Rory Scott", "Poppy Roberts-Walton",
+    "Nuala McDonald", "Lylah Wheatley", "Kitty Tyler-Reynolds", "Jessica Loach",
+    "Jayden Morning", "Esme Rust", "Erin Stephenson", "Ada Rust", "Aden Lee", "Jacob Butler"
+  ],
+  "ensemble_notes": "Combines the programme's two ensemble groups: the 'Mean Queens' (Globalsoft henchwomen, listed first) and 'The Rocking & Rolling Ensemble'.",
+  "band": {
+    "musicians": [
+      { "instrument": "Guitar 1", "player": "Will Wood" },
+      { "instrument": "Guitar 2", "player": "Alfie Smith" },
+      { "instrument": "Bass", "player": "Jon Burr" },
+      { "instrument": "Keys 1", "player": "Roger Foxcroft" },
+      { "instrument": "Keys 2", "player": "Laura Foxcroft" },
+      { "instrument": "Drums", "player": "Matt Davis" },
+      { "instrument": "Percussion", "player": "Ben Foxcroft" }
+    ],
+    "note": "A live band, rather than the Young@Part backing tracks usually licensed for this edition."
+  },
+  "production_team": [
+    { "role": "Director", "person": "Sam Simkin" },
+    { "role": "Musical Director", "person": "Laura Foxcroft" },
+    { "role": "Choreographer", "person": "Hannah Pendleton" },
+    { "role": "Company Stage Manager", "person": "Mike Hartley" },
+    { "role": "Assistant Stage Managers", "people": ["Craig Chesters", "Sam Parton"] },
+    { "role": "Stage Crew", "people": ["Karen Keen", "George Harratt", "Mick Dunn", "Dave Parton", "Tracey Brough-Chesters", "Natasha Rust"] },
+    { "role": "Props", "people": ["Sam Parton", "Craig Chesters", "HSL"] },
+    { "role": "Costumes", "person": "Alex Lewis & Parents" },
+    { "role": "Set", "person": "Musical Theatre Stafford" },
+    { "role": "Set Design", "person": "Mike Hartley" },
+    { "role": "Head Chaperones", "people": ["Clare Gibbons", "Sue Wilson"] },
+    { "role": "Artwork/Programme Design", "person": "Christopher Pendleton (@crickypdesigns)" },
+    { "role": "Photography", "person": "GCG Photography" }
+  ],
+  "society_officers": {
+    "Chairman": "Roger Foxcroft",
+    "President": "Sue Zurawiel",
+    "Secretary": "Craig Chesters",
+    "Patron": "Ashley Brough",
+    "Treasurer": "Sam Parton",
+    "Safeguarding Officer": "Diane Phizacklea-Barker",
+    "Costumes": "Alex Lewis",
+    "Marketing": "Dave Parton"
+  },
+  "musical_numbers": {
+    "act_1": [
+      { "title": "Radio Ga Ga" },
+      { "title": "I Want To Break Free" },
+      { "title": "Somebody To Love" },
+      { "title": "Killer Queen" },
+      { "title": "Under Pressure" },
+      { "title": "I Want It All" },
+      { "title": "Headlong" },
+      { "title": "No One But You" },
+      { "title": "Crazy Little Thing Called Love" },
+      { "title": "Ogre Battle" }
+    ],
+    "act_2": [
+      { "title": "Flash" },
+      { "title": "Seven Seas Of Rhye" },
+      { "title": "Who Wants To Live Forever" },
+      { "title": "Another One Bites The Dust" },
+      { "title": "Hammer To Fall" },
+      { "title": "Headlong (Reprise)" },
+      { "title": "We Will Rock You" },
+      { "title": "We Are The Champions" },
+      { "title": "Bows" }
+    ],
+    "note": "Recovered from a handwritten show-week setlist memo printed in the programme."
+  },
+  "context_notes": [
+    "MYTS's Killer Queen, Lydia Brough-Chesters, met Brenda Edwards (who played Killer Queen in the West End revival) in person and received her support ahead of the production.",
+    "MYTS's next production was announced as SpongeBob the Musical (2024)."
+  ]
+}
