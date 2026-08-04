@@ -112,3 +112,27 @@ jobs:
           #   the programme-metadata OCR skill. Without these on the allow-list,
           #   the Action blocks them (no interactive approval in CI) and OCR fails.
           claude_args: "--allowedTools 'Bash(npm ci),Bash(npm install *),Bash(npm run *),Bash(git add:*),Bash(git commit:*),Bash(git rm:*),Bash(curl:*),Bash(convert:*),Bash(magick:*),Bash(pdftoppm:*),Bash(pdftotext:*),Bash(tesseract:*),Bash(python3:*),Bash(.claude/skills/programme-metadata/scripts/extract-text.sh:*)'"
+
+      # The action pushes a branch and posts a "Create PR" link but does NOT open
+      # the PR itself. Open it automatically so the flow is hands-off end to end:
+      # issue -> branch -> PR. A human still reviews and merges (branch protection
+      # + CODEOWNERS), which is what triggers the site rebuild. `branch_name` is
+      # empty unless Claude actually created a branch, so nothing opens on a no-op
+      # (e.g. a question-only reply). Issue title/number go through env vars, not
+      # inline ${{ }}, so a crafted issue title can't inject shell.
+      - name: Open the pull request for Claude's branch
+        if: steps.claude.outputs.branch_name != '' && (github.event_name == 'issues' || github.event_name == 'issue_comment')
+        env:
+          GH_TOKEN: ${{ secrets.CLAUDE_GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          BRANCH: ${{ steps.claude.outputs.branch_name }}
+          ISSUE: ${{ github.event.issue.number }}
+          TITLE: ${{ github.event.issue.title }}
+        run: |
+          if [ -n "$(gh pr list --repo "$REPO" --head "$BRANCH" --json number -q '.[0].number')" ]; then
+            echo "A PR already exists for $BRANCH — nothing to do."
+            exit 0
+          fi
+          gh pr create --repo "$REPO" --base main --head "$BRANCH" \
+            --title "$TITLE" \
+            --body "Automated PR for #${ISSUE}. See Claude's summary on the issue for what changed and any judgment calls to check before merging. Fixes #${ISSUE}."
