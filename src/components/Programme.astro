@@ -1,0 +1,164 @@
+---
+/*
+ * Renders a digitised programme (from src/data/archive/<slug>.json).
+ * Defensive: programme JSONs vary in shape between shows, so every section
+ * checks for its data and normalises the common variants.
+ */
+const { data } = Astro.props;
+const show = data.show ?? {};
+
+const credits = [
+  ['Book', show.book],
+  ['Stage adaptation', show.stage_adaptation],
+  ['Music', show.music],
+  ['Lyrics', show.lyrics],
+  ['Based on', show.based_on],
+]
+  .filter(([, v]) => v && (Array.isArray(v) ? v.length : true))
+  .map(([k, v]) => [k, Array.isArray(v) ? v.join(', ') : v]);
+
+const cast = Array.isArray(data.cast) ? data.cast : [];
+
+const ensembleKey = Object.keys(data).find(
+  (k) => /ensemble|chorus/i.test(k) && Array.isArray(data[k]) && typeof data[k][0] === 'string'
+);
+const ensemble = ensembleKey ? data[ensembleKey] : [];
+
+const bandArr = data.band?.musicians ?? data.orchestra ?? data.cast_band ?? [];
+const band = (Array.isArray(bandArr) ? bandArr : []).map((m) => ({
+  label: m.instrument ?? m.role ?? m.section ?? '',
+  who: m.player ?? m.person ?? m.performer ?? m.name ?? '',
+}));
+
+const team = (Array.isArray(data.production_team) ? data.production_team : []).map((t) => ({
+  role: t.role,
+  who: t.person ?? (Array.isArray(t.people) ? t.people.join(', ') : t.people) ?? '',
+}));
+
+const acts = Object.entries(data.musical_numbers ?? {})
+  .filter(([, v]) => Array.isArray(v))
+  .map(([k, v]) => ({
+    label: k
+      .replace(/_/g, ' ')
+      .replace(/\bact (\d)\b/i, 'Act $1')
+      .replace(/\bscenes?\b/i, '')
+      .replace(/\bflat\b/i, '')
+      .replace(/and 2/i, '& II')
+      .trim(),
+    numbers: v.map((n) => (typeof n === 'string' ? { title: n } : n)),
+  }));
+
+const farewells = Array.isArray(data.farewells) ? data.farewells : [];
+const notes = Array.isArray(data.context_notes) ? data.context_notes : [];
+---
+<section class="programme">
+  <h2>The programme</h2>
+
+  {credits.length > 0 && (
+    <p class="credits">
+      {credits.map(([k, v], i) => (
+        <span>{i > 0 && <span class="sep"> · </span>}<strong>{k}:</strong> {v}</span>
+      ))}
+    </p>
+  )}
+
+  {cast.length > 0 && (
+    <div class="prog-block">
+      <h3>Cast</h3>
+      <dl class="pairs">
+        {cast.map((c) => (
+          <div class="pair"><dt>{c.character}</dt><dd>{c.performer}</dd></div>
+        ))}
+      </dl>
+    </div>
+  )}
+
+  {ensemble.length > 0 && (
+    <div class="prog-block">
+      <h3>Ensemble &amp; chorus</h3>
+      <p class="names">{ensemble.join(' · ')}</p>
+    </div>
+  )}
+
+  {acts.length > 0 && (
+    <div class="prog-block">
+      <h3>Musical numbers</h3>
+      <div class="acts">
+        {acts.map((act) => (
+          <div class="act">
+            {act.label && <h4>{act.label}</h4>}
+            <ol>
+              {act.numbers.map((n) => (
+                <li>
+                  {n.title}
+                  {Array.isArray(n.performers) && n.performers.length > 0 && (
+                    <span class="perf"> — {n.performers.join(', ')}</span>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+
+  {band.length > 0 && (
+    <div class="prog-block">
+      <h3>Band</h3>
+      <dl class="pairs">
+        {band.map((m) => (
+          <div class="pair"><dt>{m.label}</dt><dd>{m.who}</dd></div>
+        ))}
+      </dl>
+    </div>
+  )}
+
+  {team.length > 0 && (
+    <div class="prog-block">
+      <h3>Production team</h3>
+      <dl class="pairs">
+        {team.map((t) => (
+          <div class="pair"><dt>{t.role}</dt><dd>{t.who}</dd></div>
+        ))}
+      </dl>
+    </div>
+  )}
+
+  {farewells.length > 0 && (
+    <div class="prog-block">
+      <h3>Farewells</h3>
+      <ul class="farewells">
+        {farewells.map((f) => (
+          <li><strong>{f.name}</strong>{f.role && <span> ({f.role})</span>}{f.note && <span> — {f.note}</span>}</li>
+        ))}
+      </ul>
+    </div>
+  )}
+
+  {notes.length > 0 && (
+    <div class="prog-block">
+      <h3>About this production</h3>
+      <ul class="notes">{notes.map((n) => <li>{n}</li>)}</ul>
+    </div>
+  )}
+</section>
+
+<style>
+  .programme { margin-top: 2.5rem; border-top: 1px solid var(--myts-border); padding-top: 1.5rem; }
+  .credits { color: var(--myts-muted); font-size: 0.95rem; }
+  .credits .sep { opacity: 0.5; }
+  .prog-block { margin-top: 1.75rem; }
+  .prog-block h3 { color: var(--myts-primary); font-size: 1.15rem; margin-bottom: 0.75rem; }
+  .prog-block h4 { margin: 0 0 0.35rem; font-size: 0.95rem; color: var(--myts-text); }
+  .pairs { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.15rem 1.5rem; margin: 0; }
+  .pair { display: flex; gap: 0.5rem; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px dotted var(--myts-border); font-size: 0.9rem; }
+  .pair dt { color: var(--myts-muted); margin: 0; }
+  .pair dd { margin: 0; text-align: right; font-weight: 500; }
+  .names { color: var(--myts-text); line-height: 1.8; font-size: 0.9rem; }
+  .acts { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
+  .acts ol { margin: 0; padding-left: 1.2rem; font-size: 0.9rem; line-height: 1.5; }
+  .acts .perf { color: var(--myts-muted); }
+  .farewells, .notes { padding-left: 1.1rem; font-size: 0.9rem; line-height: 1.55; color: var(--myts-text); }
+  .farewells li, .notes li { margin-bottom: 0.4rem; }
+</style>

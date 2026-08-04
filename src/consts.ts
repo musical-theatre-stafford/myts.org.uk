@@ -10,6 +10,16 @@ export const SITE = {
   url: 'https://myts.org.uk',
 } as const;
 
+/**
+ * Public base URL for archive media (photos + programme PDFs) served from
+ * Cloudflare R2. Images resolve to `<base>/_web/<show>/thumb|display/<name>.webp`
+ * and originals to `<base>/<show>/<name>.<ext>`. Until the R2 custom domain is
+ * live the images simply won't load — everything else on the page still works.
+ */
+export const MEDIA = {
+  base: 'https://media.myts.org.uk',
+} as const;
+
 export const CONTACT = {
   emailSafeguarding: 'safeguarding@myts.org.uk',
   email: 'secretary@myts.org.uk',

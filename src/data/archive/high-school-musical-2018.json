@@ -1,0 +1,102 @@
+{
+  "$schema_version": 1,
+  "show": {
+    "title": "Disney's High School Musical",
+    "short_title": "High School Musical",
+    "year": 2018,
+    "organisation": "MYTS",
+    "venue": "Stafford Gatehouse Theatre",
+    "dates": "11-14 July 2018",
+    "dates_note": "Best guess from cover text ('11 to 14 JUL' badly OCR'd); please verify.",
+    "based_on": "Disney Channel Original Movie (2006)",
+    "programme_type": "Souvenir Programme"
+  },
+  "source": {
+    "pdf": "programme.pdf",
+    "pdf_bytes": 26079578,
+    "extracted_from_pages": 17,
+    "extraction_method": "OCR (scanned PDF, no embedded text)"
+  },
+  "cast": [
+    { "character": "Troy Bolton",     "performer": "Alex Young" },
+    { "character": "Gabriella Montez","performer": "Alex Lewis" },
+    { "character": "Sharpay Evans",   "performer": "Tabby Carr" },
+    { "character": "Ryan Evans",      "performer": "Charlie Allan-Smith" },
+    { "character": "Chad",            "performer": "Jack (surname unclear from OCR)" },
+    { "character": "Taylor",          "performer": "Aislinn (surname unclear from OCR)" },
+    { "character": "Kelsi",           "performer": "Jasmine (surname unclear from OCR — likely Gardner)" },
+    { "character": "Jackie (Jack Scott, re-cast female)", "performer": "Lainey (surname unclear from OCR)" },
+    { "character": "Mrs. Darbus",     "performer": "Lydia (surname unclear from OCR — likely Thompson)" },
+    { "character": "Coach Bolton",    "performer": "George (surname unclear from OCR — likely Brown)" },
+    { "character": "Zeke",            "performer": "James (surname unclear from OCR)" },
+    { "character": "Martha",          "performer": "Brogan (surname unclear from OCR)" }
+  ],
+  "cast_notes": "Principal cast page listed by first name only in the programme; surnames need cross-checking against another source (e.g. Facebook shout-outs).",
+  "ensemble_and_chorus_partial": [
+    "Elizabeth Tomkinson", "Aoife Kerr", "Oscar Hill-Kratnoff",
+    "Romily Tristam", "Scarlett Bryan", "Scarlett Draycott",
+    "Freya Groucott", "Isabell Draycott", "Ella Powell", "Sophie Pierce",
+    "Isla McEwan", "Leo Foetu-Bardner", "Megan Foster",
+    "Michael Miller", "Bufton (first name unclear)", "Tincknell (first name unclear)",
+    "Samuel Lovelace", "Ewan (surname unclear)", "Fran Briffiths",
+    "Hannah Patrick",
+    "Alanna Mellors", "Lola Foster", "Olivia Atkinson (Moderator)",
+    "Holly Foster", "Imogen Moore", "Isabella Kelling",
+    "Jack Saunders", "Murray Hotchkiss", "Evelyn Nicklin",
+    "Jessica Lorch", "Emma Fernyhough"
+  ],
+  "production_team": [
+    { "role": "Director / Choreographer", "person": "Hannah Morris" },
+    { "role": "Musical Director",         "person": "Laura Foxcroft" },
+    { "role": "Company Stage Manager",    "person": "Helen Downes" },
+    { "role": "Props",                    "person": "Isobel Walter" },
+    { "role": "Wardrobe / Publicity",     "person": "Jennifer Marshall" },
+    { "role": "Chaperones",               "people": ["Katie Phizacklea", "Megan McGinley"] },
+    { "role": "Drum",                     "person": "MTS / Stafford Gatehouse Theatre" },
+    { "role": "Percussion",               "person": "Stafford Gatehouse Theatre" },
+    { "role": "Sound",                    "person": "Five Towns Theatre" },
+    { "role": "Original Artwork & Design","person": "Delineate Design & Marketing" },
+    { "role": "Programme Photography",    "person": "GCG Photography" }
+  ],
+  "society_officers": {
+    "MYTS Chairman":  "Craig Chesters",
+    "MTS Chairman":   "Roger Foxcroft",
+    "President":      "Sue Zurawiel",
+    "Assistant Secretary": "Hannah Morris",
+    "Treasurer":      "Sam Parton",
+    "Membership Secretary": "Stewart Bishop",
+    "Press & Publicity":    "Jennifer Marshall",
+    "Committee Members":    ["Calum Robarts", "Diane Phizacklea", "Megan McGinley"]
+  },
+  "musical_numbers": {
+    "act_1": [
+      { "title": "Wildcat Cheer" },
+      { "title": "Start of Something New" },
+      { "title": "Get'cha Head in the Game" },
+      { "title": "Auditions (Bop to the Top / What I've Been Looking For)" },
+      { "title": "What I've Been Looking For" },
+      { "title": "What I've Been Looking For (Reprise)" },
+      { "title": "Cellular Fusion" },
+      { "title": "Stick to the Status Quo" },
+      { "title": "High School Musical Megamix" }
+    ],
+    "act_2": [
+      { "title": "I Can't Take My Eyes Off of You" },
+      { "title": "Wildcat Cheer (Reprise)" },
+      { "title": "Counting on You" },
+      { "title": "When There Was Me and You", "performers": ["Gabriella", "Troy", "Jocks", "Brainiacs"] },
+      { "title": "Start of Something New (Reprise)" },
+      { "title": "We're All in This Together" },
+      { "title": "Bop to the Top" },
+      { "title": "Breaking Free" },
+      { "title": "We're All in This Together (Reprise)" },
+      { "title": "High School Musical Megamix" }
+    ],
+    "note": "Song listing sequence recovered from OCR; some ordering may need double-checking against the printed page."
+  },
+  "context_notes": [
+    "Nominated for NODA Best Youth Musical.",
+    "Second show directed by Hannah Morris for MYTS (after Legally Blonde 2017); this time she also took the choreography.",
+    "Cast of ~65 youngsters."
+  ]
+}
