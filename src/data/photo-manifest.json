@@ -4753,116 +4753,8 @@
       "pdf": "programme.pdf"
     },
     "narnia-2009": {
-      "photos": [
-        {
-          "name": "Image-1-23",
-          "ext": "jpg",
-          "w": 1174,
-          "h": 1657
-        },
-        {
-          "name": "Image-1-24",
-          "ext": "jpg",
-          "w": 1174,
-          "h": 1657
-        },
-        {
-          "name": "Image-17-24",
-          "ext": "jpg",
-          "w": 1164,
-          "h": 1638
-        },
-        {
-          "name": "Image-18-22",
-          "ext": "jpg",
-          "w": 1166,
-          "h": 1648
-        },
-        {
-          "name": "Image-19-22",
-          "ext": "jpg",
-          "w": 1171,
-          "h": 1641
-        },
-        {
-          "name": "Image-2-22",
-          "ext": "jpg",
-          "w": 1179,
-          "h": 1663
-        },
-        {
-          "name": "Image-20-19",
-          "ext": "jpg",
-          "w": 1165,
-          "h": 1648
-        },
-        {
-          "name": "Image-21-17",
-          "ext": "jpg",
-          "w": 1169,
-          "h": 1641
-        },
-        {
-          "name": "Image-22-15",
-          "ext": "jpg",
-          "w": 1171,
-          "h": 1663
-        },
-        {
-          "name": "Image-23-14",
-          "ext": "jpg",
-          "w": 1174,
-          "h": 1652
-        },
-        {
-          "name": "Image-3-28",
-          "ext": "jpg",
-          "w": 1171,
-          "h": 1655
-        },
-        {
-          "name": "Image-4-25",
-          "ext": "jpg",
-          "w": 1179,
-          "h": 1641
-        },
-        {
-          "name": "Image-5-26",
-          "ext": "jpg",
-          "w": 1171,
-          "h": 1641
-        },
-        {
-          "name": "Image-6-25",
-          "ext": "jpg",
-          "w": 1171,
-          "h": 1657
-        },
-        {
-          "name": "Image-7-25",
-          "ext": "jpg",
-          "w": 1185,
-          "h": 1649
-        },
-        {
-          "name": "Image-8-25",
-          "ext": "jpg",
-          "w": 1179,
-          "h": 1657
-        },
-        {
-          "name": "Image-9-25",
-          "ext": "jpg",
-          "w": 1171,
-          "h": 1652
-        },
-        {
-          "name": "Narnia-the-Musical-Poster-2009",
-          "ext": "jpeg",
-          "w": 1745,
-          "h": 2497
-        }
-      ]
+      "photos": [],
+      "pdf": "programme.pdf"
     },
     "seussical-2010": {
       "photos": [],
@@ -8496,6 +8388,10 @@
       ]
     },
     "les-miserables-2012": {
+      "photos": [],
+      "pdf": "programme.pdf"
+    },
+    "west-side-story-2014": {
       "photos": [],
       "pdf": "programme.pdf"
     }
