@@ -120,10 +120,12 @@ jobs:
       # empty unless Claude actually created a branch, so nothing opens on a no-op
       # (e.g. a question-only reply). Issue title/number go through env vars, not
       # inline ${{ }}, so a crafted issue title can't inject shell.
+      # Uses the built-in GITHUB_TOKEN (the job grants pull-requests: write) — the
+      # fine-grained PAT can't create PRs ("Resource not accessible ... createPullRequest").
       - name: Open the pull request for Claude's branch
         if: steps.claude.outputs.branch_name != '' && (github.event_name == 'issues' || github.event_name == 'issue_comment')
         env:
-          GH_TOKEN: ${{ secrets.CLAUDE_GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
           BRANCH: ${{ steps.claude.outputs.branch_name }}
           ISSUE: ${{ github.event.issue.number }}
