@@ -105,6 +105,30 @@ to edit instead.
    (e.g. wrote a blurb marketing didn't supply), call it out so reviewers can
    correct it.
 
+## Digitising a show programme
+
+Some shows have a scanned **programme PDF** in the media library. To turn one
+into the on-page cast / crew / band / musical-numbers section:
+
+1. The PDF lives in the media library at
+   `https://media.myts.org.uk/<slug>/programme.pdf` — download it, e.g.
+   `curl -sSL -o /tmp/programme.pdf https://media.myts.org.uk/<slug>/programme.pdf`.
+   (It's a public URL; no auth header needed.)
+2. Use the **programme-metadata** skill (`.claude/skills/programme-metadata/`)
+   to extract the structured data — it OCRs image-only PDFs.
+3. Save the result as **`src/data/archive/<slug>.json`**. This is the one place
+   that differs from the skill's own notes: the skill was written to write
+   `programme.json` next to the PDF, but *this* site reads programme data from
+   `src/data/archive/`, so the file must land there. The show page then renders
+   the programme automatically.
+
+The "Download the programme (PDF)" button is separate — it shows whenever the
+PDF is in the media library, independent of the JSON. A show can have the button,
+the on-page programme, or both.
+
+Programmes are transcribed from scans, so keep any `(?)`-marked uncertain names
+the skill flags and call them out in the PR for a human to check.
+
 ## Images and attachments
 
 Marketing usually adds images by **dragging them into the issue**. Those become
