@@ -9,11 +9,10 @@ type Props = {
   venue: string;
   ticket_url?: string;
   poster?: any;
-  blurb?: string;
   status: 'upcoming' | 'current' | 'past';
   noda?: 'nominated' | 'awarded' | null;
 };
-const { slug, title, dates_start, dates_end, venue, ticket_url, poster, blurb, status, noda } = Astro.props;
+const { slug, title, dates_start, dates_end, venue, ticket_url, poster, status, noda } = Astro.props;
 
 const fmt = (d: Date) => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 const dateLabel = dates_end && dates_end.getTime() !== dates_start.getTime()
@@ -39,7 +38,6 @@ const badgeLabel = status === 'current' ? 'On now' : status === 'upcoming' ? 'Up
   <div class="card-body">
     <h3><a href={`/shows/${slug}/`}>{title}</a></h3>
     <p class="meta">{dateLabel} &middot; {venue}</p>
-    {blurb && <p class="blurb">{blurb}</p>}
     {ticket_url && status !== 'past' && (
       <a href={ticket_url} class="btn btn-primary" target="_blank" rel="noopener">Book tickets</a>
     )}
@@ -103,6 +101,5 @@ const badgeLabel = status === 'current' ? 'On now' : status === 'upcoming' ? 'Up
   .card-body h3 { margin: 0; font-size: 1.15rem; }
   .card-body h3 a { text-decoration: none; }
   .meta { color: var(--myts-muted); margin: 0; font-size: 0.9rem; }
-  .blurb { margin: 0.2rem 0 0.5rem; }
   .btn { align-self: flex-start; margin-top: 0.5rem; }
 </style>
