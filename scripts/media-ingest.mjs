@@ -116,6 +116,17 @@ for (const slug of shows) {
   const res = await processShow(slug);
   if (res) manifest.shows[slug] = res;
 }
+// On a FULL run (no --show), the root folder is the complete truth: drop any
+// manifest entry whose show folder is gone (e.g. removed from the Drive sync).
+// Scoped --show runs never prune, so they can't wipe other shows' entries.
+if (!ONLY) {
+  for (const slug of Object.keys(manifest.shows)) {
+    if (!shows.includes(slug)) {
+      delete manifest.shows[slug];
+      console.log(`  pruned ${slug} (no longer under ${ROOT})`);
+    }
+  }
+}
 await mkdir(path.dirname(MANIFEST), { recursive: true });
 await writeFile(MANIFEST, JSON.stringify(manifest, null, 2) + '\n');
 console.log(`\nDone. ${Object.keys(manifest.shows).length} show(s) in manifest.`);
