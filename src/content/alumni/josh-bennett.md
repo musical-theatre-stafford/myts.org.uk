@@ -2,6 +2,7 @@
 name: Josh Bennett
 photo: ./images/josh-bennett.jpg
 known_for: Love Never Dies — international tour
+year_left: 2016
 ---
 
 Josh went on to tour China and across Asia in *Love Never Dies*, performing in
