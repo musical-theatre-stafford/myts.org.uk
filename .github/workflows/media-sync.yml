@@ -1,0 +1,124 @@
+name: Sync media (Google Drive → R2)
+
+# Pulls the show media from the Google Shared Drive, regenerates the web
+# thumbnails + manifest, and mirrors everything to Cloudflare R2. Marketing
+# drops files into the Shared Drive (one folder per show, named exactly like the
+# show's page slug); running this brings them onto the site.
+#
+# Auth (all keyless on the Google side):
+#   - Google Drive: Workload Identity Federation — the job mints a short-lived
+#     read-only Drive token via OIDC (no service-account key stored anywhere).
+#   - R2: an Object Read & Write token (the only secrets this workflow needs).
+#
+# Config lives in repo Settings → Secrets and variables → Actions:
+#   Variables: WIF_PROVIDER, GDRIVE_SA_EMAIL, GDRIVE_SHARED_DRIVE_ID,
+#              GDRIVE_MEDIA_PATH (folder within the Shared Drive; blank = root),
+#              R2_ENDPOINT (e.g. https://<acct>.eu.r2.cloudflarestorage.com)
+#   Secrets:   R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY
+
+on:
+  workflow_dispatch: {}
+  # To run on a schedule too, uncomment (weekly, Monday 03:00 UTC):
+  # schedule:
+  #   - cron: '0 3 * * 1'
+
+permissions:
+  contents: write
+  id-token: write        # required for the WIF OIDC token
+  pull-requests: write
+
+concurrency:
+  group: media-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # PAT so the manifest branch can be pushed (contents: write)
+          token: ${{ secrets.CLAUDE_GITHUB_TOKEN }}
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Authenticate to Google (WIF → read-only Drive token)
+        id: gauth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ vars.WIF_PROVIDER }}
+          service_account: ${{ vars.GDRIVE_SA_EMAIL }}
+          token_format: access_token
+          access_token_scopes: https://www.googleapis.com/auth/drive.readonly
+
+      - name: Install rclone
+        run: curl -fsSL https://rclone.org/install.sh | sudo bash
+
+      # One step: the Drive token comes from the step output above, so all the
+      # rclone env (which references it) has to live here.
+      - name: Sync Drive → R2 and rebuild the manifest
+        id: sync
+        env:
+          # --- Google Drive (read-only, short-lived WIF token) ---
+          RCLONE_CONFIG_GDRIVE_TYPE: drive
+          RCLONE_CONFIG_GDRIVE_SCOPE: drive.readonly
+          RCLONE_CONFIG_GDRIVE_TEAM_DRIVE: ${{ vars.GDRIVE_SHARED_DRIVE_ID }}
+          RCLONE_CONFIG_GDRIVE_TOKEN: '{"access_token":"${{ steps.gauth.outputs.access_token }}","token_type":"Bearer","expiry":"2099-01-01T00:00:00Z"}'
+          # --- Cloudflare R2 (write) ---
+          RCLONE_CONFIG_R2_TYPE: s3
+          RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          RCLONE_CONFIG_R2_ENDPOINT: ${{ vars.R2_ENDPOINT }}
+          RCLONE_CONFIG_R2_ACL: private
+          RCLONE_CONFIG_R2_NO_CHECK_BUCKET: "true"
+          MEDIA_PATH: ${{ vars.GDRIVE_MEDIA_PATH }}
+        run: |
+          set -euo pipefail
+
+          echo "::group::Download originals from the Shared Drive"
+          rclone copy "gdrive:${MEDIA_PATH}" ./MYTS \
+            --transfers 8 --checkers 16 --fast-list --stats 30s
+          echo "::endgroup::"
+
+          echo "::group::Generate thumbnails + manifest"
+          npm ci
+          node scripts/media-ingest.mjs \
+            --root ./MYTS --out ./_myts-web --manifest src/data/photo-manifest.json
+          echo "::endgroup::"
+
+          echo "::group::Mirror originals to R2 (checksum compare; prunes deletions)"
+          rclone sync ./MYTS "r2:myts-media" \
+            --exclude "_*/**" --exclude ".*" --checksum --transfers 24 --checkers 24 --stats 30s
+          echo "::endgroup::"
+
+          echo "::group::Mirror derivatives to R2"
+          rclone sync ./_myts-web "r2:myts-media/_web" \
+            --checksum --transfers 24 --checkers 24 --stats 30s
+          echo "::endgroup::"
+
+      - name: Open a PR if the manifest changed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- src/data/photo-manifest.json; then
+            echo "No manifest changes — media in R2 is updated, nothing to merge."
+            exit 0
+          fi
+          BR="claude/media-sync-$(date -u +%Y%m%d-%H%M%S)"
+          git config user.name "myts-media-bot"
+          git config user.email "media-bot@users.noreply.github.com"
+          git switch -c "$BR"
+          git add src/data/photo-manifest.json
+          git commit -m "Media sync: update photo manifest from the Shared Drive"
+          git push origin "$BR"
+          gh pr create --repo "$REPO" --base main --head "$BR" \
+            --title "Media sync: gallery/manifest update" \
+            --body "Automated media sync from the Google Shared Drive. New/removed photos and programme PDFs have been mirrored to R2; this updates the manifest so the galleries match. Review and merge to publish." \
+            || echo "::warning::Couldn't auto-open the PR (enable 'Allow GitHub Actions to create and approve pull requests' in Settings → Actions → General). Branch $BR is pushed — open the PR from there."
