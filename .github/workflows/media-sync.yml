@@ -85,20 +85,39 @@ jobs:
             --transfers 8 --checkers 16 --fast-list --stats 30s
           echo "::endgroup::"
 
+          # SAFETY: the mirror below prunes R2 files that aren't in the download,
+          # so a half-copied Drive would wipe real media. Abort if the Drive has
+          # fewer show folders than the manifest already knows about (i.e. it
+          # looks incomplete). Adding shows is fine; a genuine show *removal*
+          # will also trip this — re-run and it'll proceed once expected.
+          echo "::group::Safety check — is the Drive copy complete?"
+          DOWNLOADED=$(find ./MYTS -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')
+          EXPECTED=$(node -e "try{console.log(Object.keys(require('./src/data/photo-manifest.json').shows).length)}catch{console.log(0)}")
+          echo "Show folders downloaded: $DOWNLOADED — manifest currently expects: $EXPECTED"
+          if [ "$DOWNLOADED" -eq 0 ] || [ "$DOWNLOADED" -lt "$EXPECTED" ]; then
+            echo "::error::Drive looks incomplete ($DOWNLOADED folders < $EXPECTED expected) — aborting before any destructive mirror. Re-run once the Drive copy has finished."
+            exit 1
+          fi
+          echo "::endgroup::"
+
           echo "::group::Generate thumbnails + manifest"
           npm ci
           node scripts/media-ingest.mjs \
             --root ./MYTS --out ./_myts-web --manifest src/data/photo-manifest.json
           echo "::endgroup::"
 
+          # --max-delete is a second backstop: if the folders are present but
+          # their contents are half-copied, a normal update won't remove many
+          # files, so an unexpectedly large prune aborts the sync instead.
           echo "::group::Mirror originals to R2 (checksum compare; prunes deletions)"
           rclone sync ./MYTS "r2:myts-media" \
-            --exclude "_*/**" --exclude ".*" --checksum --transfers 24 --checkers 24 --stats 30s
+            --exclude "_*/**" --exclude ".*" --checksum --max-delete 200 \
+            --transfers 24 --checkers 24 --stats 30s
           echo "::endgroup::"
 
           echo "::group::Mirror derivatives to R2"
           rclone sync ./_myts-web "r2:myts-media/_web" \
-            --checksum --transfers 24 --checkers 24 --stats 30s
+            --checksum --max-delete 400 --transfers 24 --checkers 24 --stats 30s
           echo "::endgroup::"
 
       - name: Open a PR if the manifest changed
