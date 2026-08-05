@@ -1351,12 +1351,6 @@
           "ext": "jpg",
           "w": 4928,
           "h": 3264
-        },
-        {
-          "name": "Footloose-Poster-2013",
-          "ext": "jpeg",
-          "w": 1740,
-          "h": 2468
         }
       ],
       "pdf": "programme.pdf"
@@ -6968,12 +6962,6 @@
           "ext": "jpg",
           "w": 2128,
           "h": 2832
-        },
-        {
-          "name": "Wizard-of-Oz-Poster-2008",
-          "ext": "jpeg",
-          "w": 1740,
-          "h": 2481
         }
       ]
     },
