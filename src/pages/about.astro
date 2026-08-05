@@ -11,6 +11,14 @@ const Content = entry ? (await render(entry)).Content : null;
       <p class="eyebrow">About us</p>
       <h1>{entry?.data.title ?? 'About MYTS'}</h1>
 
+      <figure class="about-hero">
+        <img
+          src="https://media.myts.org.uk/_web/we-will-rock-you-2023/display/363285304_652651413565331_3858594946770110028_n.webp"
+          alt="MYTS young performers on stage in We Will Rock You, 2023"
+          width="1200" height="675" loading="lazy" />
+        <figcaption>Our young company in <em>We Will Rock You</em> (2023)</figcaption>
+      </figure>
+
       <div class="about-body">
         {Content ? <Content /> : <p>Content coming soon.</p>}
       </div>
@@ -54,9 +62,26 @@ const Content = entry ? (await render(entry)).Content : null;
     background: var(--myts-accent);
     border-radius: 2px;
   }
-  /* Bold phrases (venue, audition age groups) pick up the brand colour */
-  .about-body :global(strong) { color: var(--myts-primary-ink); font-weight: 650; }
-  .about-body :global(a) { color: var(--myts-primary-ink); text-underline-offset: 2px; }
+  /* Bold phrases (venue, audition age groups) pick up the brand teal */
+  .about-body :global(strong) { color: var(--myts-primary); font-weight: 650; }
+  .about-body :global(a) { color: var(--myts-primary); text-underline-offset: 2px; }
+
+  .about-hero { margin: 1.5rem 0 2.25rem; }
+  .about-hero img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center 35%;
+    border-radius: var(--myts-radius-lg);
+    box-shadow: var(--myts-shadow-lg);
+    display: block;
+  }
+  .about-hero figcaption {
+    margin-top: 0.55rem;
+    font-size: 0.82rem;
+    color: var(--myts-muted);
+    text-align: right;
+  }
 
   .join {
     margin-top: 3rem;
