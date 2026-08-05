@@ -1,13 +1,17 @@
 name: Sync media (Google Drive → R2)
 
-# Pulls the show media from the Google Shared Drive, regenerates the web
-# thumbnails + manifest, and mirrors everything to Cloudflare R2. Marketing
-# drops files into the Shared Drive (one folder per show, named exactly like the
-# show's page slug); running this brings them onto the site.
+# Mirrors the show media from the Google Shared Drive to Cloudflare R2 and keeps
+# the galleries in step. Marketing drops files into the Shared Drive (one folder
+# per show, named exactly like the show's page slug).
+#
+# Runs nightly, and can be triggered by hand. It's cheap on quiet nights: it
+# mirrors originals Drive→R2 directly (only *changed* files move), and only if
+# something actually changed does it regenerate thumbnails + the manifest and
+# open a PR. So a no-change night moves almost nothing and finishes in minutes.
 #
 # Auth (all keyless on the Google side):
-#   - Google Drive: Workload Identity Federation — the job mints a short-lived
-#     read-only Drive token via OIDC (no service-account key stored anywhere).
+#   - Google Drive: Workload Identity Federation — a short-lived read-only Drive
+#     token via OIDC (no service-account key stored anywhere).
 #   - R2: an Object Read & Write token (the only secrets this workflow needs).
 #
 # Config lives in repo Settings → Secrets and variables → Actions:
@@ -18,9 +22,8 @@ name: Sync media (Google Drive → R2)
 
 on:
   workflow_dispatch: {}
-  # To run on a schedule too, uncomment (weekly, Monday 03:00 UTC):
-  # schedule:
-  #   - cron: '0 3 * * 1'
+  schedule:
+    - cron: '20 3 * * *'   # nightly ~03:20 UTC (03:20 GMT / 04:20 BST)
 
 permissions:
   contents: write
@@ -80,42 +83,45 @@ jobs:
         run: |
           set -euo pipefail
 
-          echo "::group::Download originals from the Shared Drive"
-          rclone copy "gdrive:${MEDIA_PATH}" ./MYTS \
-            --transfers 8 --checkers 16 --fast-list --stats 30s
-          echo "::endgroup::"
-
-          # SAFETY: the mirror below prunes R2 files that aren't in the download,
-          # so a half-copied Drive would wipe real media. Abort if the Drive has
-          # fewer show folders than the manifest already knows about (i.e. it
-          # looks incomplete). Adding shows is fine; a genuine show *removal*
-          # will also trip this — re-run and it'll proceed once expected.
-          echo "::group::Safety check — is the Drive copy complete?"
-          DOWNLOADED=$(find ./MYTS -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')
+          # SAFETY: the mirror prunes R2 files absent from the Drive, so a
+          # half-copied Drive could wipe real media. Abort if the Drive has fewer
+          # show folders than the manifest already knows about. (Adding shows is
+          # fine; a genuine show removal will also trip this — re-run to proceed.)
+          echo "::group::Safety check — is the Drive complete?"
+          DRIVE_SHOWS=$(rclone lsf "gdrive:${MEDIA_PATH}" --dirs-only | grep -c / || true)
           EXPECTED=$(node -e "try{console.log(Object.keys(require('./src/data/photo-manifest.json').shows).length)}catch{console.log(0)}")
-          echo "Show folders downloaded: $DOWNLOADED — manifest currently expects: $EXPECTED"
-          if [ "$DOWNLOADED" -eq 0 ] || [ "$DOWNLOADED" -lt "$EXPECTED" ]; then
-            echo "::error::Drive looks incomplete ($DOWNLOADED folders < $EXPECTED expected) — aborting before any destructive mirror. Re-run once the Drive copy has finished."
+          echo "Drive show folders: $DRIVE_SHOWS — manifest expects: $EXPECTED"
+          if [ "$DRIVE_SHOWS" -eq 0 ] || [ "$DRIVE_SHOWS" -lt "$EXPECTED" ]; then
+            echo "::error::Drive looks incomplete ($DRIVE_SHOWS < $EXPECTED) — aborting before any destructive mirror."
             exit 1
           fi
           echo "::endgroup::"
 
-          echo "::group::Generate thumbnails + manifest"
+          echo "::group::Mirror originals Drive → R2 (only changed files move)"
+          rclone sync "gdrive:${MEDIA_PATH}" "r2:myts-media" \
+            --exclude "_*/**" --exclude ".*" --checksum --max-delete 200 \
+            --transfers 16 --checkers 24 --fast-list --stats 30s -v 2>&1 | tee /tmp/orig.log
+          echo "::endgroup::"
+
+          CHANGES=$(grep -cE ': (Copied|Deleted|Updated)' /tmp/orig.log || true)
+          echo "Originals added/updated/removed this run: $CHANGES"
+          if [ "$CHANGES" -eq 0 ]; then
+            echo "Nothing changed in the Shared Drive — R2 already matches, no thumbnail/manifest work needed."
+            exit 0
+          fi
+
+          echo "::group::Changes detected — rebuild thumbnails + manifest"
+          # Pull the (now current) originals from R2 to regenerate derivatives and
+          # read dimensions for the manifest. Fresh ./_myts-web ⇒ everything is
+          # regenerated, so rotated/edited photos get correct new derivatives.
+          rclone copy "r2:myts-media" ./MYTS \
+            --exclude "_*/**" --fast-list --transfers 24 --checkers 24 --stats 30s
           npm ci
           node scripts/media-ingest.mjs \
             --root ./MYTS --out ./_myts-web --manifest src/data/photo-manifest.json
           echo "::endgroup::"
 
-          # --max-delete is a second backstop: if the folders are present but
-          # their contents are half-copied, a normal update won't remove many
-          # files, so an unexpectedly large prune aborts the sync instead.
-          echo "::group::Mirror originals to R2 (checksum compare; prunes deletions)"
-          rclone sync ./MYTS "r2:myts-media" \
-            --exclude "_*/**" --exclude ".*" --checksum --max-delete 200 \
-            --transfers 24 --checkers 24 --stats 30s
-          echo "::endgroup::"
-
-          echo "::group::Mirror derivatives to R2"
+          echo "::group::Mirror derivatives to R2 (checksum; prunes stale)"
           rclone sync ./_myts-web "r2:myts-media/_web" \
             --checksum --max-delete 400 --transfers 24 --checkers 24 --stats 30s
           echo "::endgroup::"
@@ -127,7 +133,7 @@ jobs:
         run: |
           set -euo pipefail
           if git diff --quiet -- src/data/photo-manifest.json; then
-            echo "No manifest changes — media in R2 is updated, nothing to merge."
+            echo "No manifest changes — nothing to merge."
             exit 0
           fi
           BR="claude/media-sync-$(date -u +%Y%m%d-%H%M%S)"
@@ -140,4 +146,4 @@ jobs:
           gh pr create --repo "$REPO" --base main --head "$BR" \
             --title "Media sync: gallery/manifest update" \
             --body "Automated media sync from the Google Shared Drive. New/removed photos and programme PDFs have been mirrored to R2; this updates the manifest so the galleries match. Review and merge to publish." \
-            || echo "::warning::Couldn't auto-open the PR (enable 'Allow GitHub Actions to create and approve pull requests' in Settings → Actions → General). Branch $BR is pushed — open the PR from there."
+            || echo "::warning::Couldn't auto-open the PR. Branch $BR is pushed — open it from there."
