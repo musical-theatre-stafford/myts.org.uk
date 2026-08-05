@@ -3,6 +3,11 @@
 The website for **Musical Youth Theatre Stafford** — an Astro-built static
 site deployed to GitHub Pages, edited by Claude on demand via GitHub issues.
 
+> 📖 **Team guide (plain-English, for non-developers):**
+> [Updating the MYTS Website](https://claude.ai/code/artifact/2f57ec37-be25-419c-90f7-5dc009889c93)
+> — a walk-through for the marketing team on adding shows, photos, programmes
+> and copy. Share this with volunteers; this README is the technical companion.
+
 ## What lives where
 
 ```
