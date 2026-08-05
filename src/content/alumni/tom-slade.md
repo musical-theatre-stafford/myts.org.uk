@@ -1,5 +1,6 @@
 ---
 name: Tom Slade
+photo: ./images/tom-slade.jpg
 known_for: Musical director & orchestrator
 year_left: 2014
 link: https://www.tomslade.info/

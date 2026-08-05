@@ -1,5 +1,6 @@
 ---
 name: Holly Musgrave
+photo: ./images/holly-musgrave.jpg
 known_for: Singer & musical theatre performer
 year_left: 2014
 ---
