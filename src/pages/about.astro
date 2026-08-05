@@ -7,17 +7,71 @@ const Content = entry ? (await render(entry)).Content : null;
 ---
 <BaseLayout title="About" description="About Musical Youth Theatre Stafford (MYTS) — the junior division of Musical Theatre Stafford.">
   <section class="section">
-    <div class="container prose">
-      <p class="eyebrow">About</p>
+    <div class="container about">
+      <p class="eyebrow">About us</p>
       <h1>{entry?.data.title ?? 'About MYTS'}</h1>
-      {Content ? <Content /> : <p>Content coming soon.</p>}
+
+      <div class="about-body">
+        {Content ? <Content /> : <p>Content coming soon.</p>}
+      </div>
+
+      <aside class="join">
+        <div>
+          <h2>Fancy giving it a go?</h2>
+          <p>New members are always welcome — we'd love to meet you.</p>
+        </div>
+        <a class="btn btn-primary" href="/contact/">Get in touch</a>
+      </aside>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .prose {
-    max-width: 68ch;
+  .about { max-width: 760px; }
+  .about h1 { margin-bottom: 1rem; }
+
+  .about-body { font-size: 1.05rem; }
+  /* Opening paragraph as a lead-in */
+  .about-body :global(p:first-child) {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: var(--myts-text);
+    font-weight: 500;
+    margin-bottom: 1.25rem;
   }
-  .prose :global(h2) { margin-top: 2rem; }
+  .about-body :global(p) { margin: 0.9rem 0; line-height: 1.7; }
+  /* Section headings: teal, with a small gold accent rule */
+  .about-body :global(h2) {
+    color: var(--myts-primary);
+    font-size: 1.5rem;
+    margin: 2.75rem 0 0.5rem;
+  }
+  .about-body :global(h2)::after {
+    content: "";
+    display: block;
+    width: 46px; height: 3px;
+    margin-top: 0.55rem;
+    background: var(--myts-accent);
+    border-radius: 2px;
+  }
+  /* Bold phrases (venue, audition age groups) pick up the brand colour */
+  .about-body :global(strong) { color: var(--myts-primary-ink); font-weight: 650; }
+  .about-body :global(a) { color: var(--myts-primary-ink); text-underline-offset: 2px; }
+
+  .join {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem 1.75rem;
+    flex-wrap: wrap;
+    background: var(--myts-surface);
+    border: 1px solid var(--myts-border);
+    border-radius: var(--myts-radius-lg);
+    box-shadow: var(--myts-shadow);
+    padding: 1.5rem 1.75rem;
+  }
+  .join h2 { margin: 0 0 0.25rem; color: var(--myts-primary); font-size: 1.25rem; }
+  .join p { margin: 0; color: var(--myts-muted); }
+  .join .btn { flex: none; }
 </style>
