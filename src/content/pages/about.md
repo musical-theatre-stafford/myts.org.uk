@@ -1,41 +1,33 @@
 ---
 title: About MYTS
-updated: 2026-08-02
+updated: 2026-08-05
 ---
 
-Musical Youth Theatre Stafford (MYTS) is the junior division of Musical Theatre
-Stafford. We develop young performers' vocal, theatrical and dance abilities
-through workshops, rehearsals and a full-scale annual musical.
+Musical Youth Theatre Stafford is the junior arm of Musical Theatre Stafford.
+Since 2006 we've helped young performers aged 8 to 18 grow in singing, acting
+and dance — and every year we stage a full musical at the Stafford Gatehouse
+Theatre.
 
-## Who can join
+We rehearse weekly at **Parkside Primary School** during term time, plus an
+all-day Sunday rehearsal roughly once a month.
 
-We welcome performers aged **8–18**. No prior experience is required — we run
-workshops to prepare newcomers for auditions each year.
+## Joining MYTS
 
-## How we work
+Every new member starts with a **New Members' Audition** — pass it and you're
+part of the show. Principal roles are then cast through a separate audition.
 
-- **Autumn workshops** — three preparatory sessions at John Wheeldon Primary Academy
-  to introduce performers to the group and the year's material.
-- **Auditions** — held after the workshops. All registered performers audition.
-- **Rehearsals** — weekly through the season, culminating in a professional run at
-  Stafford Gatehouse Theatre.
+**Under 12s** learn a song as a group and perform it together — relaxed,
+friendly, and nothing to prepare on your own.
+
+**12 and over** do an individual audition: sing a song from a set list, and
+learn a short piece of dialogue to perform.
+
+No experience necessary — just bring your enthusiasm.
 
 ## Safeguarding
 
-The safety and wellbeing of our young performers comes first. MYTS has a
-Designated Safeguarding Lead, who makes sure every performance is correctly
-licensed and that our chaperones meet Local Education Authority safeguarding
-rules, including holding up-to-date DBS checks.
-
-We go beyond the legal minimum wherever we can, so that every young person in
-our care is properly looked after on stage and off. If you have a
-safeguarding question or concern, you can reach our Designated Safeguarding
-Lead at [safeguarding@myts.org.uk](mailto:safeguarding@myts.org.uk).
-
-## Interested in joining?
-
-Get in touch via the [contact page](/contact/) or email
-[secretary@myts.org.uk](mailto:secretary@myts.org.uk).
-
-> This copy is a starting point migrated from the previous myts.org.uk site.
-> Marketing can update it by opening a GitHub issue — see the repo README for how.
+The wellbeing of our young performers always comes first. We have a Designated
+Safeguarding Lead, every show is properly licensed, and our chaperones meet
+Local Education Authority rules with up-to-date DBS checks — and we go beyond
+the legal minimum wherever we can. Any questions, email
+[safeguarding@myts.org.uk](mailto:safeguarding@myts.org.uk).
