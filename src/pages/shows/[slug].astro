@@ -5,8 +5,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Programme from '../../components/Programme.astro';
 import Gallery from '../../components/Gallery.astro';
 import NodaBadge from '../../components/NodaBadge.astro';
+import ExtIcon from '../../components/ExtIcon.astro';
 import photoManifest from '../../data/photo-manifest.json';
 import nodaData from '../../data/noda.json';
+import nodaReports from '../../data/noda-reports.json';
 import { MEDIA } from '../../consts';
 
 const programmeFiles = import.meta.glob('../../data/archive/*.json', { eager: true });
@@ -26,6 +28,7 @@ const photos: any[] = (photoManifest as any).shows?.[slug]?.photos ?? [];
 const pdf: string | null = (photoManifest as any).shows?.[slug]?.pdf ?? null;
 const pdfUrl = pdf ? `${MEDIA.base}/${slug}/${pdf}` : null;
 const noda = (nodaData as Record<string, 'nominated' | 'awarded'>)[slug] ?? null;
+const nodaReport = (nodaReports as Record<string, string>)[slug] ?? null;
 
 const now = new Date();
 const start = show.data.dates_start;
@@ -68,18 +71,20 @@ const dateLabel = end.getTime() !== start.getTime() ? `${fmt(start)} – ${fmt(e
       </div>
     </div>
 
-    {pdfUrl && (
+    {(pdfUrl || nodaReport) && (
       <div class="container">
-        <p class="prog-pdf">
-          <a class="btn btn-primary" href={pdfUrl} target="_blank" rel="noopener">
-            Download the programme (PDF)
-            <svg class="ext-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-          </a>
-        </p>
+        <div class="top-actions">
+          {pdfUrl && (
+            <a class="btn btn-primary" href={pdfUrl} target="_blank" rel="noopener">
+              Download the programme (PDF)<ExtIcon />
+            </a>
+          )}
+          {nodaReport && (
+            <a class="btn btn-noda" href={nodaReport} target="_blank" rel="noopener">
+              NODA show report<ExtIcon />
+            </a>
+          )}
+        </div>
       </div>
     )}
     {programme && (
@@ -119,6 +124,9 @@ const dateLabel = end.getTime() !== start.getTime() ? `${fmt(start)} – ${fmt(e
   .breadcrumb { margin-bottom: 1.25rem; font-size: 0.9rem; }
   .breadcrumb a { color: var(--myts-muted); text-decoration: none; }
   .breadcrumb a:hover { color: var(--myts-primary); }
-  .prog-pdf .btn { display: inline-flex; align-items: center; gap: 0.5rem; }
-  .ext-icon { flex: none; opacity: 0.85; margin-top: -1px; }
+  .top-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  .top-actions .btn { display: inline-flex; align-items: center; gap: 0.5rem; }
+  /* NODA brand cyan (sampled from their logo); dark text for legibility on the bright cyan. */
+  .btn-noda { background: #2cdfca; color: var(--myts-text); }
+  .btn-noda:hover { background: #21c9b4; color: var(--myts-text); }
 </style>
