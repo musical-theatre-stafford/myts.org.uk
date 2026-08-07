@@ -68,25 +68,23 @@ const dateLabel = end.getTime() !== start.getTime() ? `${fmt(start)} – ${fmt(e
         {show.data.ticket_url && status !== 'past' && (
           <p><a class="btn btn-primary" href={show.data.ticket_url} target="_blank" rel="noopener">Book tickets</a></p>
         )}
+        {(pdfUrl || nodaReport) && (
+          <div class="detail-actions">
+            {pdfUrl && (
+              <a class="btn btn-primary" href={pdfUrl} target="_blank" rel="noopener">
+                Download the programme (PDF)<ExtIcon />
+              </a>
+            )}
+            {nodaReport && (
+              <a class="btn btn-outline" href={nodaReport} target="_blank" rel="noopener">
+                NODA show report<ExtIcon />
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </div>
 
-    {(pdfUrl || nodaReport) && (
-      <div class="container">
-        <div class="top-actions">
-          {pdfUrl && (
-            <a class="btn btn-primary" href={pdfUrl} target="_blank" rel="noopener">
-              Download the programme (PDF)<ExtIcon />
-            </a>
-          )}
-          {nodaReport && (
-            <a class="btn btn-noda" href={nodaReport} target="_blank" rel="noopener">
-              NODA show report<ExtIcon />
-            </a>
-          )}
-        </div>
-      </div>
-    )}
     {programme && (
       <div class="container">
         <Programme data={programme} />
@@ -124,9 +122,7 @@ const dateLabel = end.getTime() !== start.getTime() ? `${fmt(start)} – ${fmt(e
   .breadcrumb { margin-bottom: 1.25rem; font-size: 0.9rem; }
   .breadcrumb a { color: var(--myts-muted); text-decoration: none; }
   .breadcrumb a:hover { color: var(--myts-primary); }
-  .top-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-  .top-actions .btn { display: inline-flex; align-items: center; gap: 0.5rem; }
-  /* NODA brand cyan (sampled from their logo); dark text for legibility on the bright cyan. */
-  .btn-noda { background: #2cdfca; color: var(--myts-text); }
-  .btn-noda:hover { background: #21c9b4; color: var(--myts-text); }
+  /* Programme + NODA-report buttons, under the info column with space above. */
+  .detail-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+  .detail-actions .btn { display: inline-flex; align-items: center; gap: 0.5rem; }
 </style>
