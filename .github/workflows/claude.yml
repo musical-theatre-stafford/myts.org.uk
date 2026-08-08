@@ -131,6 +131,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
+          SERVER: ${{ github.server_url }}
           BRANCH: ${{ steps.claude.outputs.branch_name }}
           ISSUE: ${{ github.event.issue.number }}
           TITLE: ${{ github.event.issue.title }}
@@ -139,7 +140,15 @@ jobs:
             echo "A PR already exists for $BRANCH — nothing to do."
             exit 0
           fi
+          # First body line is a plain-English one-liner of what changed — the
+          # marketing dashboard shows it, so lead with Claude's own commit message
+          # (falls back to the request title if the branch can't be read).
+          git fetch --depth=1 origin "$BRANCH" >/dev/null 2>&1 || true
+          SUMMARY=$(git log -1 --format=%s "origin/$BRANCH" 2>/dev/null)
+          [ -z "$SUMMARY" ] && SUMMARY="$TITLE"
+          BODY=$(printf '%s\n\nFixes #%s · [View the original request](%s/%s/issues/%s)' \
+            "$SUMMARY" "$ISSUE" "$SERVER" "$REPO" "$ISSUE")
           gh pr create --repo "$REPO" --base main --head "$BRANCH" \
             --title "$TITLE" \
-            --body "Automated PR for #${ISSUE}. See Claude's summary on the issue for what changed and any judgment calls to check before merging. Fixes #${ISSUE}." \
+            --body "$BODY" \
             || echo "::warning::Couldn't auto-open the PR (needs 'Allow GitHub Actions to create and approve pull requests' in Settings → Actions → General, or a PAT with Pull requests: write). Branch $BRANCH is pushed and the 'Create PR' link on the issue still works."
