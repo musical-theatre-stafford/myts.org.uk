@@ -2,11 +2,12 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
-// Custom domain: preview.myts.org.uk (see public/CNAME).
-// Preview subdomain used during launch so the current live site stays up;
-// switch `site` and public/CNAME to 'myts.org.uk' when cutting over to the apex.
+// Public site URL — drives canonical tags, og:url and the sitemap.
+// The apex myts.org.uk is now live (fronted by Cloudflare over the GitHub Pages
+// origin, which still answers on preview.myts.org.uk via public/CNAME — that's
+// deliberate and separate from the public URL below).
 export default defineConfig({
-  site: 'https://preview.myts.org.uk',
+  site: 'https://myts.org.uk',
   trailingSlash: 'ignore',
   integrations: [sitemap()],
   image: {
