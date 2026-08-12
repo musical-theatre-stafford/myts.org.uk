@@ -2,7 +2,7 @@
 title: We MYTS Still Sing
 dates_start: 2026-12-13
 venue: Crown Wharf Theatre, Stone
-poster: ./posters/we-myts-still-sing-2026.jpg
+poster: ./posters/we-myts-still-sing-2026.png
 featured: true
 blurb: Twenty years of stars — a concert celebrating 20 years of MYTS.
 ---
