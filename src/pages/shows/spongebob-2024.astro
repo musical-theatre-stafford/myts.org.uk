@@ -1,0 +1,20 @@
+---
+// The SpongeBob Musical page moved from /shows/spongebob-2024/ to
+// /shows/the-spongebob-musical-2024/ so its slug matches the media library
+// (the gallery/manifest key). This keeps the old URL working with a redirect.
+const dest = '/shows/the-spongebob-musical-2024/';
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <title>Redirecting…</title>
+    <link rel="canonical" href={dest} />
+    <meta http-equiv="refresh" content={`0; url=${dest}`} />
+  </head>
+  <body>
+    <p>This page has moved to <a href={dest}>The SpongeBob Musical (2024)</a>.</p>
+  </body>
+</html>
