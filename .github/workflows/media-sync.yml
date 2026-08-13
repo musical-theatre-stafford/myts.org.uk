@@ -136,6 +136,28 @@ jobs:
             echo "No manifest changes — nothing to merge."
             exit 0
           fi
+
+          BODY="Automated media sync from the Google Shared Drive. New/removed photos and programme PDFs have been mirrored to R2; this updates the manifest so the galleries match. Review and merge to publish."
+
+          # Guard against orphan galleries: a manifest slug with no matching show
+          # page won't appear on the site at all (the gallery only renders on the
+          # show's page). This happens when a Drive folder isn't named exactly like
+          # the show's page slug. We WARN rather than fail — a legitimate update for
+          # other shows should still go through — and ride the note on the PR so
+          # whoever merges sees it.
+          ORPHANS=$(node -e '
+            const fs = require("fs");
+            const mani = JSON.parse(fs.readFileSync("src/data/photo-manifest.json", "utf8"));
+            const pages = new Set(fs.readdirSync("src/content/shows").filter(f => f.endsWith(".md")).map(f => f.replace(/\.md$/, "")));
+            process.stdout.write(Object.keys(mani.shows || {}).filter(s => !pages.has(s)).join("\n"));
+          ')
+          if [ -n "$ORPHANS" ]; then
+            echo "::warning::Galleries with no matching show page (their photos/PDF won't appear until a page with the exact slug exists):"
+            echo "$ORPHANS" | sed 's/^/::warning:: - /'
+            QUOTED=$(echo "$ORPHANS" | sed 's/^/> - `/; s/$/`/')
+            BODY=$(printf '> [!WARNING]\n> **Galleries with no matching show page.** These have media in the library but no show page yet, so they will NOT appear on the site until a show page with the exact slug is added:\n>\n%s\n>\n> (Each Drive show folder must be named exactly like the show'"'"'s page slug.)\n\n%s' "$QUOTED" "$BODY")
+          fi
+
           BR="claude/media-sync-$(date -u +%Y%m%d-%H%M%S)"
           git config user.name "myts-media-bot"
           git config user.email "media-bot@users.noreply.github.com"
@@ -145,5 +167,5 @@ jobs:
           git push origin "$BR"
           gh pr create --repo "$REPO" --base main --head "$BR" \
             --title "Media sync: gallery/manifest update" \
-            --body "Automated media sync from the Google Shared Drive. New/removed photos and programme PDFs have been mirrored to R2; this updates the manifest so the galleries match. Review and merge to publish." \
+            --body "$BODY" \
             || echo "::warning::Couldn't auto-open the PR. Branch $BR is pushed — open it from there."
