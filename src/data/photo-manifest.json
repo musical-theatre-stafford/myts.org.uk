@@ -3881,10 +3881,172 @@
     "seussical-2025": {
       "photos": [
         {
-          "name": "poster",
+          "name": "SuesSamp-1",
           "ext": "jpg",
-          "w": 1240,
-          "h": 1754
+          "w": 6048,
+          "h": 4024
+        },
+        {
+          "name": "SuesSamp-10",
+          "ext": "jpg",
+          "w": 4778,
+          "h": 7167
+        },
+        {
+          "name": "SuesSamp-11",
+          "ext": "jpg",
+          "w": 8256,
+          "h": 5504
+        },
+        {
+          "name": "SuesSamp-12",
+          "ext": "jpg",
+          "w": 8256,
+          "h": 5504
+        },
+        {
+          "name": "SuesSamp-13",
+          "ext": "jpg",
+          "w": 8256,
+          "h": 5504
+        },
+        {
+          "name": "SuesSamp-14",
+          "ext": "jpg",
+          "w": 5504,
+          "h": 8256
+        },
+        {
+          "name": "SuesSamp-15",
+          "ext": "jpg",
+          "w": 5504,
+          "h": 8256
+        },
+        {
+          "name": "SuesSamp-16",
+          "ext": "jpg",
+          "w": 8256,
+          "h": 5504
+        },
+        {
+          "name": "SuesSamp-17",
+          "ext": "jpg",
+          "w": 8256,
+          "h": 5504
+        },
+        {
+          "name": "SuesSamp-18",
+          "ext": "jpg",
+          "w": 8256,
+          "h": 5504
+        },
+        {
+          "name": "SuesSamp-19",
+          "ext": "jpg",
+          "w": 8256,
+          "h": 5504
+        },
+        {
+          "name": "SuesSamp-2",
+          "ext": "jpg",
+          "w": 8256,
+          "h": 5504
+        },
+        {
+          "name": "SuesSamp-20",
+          "ext": "jpg",
+          "w": 8256,
+          "h": 5504
+        },
+        {
+          "name": "SuesSamp-21",
+          "ext": "jpg",
+          "w": 8256,
+          "h": 5504
+        },
+        {
+          "name": "SuesSamp-22",
+          "ext": "jpg",
+          "w": 8256,
+          "h": 5504
+        },
+        {
+          "name": "SuesSamp-23",
+          "ext": "jpg",
+          "w": 4024,
+          "h": 6048
+        },
+        {
+          "name": "SuesSamp-24",
+          "ext": "jpg",
+          "w": 4024,
+          "h": 6048
+        },
+        {
+          "name": "SuesSamp-25",
+          "ext": "jpg",
+          "w": 5493,
+          "h": 8256
+        },
+        {
+          "name": "SuesSamp-26",
+          "ext": "jpg",
+          "w": 8256,
+          "h": 5493
+        },
+        {
+          "name": "SuesSamp-27",
+          "ext": "jpg",
+          "w": 5493,
+          "h": 8256
+        },
+        {
+          "name": "SuesSamp-28",
+          "ext": "jpg",
+          "w": 4024,
+          "h": 6048
+        },
+        {
+          "name": "SuesSamp-29",
+          "ext": "jpg",
+          "w": 5493,
+          "h": 8256
+        },
+        {
+          "name": "SuesSamp-3",
+          "ext": "jpg",
+          "w": 8256,
+          "h": 5504
+        },
+        {
+          "name": "SuesSamp-5",
+          "ext": "jpg",
+          "w": 5504,
+          "h": 8256
+        },
+        {
+          "name": "SuesSamp-6",
+          "ext": "jpg",
+          "w": 5504,
+          "h": 8256
+        },
+        {
+          "name": "SuesSamp-7",
+          "ext": "jpg",
+          "w": 5504,
+          "h": 8256
+        },
+        {
+          "name": "SuesSamp-8",
+          "ext": "jpg",
+          "w": 5504,
+          "h": 8256
+        },
+        {
+          "name": "SuesSamp-9",
+          "ext": "jpg",
+          "w": 8256,
+          "h": 5504
         }
       ]
     },
