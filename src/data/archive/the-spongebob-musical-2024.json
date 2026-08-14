@@ -1,0 +1,124 @@
+{
+  "$schema_version": 1,
+  "show": {
+    "title": "The SpongeBob Musical",
+    "short_title": "SpongeBob",
+    "year": 2024,
+    "organisation": "MYTS",
+    "venue": "Stafford Gatehouse Theatre",
+    "dates": "17–20 July 2024",
+    "based_on": "the Nickelodeon series SpongeBob SquarePants, created by Stephen Hillenburg",
+    "licensor": "Concord Theatricals"
+  },
+  "source": {
+    "pdf": "programme.pdf",
+    "pdf_bytes": 155024429,
+    "extracted_from_pages": 20,
+    "extraction_method": "OCR (scanned PDF, no embedded text)",
+    "note": "Cast, band, production team and in-memoriam transcribed by OCR. Names marked (?) and the musical-numbers running order are best-effort from the scan and need checking against the printed programme — see the tracking issue."
+  },
+  "cast": [
+    { "character": "SpongeBob SquarePants", "performer": "Joel Tennant" },
+    { "character": "Patrick Star", "performer": "Issy Draycott" },
+    { "character": "Sandy Cheeks", "performer": "Annie Connell" },
+    { "character": "Squidward Q. Tentacles", "performer": "Jamie Gardner" },
+    { "character": "Eugene Krabs", "performer": "Amy Read" },
+    { "character": "Pearl Krabs", "performer": "Eryn Moore" },
+    { "character": "Sheldon J. Plankton", "performer": "Harry Saint-Dunn" },
+    { "character": "Karen the Computer", "performer": "Scarlett Draycott" },
+    { "character": "Patchy the Pirate", "performer": "Maya Thomas" },
+    { "character": "Foley Fish / French Narrator / Gary the Snail", "performer": "Aden Lee" },
+    { "character": "Old Man Jenkins", "performer": "Jayden Morning" },
+    { "character": "Mrs Puff", "performer": "Tegan Humphries" },
+    { "character": "Mermaid Man", "performer": "Jacob Butler" },
+    { "character": "Larry the Lobster", "performer": "Sebastian Barron" },
+    { "character": "Perch Perkins", "performer": "Daisy Lazenby" },
+    { "character": "Mayor of Bikini Bottom", "performer": "Ruby Munday-Crates" },
+    { "character": "Johnny the Bartender", "performer": "Ethan Travers" },
+    { "character": "Krabby Patty Fish", "performer": "Ruby Bentley" },
+    { "character": "A Fish", "performer": "Bella Rowland" },
+    { "character": "Another Fish", "performer": "Erin Stephenson" },
+    { "character": "Electric Skates", "performer": "Skye Carrigan" },
+    { "character": "Electric Skates", "performer": "Xanthe Gowodo" },
+    { "character": "Electric Skates", "performer": "Jess Morgan" },
+    { "character": "Security Guard", "performer": "Emilia Russell(?)" },
+    { "character": "Security Guard", "performer": "Nuala McDonald" },
+    { "character": "Dance Troupe", "performer": "Esme Rust" },
+    { "character": "Dance Troupe", "performer": "Rosie Rowley" },
+    { "character": "Dance Troupe", "performer": "Summer Sadler" },
+    { "character": "Dance Troupe", "performer": "Kitty Tyler-Reynolds" },
+    { "character": "Dance Troupe", "performer": "Rhea Skews" }
+  ],
+  "ensemble": [
+    "Lylah Wheatley",
+    "Ivy Munro",
+    "Poppy Roberts-Walton",
+    "Evelyn Abbott",
+    "Charlie Wynn-Jones",
+    "Amelia Adams",
+    "Llayla Brassington",
+    "Poppy Wheildon",
+    "Abigail Burley",
+    "Bethany Calderbank",
+    "Scarlett Frost",
+    "Ada Rust"
+  ],
+  "band": {
+    "conductor": { "instrument": "Musical Director", "player": "Laura Foxcroft" },
+    "musicians": [
+      { "instrument": "Trumpet", "player": "Rachel Hayes" },
+      { "instrument": "Violin", "player": "Judith Cowdy" },
+      { "instrument": "Cello", "player": "Graham Darby" },
+      { "instrument": "Bass", "player": "Jon Burr" },
+      { "instrument": "Drum Kit", "player": "Matt Davis" },
+      { "instrument": "Percussion", "player": "Ben Foxcroft" },
+      { "instrument": "Keys 1", "player": "Roger Foxcroft" },
+      { "instrument": "Keys 2", "player": "Ruairi Leonard" }
+    ],
+    "note": "Band list transcribed from the scan; the top of the section overlapped the musical numbers, so a reed/brass line or two may be missing — please check."
+  },
+  "production_team": [
+    { "role": "Director", "person": "Sam Simkin" },
+    { "role": "Musical Director", "person": "Laura Foxcroft" },
+    { "role": "Choreographer", "person": "Hannah Pendleton" },
+    { "role": "Costumes", "person": "Alex Lewis(?)" },
+    { "role": "Head Chaperone", "person": "Ruth Stephenson" },
+    { "role": "Artwork / Programme Design", "people": ["Karen Keen", "Christopher Pendleton"] },
+    { "role": "Photography", "person": "GCG Photography" },
+    { "role": "Publicity", "person": "Dave Parton" }
+  ],
+  "society_officers": {
+    "MYTS Chairman": "Sam Parton",
+    "Secretary": "Craig Chesters",
+    "MYTS President": "Sue Zurawiel",
+    "Patron": "Ashley Brough"
+  },
+  "musical_numbers": {
+    "act_1": [
+      "Bikini Bottom Day",
+      "Bikini Bottom Day (Reprise)",
+      "No Control",
+      "BFF",
+      "When the Going Gets Tough",
+      "(Just a) Simple Sponge",
+      "Daddy Knows Best",
+      "Hero is My Middle Name",
+      "Super Sea-Star Saviour"
+    ],
+    "act_2": [
+      "Poor Pirates",
+      "Bikini Bottom Day (Reprise)",
+      "Bikini Bottom Boogie",
+      "Chop to the Top",
+      "(I Guess) I Miss You",
+      "I'm Not a Loser",
+      "Simple Sponge (Reprise)",
+      "Best Day Ever",
+      "Bikini Bottom Day (Finale)"
+    ],
+    "note": "Running order and act split reconstructed from a two-column scan — please verify against the printed programme."
+  },
+  "context_notes": [
+    "Original songs by Yolanda Adams, Steven Tyler & Joe Perry (Aerosmith), Sara Bareilles, Jonathan Coulton, Alex Ebert, The Flaming Lips, Lady A, Cyndi Lauper, John Legend, Panic! At the Disco, Plain White T's, They Might Be Giants and T.I.; songs by David Bowie, Tom Kenny & Andy Paley; additional lyrics by Jonathan Coulton; additional music by Tom Kitt; conceived by Tina Landau."
+  ]
+}
