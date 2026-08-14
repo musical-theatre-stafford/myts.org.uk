@@ -66,7 +66,12 @@
   "band": {
     "conductor": { "instrument": "Musical Director", "player": "Laura Foxcroft" },
     "musicians": [
+      { "instrument": "Reed 1", "player": "Natasha Malbon" },
+      { "instrument": "Reed 2", "player": "Anna Lamplough" },
       { "instrument": "Trumpet", "player": "Rachel Hayes" },
+      { "instrument": "Trombone", "player": "Shaun Farrington" },
+      { "instrument": "Guitar 1", "player": "Rich Rowley" },
+      { "instrument": "Guitar 2", "player": "Alfie Smith" },
       { "instrument": "Violin", "player": "Judith Cowdy" },
       { "instrument": "Cello", "player": "Graham Darby" },
       { "instrument": "Bass", "player": "Jon Burr" },
@@ -74,8 +79,7 @@
       { "instrument": "Percussion", "player": "Ben Foxcroft" },
       { "instrument": "Keys 1", "player": "Roger Foxcroft" },
       { "instrument": "Keys 2", "player": "Ruairi Leonard" }
-    ],
-    "note": "Band list transcribed from the scan; the top of the section overlapped the musical numbers, so a reed/brass line or two may be missing — please check."
+    ]
   },
   "production_team": [
     { "role": "Director", "person": "Sam Simkin" },
