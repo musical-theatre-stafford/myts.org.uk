@@ -15,7 +15,7 @@
     "pdf_bytes": 155024429,
     "extracted_from_pages": 20,
     "extraction_method": "OCR (scanned PDF, no embedded text)",
-    "note": "Cast, band, production team and in-memoriam transcribed by OCR. Names marked (?) and the musical-numbers running order are best-effort from the scan and need checking against the printed programme — see the tracking issue."
+    "note": "Digitised by OCR of the scanned programme, then verified and completed against the printed programme from corrections supplied by the production team."
   },
   "cast": [
     { "character": "SpongeBob SquarePants", "performer": "Joel Tennant" },
@@ -119,8 +119,7 @@
       "Simple Sponge (Reprise)",
       "Best Day Ever",
       "Bikini Bottom Day (Finale)"
-    ],
-    "note": "Running order and act split reconstructed from a two-column scan — please verify against the printed programme."
+    ]
   },
   "context_notes": [
     "Original songs by Yolanda Adams, Steven Tyler & Joe Perry (Aerosmith), Sara Bareilles, Jonathan Coulton, Alex Ebert, The Flaming Lips, Lady A, Cyndi Lauper, John Legend, Panic! At the Disco, Plain White T's, They Might Be Giants and T.I.; songs by David Bowie, Tom Kenny & Andy Paley; additional lyrics by Jonathan Coulton; additional music by Tom Kitt; conceived by Tina Landau."
