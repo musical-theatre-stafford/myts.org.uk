@@ -1,0 +1,100 @@
+name: Nightly security audit
+
+# Runs `npm audit` each night. If there are high/critical vulnerabilities in the
+# dependencies, it opens ONE tracking issue labelled `security`. That issue is
+# picked up by claude.yml (its autolabel adds `claude`), so Claude fixes the
+# vulnerabilities and opens a PR. Because the fix changes package-lock.json —
+# which CODEOWNERS assigns to @rogerfoxcroft — the PR requires Roger's review to
+# merge, and claude.yml additionally assigns the PR to him (see the `security`
+# handling there). So: audit → issue → Claude PR → Roger signs off.
+#
+# Deduped: it won't raise a second issue while a `security` one is still open.
+# Only high + critical are treated as actionable (moderate/low are reported in
+# the body but don't, on their own, raise an issue) — adjust THRESHOLD_SEVERITIES
+# below if you want to include moderate.
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '30 2 * * *'   # nightly ~02:30 UTC
+
+permissions:
+  contents: read
+
+concurrency:
+  group: security-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run npm audit
+        id: audit
+        run: |
+          set -uo pipefail
+          # npm audit reads package-lock.json directly; it exits non-zero when it
+          # finds vulnerabilities, so swallow that and inspect the JSON ourselves.
+          npm audit --json > /tmp/audit.json 2>/dev/null || true
+          node <<'NODE'
+          const fs = require('fs');
+          let a = {};
+          try { a = JSON.parse(fs.readFileSync('/tmp/audit.json', 'utf8')); } catch {}
+          const counts = (a.metadata && a.metadata.vulnerabilities) || {};
+          const actionable = (counts.high || 0) + (counts.critical || 0);
+
+          const sevLines = ['critical', 'high', 'moderate', 'low', 'info']
+            .filter((s) => counts[s]).map((s) => `- **${s}**: ${counts[s]}`);
+          const advs = a.vulnerabilities || {};
+          const detail = Object.values(advs)
+            .filter((v) => v.severity === 'high' || v.severity === 'critical')
+            .map((v) => `- \`${v.name}\` — **${v.severity}** (affected: ${v.range || '?'}) — ${v.fixAvailable ? 'fix available' : 'no automatic fix'}`);
+
+          const md = [
+            '**Severity counts**',
+            sevLines.join('\n') || '- none',
+            '',
+            '**High / critical advisories**',
+            detail.join('\n') || '- (see the full `npm audit` output)',
+          ].join('\n');
+          fs.writeFileSync('/tmp/summary.md', md);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `actionable=${actionable}\n`);
+          console.log(`high+critical = ${actionable}`);
+          NODE
+
+      - name: Open a tracking issue for Claude to fix
+        if: steps.audit.outputs.actionable != '0'
+        env:
+          # A PAT (not the built-in GITHUB_TOKEN) so that creating the issue fires
+          # the `issues.opened` event that claude.yml's autolabel listens for — the
+          # default token deliberately does NOT trigger other workflows.
+          GH_TOKEN: ${{ secrets.CLAUDE_GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          gh label create security --repo "$REPO" --color d73a4a \
+            --description "Dependency/security vulnerabilities" 2>/dev/null || true
+
+          existing=$(gh issue list --repo "$REPO" --state open --label security --json number -q '.[0].number' || true)
+          if [ -n "$existing" ]; then
+            echo "Security issue #$existing already open — not raising another."
+            exit 0
+          fi
+
+          SUMMARY=$(cat /tmp/summary.md)
+          BODY=$(printf 'The nightly security audit found **high/critical vulnerabilities** in the site'\''s dependencies.\n\n%s\n\n---\n\n@claude please fix these: update the affected dependencies (prefer the smallest safe bump), and run `npm run build` to check nothing breaks. Call out any change that needs a major version bump.\n\nThese are infrastructure changes, so the resulting PR will wait for Roger'\''s sign-off (CODEOWNERS on `package-lock.json`) and be assigned to him.\n\n_Raised automatically by the nightly security audit._' "$SUMMARY")
+
+          gh issue create --repo "$REPO" \
+            --title "Security: dependency vulnerabilities found ($(date -u +%Y-%m-%d))" \
+            --label security \
+            --body "$BODY"
