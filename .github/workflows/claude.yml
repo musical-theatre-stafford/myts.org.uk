@@ -111,7 +111,9 @@ jobs:
           # pdftoppm/pdftotext/tesseract/python3 + the skill's extract-text.sh:
           #   the programme-metadata OCR skill. Without these on the allow-list,
           #   the Action blocks them (no interactive approval in CI) and OCR fails.
-          claude_args: "--allowedTools 'Bash(npm ci),Bash(npm install *),Bash(npm run *),Bash(git add:*),Bash(git commit:*),Bash(git rm:*),Bash(curl:*),Bash(convert:*),Bash(magick:*),Bash(pdftoppm:*),Bash(pdftotext:*),Bash(tesseract:*),Bash(python3:*),Bash(.claude/skills/programme-metadata/scripts/extract-text.sh:*)'"
+          # npm audit / npm audit fix: let Claude inspect and fix dependency
+          #   vulnerabilities raised by the nightly security-audit workflow.
+          claude_args: "--allowedTools 'Bash(npm ci),Bash(npm install *),Bash(npm run *),Bash(npm audit),Bash(npm audit *),Bash(git add:*),Bash(git commit:*),Bash(git rm:*),Bash(curl:*),Bash(convert:*),Bash(magick:*),Bash(pdftoppm:*),Bash(pdftotext:*),Bash(tesseract:*),Bash(python3:*),Bash(.claude/skills/programme-metadata/scripts/extract-text.sh:*)'"
 
       # The action pushes a branch and posts a "Create PR" link but does NOT open
       # the PR itself. Open it automatically so the flow is hands-off end to end:
@@ -135,6 +137,11 @@ jobs:
           BRANCH: ${{ steps.claude.outputs.branch_name }}
           ISSUE: ${{ github.event.issue.number }}
           TITLE: ${{ github.event.issue.title }}
+          # True when the triggering issue is a `security` one (from the nightly
+          # security-audit workflow) — those PRs are infrastructural, so we assign
+          # them to Roger for sign-off. CODEOWNERS on package-lock.json already
+          # makes his review required to merge.
+          IS_SECURITY: ${{ contains(github.event.issue.labels.*.name, 'security') }}
         run: |
           if [ -n "$(gh pr list --repo "$REPO" --head "$BRANCH" --json number -q '.[0].number')" ]; then
             echo "A PR already exists for $BRANCH — nothing to do."
@@ -148,7 +155,11 @@ jobs:
           [ -z "$SUMMARY" ] && SUMMARY="$TITLE"
           BODY=$(printf '%s\n\nFixes #%s · [View the original request](%s/%s/issues/%s)' \
             "$SUMMARY" "$ISSUE" "$SERVER" "$REPO" "$ISSUE")
+          # Security PRs get assigned to Roger so he's notified for sign-off.
+          ASSIGN=""
+          if [ "$IS_SECURITY" = "true" ]; then ASSIGN="--assignee rogerfoxcroft"; fi
           gh pr create --repo "$REPO" --base main --head "$BRANCH" \
             --title "$TITLE" \
             --body "$BODY" \
+            $ASSIGN \
             || echo "::warning::Couldn't auto-open the PR (needs 'Allow GitHub Actions to create and approve pull requests' in Settings → Actions → General, or a PAT with Pull requests: write). Branch $BRANCH is pushed and the 'Create PR' link on the issue still works."
