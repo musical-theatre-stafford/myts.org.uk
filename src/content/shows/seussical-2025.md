@@ -3,6 +3,7 @@ title: Seussical
 dates_start: 2025-07-16
 dates_end: 2025-07-19
 poster: ./posters/seussical-2025.jpg
+photographer: GCG Photography
 ---
 
 Our July 2025 production of Seussical the Musical.

@@ -87,6 +87,7 @@ const eventSchema = {
       {show.data.poster && (
         <div class="poster">
           <Image src={show.data.poster} alt={`${show.data.title} poster`} width={800} height={1067} />
+          {show.data.photographer && <p class="photo-credit">Photos: {show.data.photographer}</p>}
         </div>
       )}
       <div class="body">
@@ -148,6 +149,7 @@ const eventSchema = {
     .detail { grid-template-columns: 1fr; }
   }
   .poster img { width: 100%; height: auto; border-radius: var(--myts-radius-lg); box-shadow: var(--myts-shadow-lg); }
+  .photo-credit { margin-top: 0.5rem; font-size: 0.8rem; color: var(--myts-muted); text-align: right; }
   .meta { color: var(--myts-muted); margin-bottom: 1rem; }
   .lede { font-size: 1.15rem; }
   .prose :global(p) { margin-bottom: 1rem; }
