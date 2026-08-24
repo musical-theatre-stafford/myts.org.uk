@@ -26,6 +26,8 @@ const shows = defineCollection({
       featured: z.boolean().default(false),
       // Short one-line hook shown on cards.
       blurb: z.string().max(200).optional(),
+      // Photo credit shown on the show page, e.g. "GCG Photography".
+      photographer: z.string().optional(),
     }),
 });
 

@@ -16,6 +16,7 @@ poster: ./posters/grease.jpg             # optional; relative to this file
 status: upcoming | current | past        # optional; auto-derived from dates otherwise
 featured: true                           # optional; boosts on homepage
 blurb: One-line hook for the card.       # optional; ≤ 200 chars
+photographer: GCG Photography            # optional; photo credit shown on the show page
 ---
 
 Long-form description here. Markdown supported.
