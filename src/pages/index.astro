@@ -33,7 +33,7 @@ const nextShowDateLabel = nextShow
 const homeEntry = (await getCollection('pages')).find(p => p.id === 'home');
 const HomeContent = homeEntry ? (await render(homeEntry)).Content : null;
 ---
-<BaseLayout>
+<BaseLayout description="Musical Youth Theatre Stafford (MYTS) is a youth theatre in Stafford staging musicals with young people aged 8–18 at the Stafford Gatehouse Theatre. See our upcoming and past productions.">
   <section class="hero">
     <div class="container hero-inner">
       <p class="eyebrow">Est. Stafford 2006</p>
