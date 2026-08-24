@@ -9,7 +9,7 @@ import ExtIcon from '../../components/ExtIcon.astro';
 import photoManifest from '../../data/photo-manifest.json';
 import nodaData from '../../data/noda.json';
 import nodaReports from '../../data/noda-reports.json';
-import { MEDIA } from '../../consts';
+import { MEDIA, SITE } from '../../consts';
 
 const programmeFiles = import.meta.glob('../../data/archive/*.json', { eager: true });
 
@@ -42,8 +42,43 @@ if (!show.data.status) {
 
 const fmt = (d: Date) => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 const dateLabel = end.getTime() !== start.getTime() ? `${fmt(start)} – ${fmt(end)}` : fmt(start);
+
+// Poster as the page's social share image (absolute URL).
+const posterUrl = show.data.poster
+  ? new URL((show.data.poster as any).src, Astro.site ?? SITE.url).toString()
+  : undefined;
+
+// Structured data so search engines can show the production as an event
+// (name, dates, venue, tickets) — helps rich results, especially for upcoming shows.
+const eventSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'TheaterEvent',
+  name: show.data.title,
+  startDate: start.toISOString().slice(0, 10),
+  endDate: end.toISOString().slice(0, 10),
+  eventStatus: 'https://schema.org/EventScheduled',
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  location: {
+    '@type': 'Place',
+    name: show.data.venue,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Stafford',
+      addressRegion: 'Staffordshire',
+      addressCountry: 'GB',
+    },
+  },
+  organizer: { '@type': 'Organization', name: SITE.title, url: SITE.url },
+  performer: { '@type': 'PerformingGroup', name: SITE.title },
+  ...(posterUrl ? { image: [posterUrl] } : {}),
+  ...(show.data.blurb ? { description: show.data.blurb } : {}),
+  ...(show.data.ticket_url
+    ? { offers: { '@type': 'Offer', url: show.data.ticket_url, availability: 'https://schema.org/InStock' } }
+    : {}),
+};
 ---
-<BaseLayout title={show.data.title} description={show.data.blurb ?? `${show.data.title} at ${show.data.venue}, ${dateLabel}`}>
+<BaseLayout title={show.data.title} description={show.data.blurb ?? `${show.data.title} at ${show.data.venue}, ${dateLabel}`} ogImage={posterUrl}>
+  <script type="application/ld+json" set:html={JSON.stringify(eventSchema)} />
   <section class="section">
     <div class="container">
       <p class="breadcrumb"><a href="/shows/">&larr; All shows</a></p>
