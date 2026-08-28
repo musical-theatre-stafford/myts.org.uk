@@ -2,6 +2,7 @@
 name: Abbie Ashall
 photo: ./images/abbie-ashall.jpg
 known_for: Co-creator & star of Spraywatch at the Edinburgh Fringe
+year_left: 2014
 link: https://lowfatproductions.com/spraywatch-the-musical
 ---
 
