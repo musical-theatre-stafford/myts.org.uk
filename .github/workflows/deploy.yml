@@ -21,11 +21,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
       - name: Build with Astro
-        uses: withastro/action@v3
+        uses: withastro/action@v6
         with:
-          # Astro 7 requires Node >= 22.12; withastro/action defaults to Node 20,
-          # so pin 22 here (matches the other workflows). Without this the build
-          # fails with "Node.js v20 is not supported by Astro".
+          # Astro 7 requires Node >= 22.12. withastro/action@v6 already defaults
+          # to Node 24, which satisfies that, but pin 22 explicitly to match the
+          # other workflows (setup-node uses 22) and keep the runtime consistent.
           node-version: 22
         # withastro/action installs deps, runs `astro build`, and uploads
         # the dist/ folder as the Pages artifact.
