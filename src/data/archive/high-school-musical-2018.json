@@ -19,7 +19,7 @@
   "cast": [
     { "character": "Troy Bolton",     "performer": "Alex Young" },
     { "character": "Gabriella Montez","performer": "Alex Lewis" },
-    { "character": "Sharpay Evans",   "performer": "Tabby Carr" },
+    { "character": "Sharpay Evans",   "performer": "Tabitha Carr" },
     { "character": "Ryan Evans",      "performer": "Charlie Allen-Smith" },
     { "character": "Chad",            "performer": "Jack Foster" },
     { "character": "Taylor",          "performer": "Aislinn Humphries" },
@@ -31,20 +31,23 @@
     { "character": "Martha",          "performer": "Brogan Pugh" },
     { "character": "Moderator",       "performer": "Olivia Atkinson" }
   ],
-  "cast_notes": "The principal cast page lists performers by first name only. Surnames were filled in by cross-referencing the Legally Blonde 2017 and Godspell 2019 programmes (the same company either side of this show) and the cast bios in this programme, then confirmed by Roger Foxcroft. Ensemble spellings were corrected against Godspell 2019 where the scan had mangled them; the ensemble list omits anyone already credited in the cast.",
-  "ensemble_and_chorus_partial": [
-    "Elizabeth Tomkinson", "Aoife Kerr", "Oscar Hill",
-    "Romily Tristam", "Scarlett Bryan", "Scarlett Draycott",
-    "Freya Groucott", "Isabell Draycott", "Ella Powell", "Sophie Pearce",
-    "Isla McEwan", "Leo Foetu-Foster", "Megan Foster",
-    "Michael Miller", "Amy Bufton", "Samuel Tincknell", "James Tincknell",
-    "Madison Lovelace", "Ewan Lovelace", "Fran Griffiths",
-    "Hannah Patrick",
-    "Alannah Mellors", "Lola Foster",
-    "Holly Foster", "Imogen Moore", "Isabella Keeling",
-    "Jack Saunders", "Murray Hotchkiss", "Evelyn Nicklin",
-    "Jessica Loach", "Emma Fernyhough"
+  "cast_notes": "The principal cast page lists performers by first name only. Surnames were filled in by cross-referencing the Legally Blonde 2017 and Godspell 2019 programmes (the same company either side of this show) and the cast bios in this programme, then confirmed by Roger Foxcroft.",
+  "ensemble": [
+    "Claudia Robb", "Elizabeth Tomkinson", "Oscar Hill", "Aoife Kerr",
+    "Bethany Calderbank", "Isla McEwan", "Jamie Gardner", "Leo Foetu-Foster",
+    "Megan Johnson", "Megan Richardson", "Romily Tristam", "Scarlett Bryan",
+    "Scarlett Draycott", "Freya Groucott", "Isabell Draycott", "Ella Powell",
+    "Sophie Pearce", "Michael Millar", "Samuel Tincknell", "Ewan Lovelace",
+    "James Tincknell", "Erin Holder", "Fran Griffiths", "Amy Bufton",
+    "Hannah Patrick", "Ruby Lewis", "Lydia Brough-Chesters", "Alannah Mellors",
+    "Libby Wilson", "Lola Foster", "Madison Lovelace", "Eve Keeling",
+    "Charlotte Cairns-Smith", "Evelyn Nicklin", "Cali Fudge", "Holly Foster",
+    "Ava Holloway", "Tolly Tams", "Hannah Kirby", "Imogen Moore",
+    "Jessica Loach", "Sam Rodi", "Toby Foetu-Foster", "Isabella Keeling",
+    "Caitlyn Harvey", "Charlie Tiernan", "Emma Fernyhough", "Megan Foster",
+    "Jack Saunders", "Murray Hotchkiss"
   ],
+  "ensemble_notes": "Company members not already credited in the cast list above, from the full company list supplied by Roger Foxcroft from the printed programme.",
   "production_team": [
     { "role": "Director / Choreographer", "person": "Hannah Morris" },
     { "role": "Musical Director",         "person": "Laura Foxcroft" },
