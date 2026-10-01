@@ -83,7 +83,7 @@
     { "role": "Wardrobe",              "person": "Helen Phillips", "note": "and team" },
     { "role": "Make-up",               "person": "Mandy Slade", "note": "and team" },
     { "role": "Properties",            "people": ["Peter Brown", "Pauline Brown"] },
-    { "role": "Publicity & Sponsorship","person": "Dave Slade" },
+    { "role": "Publicity & Sponsorship","person": "David Slade" },
     { "role": "Set",                   "person": "Mark Hawley" },
     { "role": "Front of House, Raffle & Programmes", "people": ["Jan Lawton", "Julie Perry"], "note": "and teams" },
     { "role": "Programme (compiled)",  "person": "Claire Saunders" },

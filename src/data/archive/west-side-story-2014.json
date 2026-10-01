@@ -100,14 +100,14 @@
     { "role": "Chaperones", "person": "Julie Perry & Team" },
     { "role": "Ticket Secretary", "people": ["Jo Golding", "Karen Walton"] },
     { "role": "Original Artwork", "person": "Jamie Candlin" },
-    { "role": "Publicity and Finance", "person": "Dave Slade" },
+    { "role": "Publicity and Finance", "person": "David Slade" },
     { "role": "Programme Design & Printing", "person": "KJB UK Ltd" }
   ],
   "society_officers": {
     "MYTS Chairman": "Mark Hawley",
     "Vice Chair": "Kevin Bennett",
     "Secretary": "Sarah Bishop",
-    "Treasurer": "Dave Slade",
+    "Treasurer": "David Slade",
     "Committee Members": ["Jo Golding", "Jan Lawton", "Julie Perry", "Karen Walton", "Calum Robarts", "Roger Foxcroft", "Tim Downes", "Louise Lyle"]
   },
   "gatehouse_theatre_officials": [

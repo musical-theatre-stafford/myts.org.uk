@@ -59,14 +59,18 @@
     ],
     "note": "The 'Cast Band' section listed people alongside instruments; the OCR order suggests some names may not have instrument labels aligned — verify against the printed page."
   },
-  "orchestra": {
+  "band": {
     "musicians": [
       { "instrument": "Bass",       "player": "Jon Burr" },
       { "instrument": "Drums",      "player": "Jack Groom" },
       { "instrument": "Percussion", "player": "Matthew Davis" },
       { "instrument": "Guitar 1",   "player": "Rich Rowley" },
-      { "instrument": "Piano/Repetiteur/MD support", "person_names": ["Doug McMillan", "Roger Foxcroft", "Abbie Ovens", "Calum Robarts"], "note": "Names appeared under the orchestra block but their specific instruments are ambiguous in the OCR." }
-    ]
+      { "instrument": "Guitar 2",   "player": "Doug McMillan" },
+      { "instrument": "Keyboard 1", "player": "Roger Foxcroft" },
+      { "instrument": "Keyboard 2", "player": "Abbey Ovens" },
+      { "instrument": "Reeds",      "player": "Calum Robarts" }
+    ],
+    "note": "Transcribed from the band panel in the printed programme, read directly from the page."
   },
   "production_team": [
     { "role": "Director",         "person": "David Reynolds" },

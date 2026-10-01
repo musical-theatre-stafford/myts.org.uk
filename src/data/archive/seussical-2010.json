@@ -86,7 +86,7 @@
     { "role": "Wardrobe",              "person": "Jean Cox" },
     { "role": "Make-Up",               "person": "Ruby Ashton", "note": "and team" },
     { "role": "Properties",            "people": ["Michelle Cox", "Kerry Roberts", "Mandy Alcock"] },
-    { "role": "Publicity",             "person": "Dave Slade", "note": "and Publicity Team" },
+    { "role": "Publicity",             "person": "David Slade", "note": "and Publicity Team" },
     { "role": "Set",                   "person": "George Hawley" },
     { "role": "Raffle Organiser",      "person": "Cath Jackson" },
     { "role": "Programme (compiled)",  "person": "Claire Saunders" },
@@ -98,7 +98,7 @@
       "Chairman":       "Tim Downes",
       "Vice-Chairman":  "Diane Phizacklea",
       "Secretary":      "Katie Hayes",
-      "Treasurer":      "Dave Slade",
+      "Treasurer":      "David Slade",
       "Committee Members": [
         "Ben Biddle", "Michelle Cox", "Calum Robarts", "Jo Golding",
         "George Hawley", "Anne-Marie Ferguson"
