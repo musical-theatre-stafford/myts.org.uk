@@ -18,7 +18,7 @@
     "pdf_bytes": 12838301,
     "extracted_from_pages": 16,
     "extraction_method": "OCR (scanned PDF, no embedded text)",
-    "note": "The committee list on the Appointments page (p.13) reads 'George Hawley, Chair', but the Chairman's welcome letter (p.3) is signed 'Mark Hawley, MYTS Chairman' and Mark Hawley is also named MYTS Chairman in the neighbouring 2013 Footloose programme — 'George Hawley' is most likely an OCR misread and 'Mark Hawley' is used here; worth a human check. Reed 4's surname ('Anna Lamplou') and the adult role billed as 'A Boy' (performer Charlie Allen-Smith) are also uncertain from the scan."
+    "note": "The committee list on the Appointments page (p.13) reads 'George Hawley, Chair', but the Chairman's welcome letter (p.3) is signed 'Mark Hawley, MYTS Chairman' and Mark Hawley is also named MYTS Chairman in the neighbouring 2013 Footloose programme — George is Mark Hawley's middle name, which he sometimes went by, so 'Mark Hawley' is used here for consistency (confirmed by Roger Foxcroft)."
   },
   "cast": [
     { "character": "Riff", "performer": "Alistair Peet" },
@@ -47,7 +47,7 @@
     { "character": "Consuela", "performer": "Laura Pyatt" },
     { "character": "Francisca", "performer": "Kelly Slade" },
     { "character": "Margarita", "performer": "Holly Garratley" },
-    { "character": "A Boy", "performer": "Charlie Allen-Smith(?)", "note": "Role name as printed is uncertain from the scan." },
+    { "character": "A Boy", "performer": "Charlie Allen-Smith", "note": "Role name as printed is uncertain from the scan." },
     { "character": "Doc", "performer": "Abbie Venables" },
     { "character": "Schrank", "performer": "Aaron Mace" },
     { "character": "Krupke", "performer": "Sam Simkin" },
@@ -70,7 +70,7 @@
       { "instrument": "Reed 1 (Alto, Bb Clarinet, Flute, Piccolo)", "player": "Pete Godfrey" },
       { "instrument": "Reed 2 (Alto, Bb+Eb Clarinet, Flute, Piccolo)", "player": "Liz Oughton" },
       { "instrument": "Reed 3 (Bb Clarinet, Flute, Piccolo, Tenor)", "player": "Andy Smith" },
-      { "instrument": "Reed 4 (Bb Clarinet, Baritone, Bass Clarinet)", "player": "Anna Lamplou(?)" },
+      { "instrument": "Reed 4 (Bb Clarinet, Baritone, Bass Clarinet)", "player": "Anna Lamplough" },
       { "instrument": "Reed 5 (Bassoon)", "player": "Ron Buckley" },
       { "instrument": "Trumpet 1", "player": "Neil Fryer" },
       { "instrument": "Trumpet 2", "player": "Alan Holder" },

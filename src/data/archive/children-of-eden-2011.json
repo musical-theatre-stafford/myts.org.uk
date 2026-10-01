@@ -20,7 +20,7 @@
   },
   "cast": [
     { "character": "Father",       "performer": "Andrew Ridal" },
-    { "character": "Adam",         "performer": "Oliver Dickson", "note": "Also spelled 'Dixon' in the ensemble list — OCR uncertainty; verify against printed page." },
+    { "character": "Adam",         "performer": "Oliver Dickson" },
     { "character": "Eve",          "performer": "Stephanie Golding" },
     { "character": "Cain",         "performer": "Tom Slade" },
     { "character": "Abel",         "performer": "Lewis Warren" },
@@ -30,7 +30,7 @@
     { "character": "Mama Noah",    "performer": "Holly Musgrave" },
     { "character": "Japheth",      "performer": "Josh Russell" },
     { "character": "Yonah",        "performer": "Alex Smith" },
-    { "character": "Ham",          "performer": "Becky Bates" },
+    { "character": "Ham",          "performer": "Rebecca Bate" },
     { "character": "Aphra / Snake","performer": "Kelly Slade" },
     { "character": "Aysha",        "performer": "Eden Baker" },
     { "character": "Shem / Snake", "performer": "Abigail Venables" },
@@ -41,36 +41,38 @@
     { "character": "Soloist",      "performer": "Roxanne Warrilow" },
     { "character": "Soloist",      "performer": "Sarah Russell" }
   ],
-  "ensemble": {
-    "note": "The company/storytellers page (page 6) was heavily obscured by layout artefacts in OCR; names below are partial and best-guess.",
-    "performers": [
-      "Alex Baker", "Eden Baker", "Molly Barnes", "Rebecca Bate",
-      "Joshua Bennett", "Oliver Bennett", "Charlie Bishop", "Nicola Blagg",
-      "Bethany Boulton", "Chloe Bradshaw", "Natalie Bradshaw",
-      "George Brown", "Jacob Brown", "Jennie Brunskill", "Alfie Cortes-Pooler",
-      "Cassie Curno", "Lauren Curno", "Oliver Dixon", "Euan Flynn", "Niamh Flynn",
-      "Holly Garratley", "Ellena Godwin", "Stephanie Golding",
-      "Emily Hancock", "Carter Harrison", "Emilia Harrison",
-      "Charlotte Henshaw", "Rebecca Henshaw", "Hannah Hurley",
-      "Susie Lakin", "Zoe Lakin(?)", "Hannah Lilburne", "Katie Lord", "Becky Lyle",
-      "Aaron Mace", "Jordan Mace",
-      "Amy Matthews", "K. Matthews(?)", "Lucy Matthews",
-      "Hannah Musgrave", "Holly Musgrave",
-      "Jac Norris", "Alex Osborne", "Eve Phillips(?)",
-      "Sofia Pownall", "Hannah Revell", "Josh Russell", "Sarah Russell",
-      "Kelly Slade", "Tom Slade", "Alex Smith", "Charlotte Smith", "Hannah Smith",
-      "Phoebe Squires", "Alex Stewart", "Charlotte (?)",
-      "Eleanor Turner", "Abigail Venables", "Rebecca Waldron", "Eleanor Walker",
-      "Lewis Warren", "Roxanne Warrilow", "Beatrice Wilkinson", "Erika Withers"
-    ],
-    "non_performing_members": [
-      "Erdwin(?)", "Lauren Hough", "Shackleton(?)", "Shani Swift", "Amber (?)", "Millie Yates"
-    ]
-  },
+  "ensemble": [
+    "Alex Baker", "Molly Barnes", "Charlie Bishop", "Nicola Blagg",
+    "Bethany Boulton", "Chloe Bradshaw", "Natalie Bradshaw", "George Brown",
+    "Jacob Brown", "Jennie Brunskill", "Alfie Cortes-Pooler", "Cassie Curno",
+    "Lauren Curno", "Niamh Flynn", "Ellena Godwin", "Emily Hancock",
+    "Carter Harrison", "Emilia Harrison", "Charlotte Henshaw", "Rebecca Henshaw",
+    "Hannah Hurley", "Hannah Lilburne", "Katie Lord",
+    "Aaron Mace", "Jordan Mace", "Amy Matthews", "Katie Matthews",
+    "Lucy Matthews", "Hannah Musgrave", "Jac Norris", "Alex Osborne",
+    "Sofia Pownall", "Hannah Revell", "Charlotte Smith", "Hannah Smith",
+    "Phoebe Squires", "Alex Stewart", "Charlotte Tatler", "Eleanor Turner",
+    "Rebecca Waldron", "Eleanor Walker", "Beatrice Wilkinson", "Erika Withers"
+  ],
+  "ensemble_notes": "Company members not already credited in the cast list above. The company page (page 6) was heavily obscured in the scan; incomplete names were completed by cross-referencing the Narnia 2009, Seussical 2010, Les Misérables 2012 and Footloose 2013 programmes and the alphabetical order of the list.",
+  "non_performing_members": [
+    "Jasmine Erdwin", "Lauren Hough", "Amelia Shackleton", "Shani Swift",
+    "Amber Walton", "Milly Yates"
+  ],
   "band": {
-    "note": "The Band panel was heavily overlaid with the following-page bio, so instrument-to-player mapping could not be recovered from OCR with confidence. Calum Robarts is legible as one of the players (possibly conductor/keys).",
-    "instruments_listed": ["Bass", "Cello", "Drums", "French Horn", "Guitar", "Keyboard 1", "Keyboard 2", "Reed 1", "Reed 2", "Reed 3"],
-    "players_visible": ["Calum Robarts"]
+    "musicians": [
+      { "instrument": "Bass",        "player": "Jon Burr" },
+      { "instrument": "Cello",       "player": "Dan Bradley" },
+      { "instrument": "Drums",       "player": "Dan Haywood" },
+      { "instrument": "French Horn", "player": "Bill Moss" },
+      { "instrument": "Guitar",      "player": "Rich Rowley" },
+      { "instrument": "Keyboard 1",  "player": "Roger Foxcroft" },
+      { "instrument": "Keyboard 2",  "player": "Tim Sagar" },
+      { "instrument": "Reed 1",      "player": "Peter Godfrey" },
+      { "instrument": "Reed 2",      "player": "Anna Lamplough" },
+      { "instrument": "Reed 3",      "player": "Calum Robarts" }
+    ],
+    "note": "The Band panel did not survive OCR; the line-up was supplied by Roger Foxcroft (Keyboard 1)."
   },
   "production_team": [
     { "role": "Director",              "person": "David Reynolds" },
