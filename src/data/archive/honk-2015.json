@@ -72,7 +72,7 @@
     { "role": "Musical Director", "person": "Matthew Davis" },
     { "role": "Choreographer", "person": "Rachel Millar", "note": "director also choreographed" },
     { "role": "Ticket Sales", "people": ["Elaine Bennett", "Carolyn Chapman"] },
-    { "role": "Stage Manager", "person": "George Hawley" },
+    { "role": "Stage Manager", "person": "Mark Hawley" },
     { "role": "Costume / Wardrobe", "people": ["Julie Perry", "Gaynor", "Clare"], "note": "and team" },
     { "role": "Make-up", "person": "Mandy Slade", "note": "and team" },
     { "role": "Properties", "person": "Kevin Bennett" },
