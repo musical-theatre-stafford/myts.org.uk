@@ -42,14 +42,9 @@
     { "character": "Jeter",             "performer": "Lewis Warren" },
     { "character": "Bickle",            "performer": "Joshua Bennett" },
     { "character": "Garvin",            "performer": "Charlie Bishop" },
-    { "character": "Cowboy Bobbie",     "performer": "Roxanne Warrilow" }
+    { "character": "Cowboy Bobbie",     "performer": "Roxanne Warrilow" },
+    { "character": "Cast Band",         "performer": "Jack Anthony, Thomas Hawley, Katie Lord, Hannah Smith, Alex Stewart, Eleanor Walker, Emilia Harrison, Jac Norris, Sarah Russell, Roxanne Warrilow" }
   ],
-  "cast_band": [
-    "Jack Anthony", "Thomas Hawley", "Katie Lord", "Hannah Smith",
-    "Alex Stewart", "Eleanor Walker", "Emilia Harrison", "Jac Norris",
-    "Sarah Russell", "Roxanne Warrilow"
-  ],
-  "cast_band_notes": "Cast members who played in the on-stage band. The programme lists names only, without instruments.",
   "band": {
     "musicians": [
       { "instrument": "Bass",       "player": "Jon Burr" },
