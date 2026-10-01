@@ -109,7 +109,6 @@
       { "scene": 4, "title": "I Can't Stand Still" },
       { "scene": 5, "title": "Learning to be Silent" },
       { "scene": 6, "title": "Holding Out for a Hero" },
-      { "scene": 7, "title": "Somebody's Eyes" },
       { "scene": 7, "title": "Somebody's Eyes (Reprise)" },
       { "scene": 8, "title": "Somebody's Eyes" },
       { "scene": 8, "title": "Heaven Help Me" },
@@ -125,7 +124,7 @@
       { "scene": 6, "title": "Heaven Help Me (Reprise)" },
       { "scene": 6, "title": "Can You Find It in Your Heart? (Reprise)" },
       { "scene": 7, "title": "Footloose Finale" },
-      { "scene": null, "title": "Megamix" }
+      { "scene": 7, "title": "Megamix" }
     ]
   }
 }

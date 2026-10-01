@@ -38,22 +38,20 @@
     { "character": "Penny", "performer": "Emily Chapman" },
     { "character": "Mother Swan", "performer": "Cydney Beech" },
     { "character": "Jack Daw", "performer": "Gus Espinosa" },
-    { "character": "The Turkey", "performer": "Alex Young" }
+    { "character": "The Turkey", "performer": "Alex Young" },
+    { "character": "New Born Ducklings", "performer": "Isaac Curno, George Brown, Charlie Allen-Smith, Matthew Murray, Olivia Wilson, Phoebe Reynolds, Eliza Wilkinson, Stephanie Tomkinson" },
+    { "character": "Teenage Ducklings", "performer": "Lewis Warren, Charlie Bishop, Gus Espinosa, Alicia Cortes-Pooler, Maddison Seed, Sofia Pownall, Hannah Lilburne, Samantha Blundy" }
   ],
   "cast_notes": "The cast-list page had a two-column layout that OCR interleaved; role-to-performer order was reconstructed from matching list lengths and is high-confidence.",
   "ensemble": [
-    "Isaac Curno", "George Brown", "Charlie Allan-Smith", "Matthew Murray",
-    "Olivia Wilson", "Phoebe Reynolds", "Eliza Wilkinson", "Stephanie Tomkinson",
-    "Carys Barker", "Lewis Warren", "Charlie Bishop", "Alfie Cortes-Pooler(?)",
-    "Maddison Seed", "Sofia Pownall", "Hannah Lilourne", "Samantha Blundy",
-    "Amelia Benoit", "Chloe Bradshaw", "Olivia Busby", "Evan Flynn",
-    "Jasmine Gardner", "Molly Hancock", "Aislinn Humphries", "Eve Keeling",
-    "Lydia Thomson", "Maia Till", "Rosie Wilkes", "Erica Withers",
-    "Isabella Beech", "Jennie Brunskill", "Lauren Curno", "Emilia Harrison",
-    "Thomas Hawley", "Sophie Pearce", "Megan Richardson", "Jack Saunders",
-    "Charlotte Tatler"
+    "Carys Barker", "Amelia Benoit", "Chloe Bradshaw", "Olivia Busby",
+    "Euan Flynn", "Jasmine Gardner", "Molly Hancock", "Aislinn Humphries",
+    "Eve Keeling", "Lydia Thomson", "Maia Till", "Rosie Wilkes",
+    "Erika Withers", "Isabella Beech", "Jennie Brunskill", "Lauren Curno",
+    "Emilia Harrison", "Thomas Hawley", "Sophie Pearce", "Megan Richardson",
+    "Jack Saunders", "Charlotte Tatler"
   ],
-  "ensemble_notes": "The programme grouped the ensemble as New Born Ducklings, Teenage Ducklings and Chorus (in that order above), but OCR column interleaving made the exact New Born/Teenage boundary uncertain, so all three groups are combined here. 'Alfie Cortes-Pooler' was OCR'd as 'Alicia'; corrected against the Footloose 2013 and Children of Eden 2011 programmes, which list an 'Alfie Cortes-Pooler' in the MYTS ensemble of this era.",
+  "ensemble_notes": "The Chorus. The New Born and Teenage Ducklings are listed as groups in the cast, as the programme prints them (read directly from the page). 'Evan Flynn' and 'Erica Withers' in the scan are corrected to Euan Flynn and Erika Withers, as every other programme of the era has them.",
   "band": {
     "musicians": [
       { "instrument": "Reed 1", "player": "Anna Lamplough" },
