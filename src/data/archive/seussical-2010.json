@@ -63,18 +63,21 @@
     ]
   },
   "band": {
-    "note": "Band panel on page 8 was partially obscured; the instrument-to-player alignment for a few lines could not be fully recovered from OCR.",
     "musicians": [
-      { "instrument": "Reed 3",     "player": "Neil Fryer" },
-      { "instrument": "Reed (1 or 2)","player": "Tanya Harrison(?)" },
-      { "instrument": "Reed (1 or 2)","player": "Glyn Adams(?)" },
-      { "instrument": "Keyboard 1", "player": "Roger Foxcroft" },
-      { "instrument": "Keyboard 2", "player": "Tim Sagar" },
-      { "instrument": "unclear",    "player": "Tim Waring(?)" },
-      { "instrument": "Bass(?)",    "player": "Jon Burr" },
-      { "instrument": "unclear",    "player": "Chris Regnauld(?)" },
-      { "instrument": "Percussion", "player": "Andrew Ridal" }
-    ]
+      { "instrument": "Reed 1",      "player": "Peter Godfrey" },
+      { "instrument": "Reed 2",      "player": "Calum Robarts" },
+      { "instrument": "Reed 3",      "player": "Norman Hogg" },
+      { "instrument": "Trumpet 1",   "player": "Neil Fryer" },
+      { "instrument": "Trumpet 2",   "player": "Tanya Harrison" },
+      { "instrument": "Trombone",    "player": "Glyn Adams" },
+      { "instrument": "Keyboard 1",  "player": "Roger Foxcroft" },
+      { "instrument": "Keyboard 2",  "player": "Tim Sagar" },
+      { "instrument": "Guitar",      "player": "Tim Waring" },
+      { "instrument": "Bass",        "player": "Jon Burr" },
+      { "instrument": "Drums",       "player": "Chris Regnauld" },
+      { "instrument": "Percussion",  "player": "Andrew Ridal" }
+    ],
+    "note": "Transcribed from the band panel in the printed programme, read directly from the page."
   },
   "production_team": [
     { "role": "Director",              "person": "David Reynolds" },
