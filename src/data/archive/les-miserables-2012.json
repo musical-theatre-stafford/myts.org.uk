@@ -28,7 +28,7 @@
     { "character": "Cosette", "performer": "Helen Sherrard" },
     { "character": "Young Cosette", "performer": "Rebecca Henshaw" },
     { "character": "Eponine", "performer": "Abigail Venables" },
-    { "character": "Enjolras", "performer": "Tom Slade" },
+    { "character": "Enjolras", "performer": "Thomas Slade" },
     { "character": "Thénardier", "performer": "Lewis Warren" },
     { "character": "Madame Thénardier", "performer": "Stephanie Golding" },
     { "character": "Feuilly", "performer": "Josh Barry", "note": "ABC Society" },
@@ -70,7 +70,7 @@
     { "character": "Sentry", "performer": "Lauren Curno" },
     { "character": "Urchin", "performer": "Euan Flynn" },
     { "character": "Worker 1", "performer": "Jack Anthony" },
-    { "character": "Worker 2", "performer": "Tom Hawley" },
+    { "character": "Worker 2", "performer": "Thomas Hawley" },
     { "character": "Young Eponine", "performer": "Phoebe Jones" }
   ],
   "ensemble": [
@@ -92,7 +92,7 @@
       { "instrument": "Keyboard 1", "player": "Roger Foxcroft" },
       { "instrument": "Keyboard 2", "player": "Abbie Ovens" },
       { "instrument": "Keyboard 3", "player": "Stewart Haydon" },
-      { "instrument": "Reed 1", "player": "Pete Godfrey" },
+      { "instrument": "Reed 1", "player": "Peter Godfrey" },
       { "instrument": "Reed 2", "player": "Viki Butler" },
       { "instrument": "Trombone", "player": "Glyn Adams" },
       { "instrument": "Trumpet 1", "player": "Neil Fryer" },

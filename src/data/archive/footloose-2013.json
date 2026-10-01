@@ -20,7 +20,7 @@
     "extraction_method": "OCR (scanned PDF, no embedded text)"
   },
   "cast": [
-    { "character": "Ren McCormack",     "performer": "Tom Slade" },
+    { "character": "Ren McCormack",     "performer": "Thomas Slade" },
     { "character": "Ethel McCormack",   "performer": "Jennie Brunskill" },
     { "character": "Reverend Shaw Moore","performer": "Will Berrington" },
     { "character": "Vi Moore",          "performer": "Abigail Venables" },
@@ -47,7 +47,7 @@
   "cast_band": {
     "musicians": [
       { "instrument": "Guitar 2",    "player": "Jack Anthony" },
-      { "instrument": "Keyboard 1",  "player": "Tom Hawley" },
+      { "instrument": "Keyboard 1",  "player": "Thomas Hawley" },
       { "instrument": "Keyboard 2",  "player": "Katie Lord" },
       { "instrument": "Reeds",       "player": "Hannah Smith" },
       { "instrument": null,          "player": "Alex Stewart" },
@@ -63,7 +63,7 @@
     "musicians": [
       { "instrument": "Bass",       "player": "Jon Burr" },
       { "instrument": "Drums",      "player": "Jack Groom" },
-      { "instrument": "Percussion", "player": "Matt Davis" },
+      { "instrument": "Percussion", "player": "Matthew Davis" },
       { "instrument": "Guitar 1",   "player": "Rich Rowley" },
       { "instrument": "Piano/Repetiteur/MD support", "person_names": ["Doug McMillan", "Roger Foxcroft", "Abbie Ovens", "Calum Robarts"], "note": "Names appeared under the orchestra block but their specific instruments are ambiguous in the OCR." }
     ]
@@ -94,7 +94,7 @@
     "Jamie Beddow", "Jasmine Gardner", "Jordan Mace", "Katie Bishop",
     "Katie Lord", "Lauren Curno", "Leah Parker", "Maddison Seed",
     "Molly Barnes", "Natalie Bradshaw", "Pippa Munro", "Rebecca Henshaw",
-    "Sarah Russell", "Sofia Pownall", "Sophie Pearce", "Tom Hawley"
+    "Sarah Russell", "Sofia Pownall", "Sophie Pearce", "Thomas Hawley"
   ],
   "ensemble_notes": "Company members not already credited in the cast list above, reconstructed from the pictorial ensemble spread on pages 9-11 and cross-checked against the neighbouring Children of Eden 2011, Les Misérables 2012 and West Side Story 2014 programmes.",
   "musical_numbers": {

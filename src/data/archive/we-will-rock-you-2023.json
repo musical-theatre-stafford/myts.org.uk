@@ -25,7 +25,7 @@
     { "character": "Khashoggi", "performer": "Toby Hassall" },
     { "character": "Brit", "performer": "Toby Foetu-Foster" },
     { "character": "Oz", "performer": "Annie Connell" },
-    { "character": "Buddy", "performer": "Sam Tincknell" },
+    { "character": "Buddy", "performer": "Samuel Tincknell" },
     { "character": "Globalsoft Manager", "performer": "Gabrielle Preece" },
     { "character": "GaGa Student 1", "performer": "Daisy Lazenby" },
     { "character": "GaGa Student 2", "performer": "Milly Green" },
@@ -34,7 +34,7 @@
     { "character": "Aretha (Bohemian)", "performer": "Rosie Prince" },
     { "character": "Bruce (Bohemian)", "performer": "Libby Wilson" },
     { "character": "Madonna (Bohemian)", "performer": "Xanthe Gowodo" },
-    { "character": "Michael (Bohemian)", "performer": "Issy Draycott" },
+    { "character": "Michael (Bohemian)", "performer": "Isabell Draycott" },
     { "character": "John (Bohemian)", "performer": "Lola Foster" },
     { "character": "Paul (Bohemian)", "performer": "Joel Tennant" },
     { "character": "George (Bohemian)", "performer": "Alex Birch" },
@@ -57,7 +57,7 @@
       { "instrument": "Bass", "player": "Jon Burr" },
       { "instrument": "Keys 1", "player": "Roger Foxcroft" },
       { "instrument": "Keys 2", "player": "Laura Foxcroft" },
-      { "instrument": "Drums", "player": "Matt Davis" },
+      { "instrument": "Drums", "player": "Matthew Davis" },
       { "instrument": "Percussion", "player": "Ben Foxcroft" }
     ],
     "note": "A live band, rather than the Young@Part backing tracks usually licensed for this edition."
