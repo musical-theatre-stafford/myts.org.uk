@@ -7,7 +7,7 @@
     "organisation": "MYTS",
     "venue": "Stafford Gatehouse Theatre",
     "dates": null,
-    "dates_note": "Programme does not clearly state the run dates. Historically MYTS's July show; this was MYTS's 4th annual production. If you know the exact dates, please fill in.",
+    "dates": "7-10 July 2010",
     "music": ["Stephen Flaherty"],
     "lyrics": ["Lynn Ahrens"],
     "book": ["Lynn Ahrens", "Stephen Flaherty"],
@@ -115,8 +115,7 @@
       "Assistant Treasurer":  "Ruby Ashton",
       "Ticket Secretary":     "Ron Jackson",
       "Membership Secretary": "Sarah Bishop",
-      "Press Officer":        "Calum Robarts",
-      "Committee Members":    ["Isobel Walter", "Andrew Ridal", "Maltese-Preston(?)"]
+      "Press Officer":        "Calum Robarts"
     },
     "Patron":  "John Wood",
     "Chairman (SDOS)": "Sue Zurawiel"
