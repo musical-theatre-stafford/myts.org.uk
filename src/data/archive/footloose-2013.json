@@ -23,7 +23,7 @@
     { "character": "Ren McCormack",     "performer": "Tom Slade" },
     { "character": "Ethel McCormack",   "performer": "Jennie Brunskill" },
     { "character": "Reverend Shaw Moore","performer": "Will Berrington" },
-    { "character": "Vi Moore",          "performer": "Abbie Venables" },
+    { "character": "Vi Moore",          "performer": "Abigail Venables" },
     { "character": "Ariel Moore",       "performer": "Becky Lyle" },
     { "character": "Lulu Warnicker",    "performer": "Holly Garratley" },
     { "character": "Wes Warnicker",     "performer": "Jacob Brown" },
@@ -40,9 +40,9 @@
     { "character": "Willard Hewitt",    "performer": "Sam Simkin" },
     { "character": "Principal Harry Clark", "performer": "Lucy Palmer" },
     { "character": "Jeter",             "performer": "Lewis Warren" },
-    { "character": "Bickle",            "performer": "Josh Bennett" },
+    { "character": "Bickle",            "performer": "Joshua Bennett" },
     { "character": "Garvin",            "performer": "Charlie Bishop" },
-    { "character": "Cowboy Bobbie",     "performer": "Roxy Warrilow" }
+    { "character": "Cowboy Bobbie",     "performer": "Roxanne Warrilow" }
   ],
   "cast_band": {
     "musicians": [
@@ -55,7 +55,7 @@
       { "instrument": null,          "player": "Emilia Harrison" },
       { "instrument": null,          "player": "Jac Norris" },
       { "instrument": null,          "player": "Sarah Russell" },
-      { "instrument": null,          "player": "Roxy Warrilow" }
+      { "instrument": null,          "player": "Roxanne Warrilow" }
     ],
     "note": "The 'Cast Band' section listed people alongside instruments; the OCR order suggests some names may not have instrument labels aligned — verify against the printed page."
   },
@@ -65,7 +65,7 @@
       { "instrument": "Drums",      "player": "Jack Groom" },
       { "instrument": "Percussion", "player": "Matt Davis" },
       { "instrument": "Guitar 1",   "player": "Rich Rowley" },
-      { "instrument": "Piano/Repetiteur/MD support", "person_names": ["Doug McMillan", "Roger Foxcroft", "Abbey Ovens", "Calum Robarts"], "note": "Names appeared under the orchestra block but their specific instruments are ambiguous in the OCR." }
+      { "instrument": "Piano/Repetiteur/MD support", "person_names": ["Doug McMillan", "Roger Foxcroft", "Abbie Ovens", "Calum Robarts"], "note": "Names appeared under the orchestra block but their specific instruments are ambiguous in the OCR." }
     ]
   },
   "production_team": [
@@ -83,24 +83,20 @@
     { "role": "Technical/Stage Manager",    "person": "Matt Glass" },
     { "role": "Lighting",                   "person": "Mark Elkin" }
   ],
-  "ensemble_partial": [
-    "Aaron Mace", "Abbie Venables", "Alex Baker", "Alex Osborne", "Alex Smith",
-    "Alex Stewart", "Alfie Cortes-Pooler", "Alistair Peet", "Amber Walton",
-    "Beatrice Wilkinson", "Becky Lyle", "Bethany Boulton", "Cassie Curno",
-    "Charlotte Tatler", "Charlie Bishop", "Charlotte Henshaw", "Charlotte Smith",
-    "Chloe Bradshaw", "Eleanor Turner", "Eleanor Walker", "Elena Godwin",
-    "Emily Chapman", "Emily Hancock", "Emilia Harrison", "Erika Withers",
-    "Euan Flynn", "Eve Phillips", "Freya Perry", "George Brown",
-    "Georgia Holloway", "Hannah Hurley", "Hannah Lilburne", "Hannah Revell",
-    "Hannah Smith", "Holly Garratley", "Jac Norris", "Jack Anthony", "Jacob Brown",
-    "James Beddow", "Jasmine Gardner", "Jennie Brunskill", "Jordan Mace",
-    "Josh Bennett", "Josh Jones", "Josh Russell", "Katie Bishop", "Katie Lord",
-    "Kelly Slade", "Lauren Curno", "Leah Parker", "Lewis Warren", "Lucy Palmer",
-    "Maddison Seed", "Molly Barnes", "Natalie Bradshaw", "Nicola Blagg",
-    "Pippa Munro", "Rebecca Henshaw", "Roxy Warrilow", "Sam Morris", "Sam Simkin",
-    "Sarah Russell", "Sean Pownall", "Sophie Pearce", "Tom Hawley", "Tom Slade"
+  "ensemble": [
+    "Aaron Mace", "Alex Baker", "Alex Stewart", "Alfie Cortes-Pooler",
+    "Beatrice Wilkinson", "Bethany Boulton", "Cassie Curno", "Charlotte Tatler",
+    "Charlotte Henshaw", "Charlotte Smith", "Chloe Bradshaw", "Eleanor Turner",
+    "Eleanor Walker", "Ellena Godwin", "Emily Chapman", "Emily Hancock",
+    "Emilia Harrison", "Erika Withers", "Euan Flynn", "Eve Phillips",
+    "Freya Perry", "George Brown", "Georgia Holloway", "Hannah Hurley",
+    "Hannah Lilburne", "Hannah Revell", "Hannah Smith", "Jack Anthony",
+    "Jamie Beddow", "Jasmine Gardner", "Jordan Mace", "Katie Bishop",
+    "Katie Lord", "Lauren Curno", "Leah Parker", "Maddison Seed",
+    "Molly Barnes", "Natalie Bradshaw", "Pippa Munro", "Rebecca Henshaw",
+    "Sarah Russell", "Sofia Pownall", "Sophie Pearce", "Tom Hawley"
   ],
-  "ensemble_notes": "Names reconstructed from the OCR of the pictorial ensemble spread on pages 9-11; several are corrupted by page layout artefacts and may need correction.",
+  "ensemble_notes": "Company members not already credited in the cast list above, reconstructed from the pictorial ensemble spread on pages 9-11 and cross-checked against the neighbouring Children of Eden 2011, Les Misérables 2012 and West Side Story 2014 programmes.",
   "musical_numbers": {
     "act_1_scenes": [
       { "scene": 1, "title": "Footloose" },

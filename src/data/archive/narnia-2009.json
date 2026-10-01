@@ -19,7 +19,7 @@
   },
   "cast": [
     { "character": "Peter", "performer": "David Anderson" },
-    { "character": "Susan", "performer": "Abbie Venables" },
+    { "character": "Susan", "performer": "Abigail Venables" },
     { "character": "Edmund", "performer": "Thomas Slade", "note": "Billed as 'Tom Slade' on the cast list; full name taken from his cast bio." },
     { "character": "Lucy", "performer": "Amelia Shackleton" },
     { "character": "Aslan", "performer": "Oliver Bennett" },
@@ -58,7 +58,7 @@
       "Stephanie Golding", "Amber Walton", "Scott Bagnall", "Emily Phillips",
       "Lauren Moseley", "Amy Oakden", "Emily Kimber", "Imogen Bloxham",
       "Eloise Beeching", "Emily Illingworth", "Alex Smith", "Samantha Wylie",
-      "David Anderson", "Abbie Venables", "Holly Garratley", "Nicole Roberts",
+      "David Anderson", "Abigail Venables", "Holly Garratley", "Nicole Roberts",
       "Jonathon Luck", "Jasmine Erdwin"
     ],
     "note": "Junior/Senior MYTS lists are the full company breakdown printed alongside the cast list; several named principals also appear in these lists."
