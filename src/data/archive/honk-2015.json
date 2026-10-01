@@ -22,7 +22,7 @@
   "cast": [
     { "character": "Ugly", "performer": "Jack Anthony" },
     { "character": "Ida", "performer": "Eleanor Walker" },
-    { "character": "Cat", "performer": "Josh Bennett" },
+    { "character": "Cat", "performer": "Joshua Bennett" },
     { "character": "Drake", "performer": "Josh Russell" },
     { "character": "Maureen", "performer": "Lucy Palmer" },
     { "character": "Grace", "performer": "Cassie Curno" },
@@ -50,7 +50,7 @@
     "Jasmine Gardner", "Molly Hancock", "Aislinn Humphries", "Eve Keeling",
     "Lydia Thomson", "Maia Till", "Rosie Wilkes", "Erica Withers",
     "Isabella Beech", "Jennie Brunskill", "Lauren Curno", "Emilia Harrison",
-    "Tom Hawley", "Sophie Pearce", "Megan Richardson", "Jack Saunders",
+    "Thomas Hawley", "Sophie Pearce", "Megan Richardson", "Jack Saunders",
     "Charlotte Tatler"
   ],
   "ensemble_notes": "The programme grouped the ensemble as New Born Ducklings, Teenage Ducklings and Chorus (in that order above), but OCR column interleaving made the exact New Born/Teenage boundary uncertain, so all three groups are combined here. 'Alfie Cortes-Pooler' was OCR'd as 'Alicia'; corrected against the Footloose 2013 and Children of Eden 2011 programmes, which list an 'Alfie Cortes-Pooler' in the MYTS ensemble of this era.",
@@ -69,7 +69,7 @@
   },
   "production_team": [
     { "role": "Director", "person": "Rachel Millar" },
-    { "role": "Musical Director", "person": "Matt Davis" },
+    { "role": "Musical Director", "person": "Matthew Davis" },
     { "role": "Choreographer", "person": "Rachel Millar", "note": "director also choreographed" },
     { "role": "Ticket Sales", "people": ["Elaine Bennett", "Carolyn Chapman"] },
     { "role": "Stage Manager", "person": "George Hawley" },
@@ -90,7 +90,7 @@
     "Vice Chairperson": "Kevin Bennett",
     "Secretary": "Sarah Bishop",
     "Assistant Secretary": "Jan Lawton",
-    "Treasurer / Publicity": "Dave Slade",
+    "Treasurer / Publicity": "David Slade",
     "Ticket Secretary": "Elaine Bennett",
     "Patron": "Andy Reiss",
     "Committee Members": ["Carolyn Chapman", "Ian Curno", "Julie Perry", "Calum Robarts"]
@@ -132,7 +132,7 @@
   },
   "context_notes": [
     "This production won a NODA award (see the Children of Eden 2011 archive entry, which notes Honk! 2015 as the Society's other NODA win).",
-    "Rachel Millar (director/choreographer) and Matt Davis (musical director) were both making their production-team debuts with MYTS this year, though both were already long-standing MYTS collaborators.",
+    "Rachel Millar (director/choreographer) and Matthew Davis (musical director) were both making their production-team debuts with MYTS this year, though both were already long-standing MYTS collaborators.",
     "Next productions trailed in the programme: Bugsy Malone (July 2016) and Legally Blonde (July 2017)."
   ]
 }

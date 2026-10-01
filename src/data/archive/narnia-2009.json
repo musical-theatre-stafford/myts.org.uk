@@ -19,7 +19,7 @@
   },
   "cast": [
     { "character": "Peter", "performer": "David Anderson" },
-    { "character": "Susan", "performer": "Abbie Venables" },
+    { "character": "Susan", "performer": "Abigail Venables" },
     { "character": "Edmund", "performer": "Thomas Slade", "note": "Billed as 'Tom Slade' on the cast list; full name taken from his cast bio." },
     { "character": "Lucy", "performer": "Amelia Shackleton" },
     { "character": "Aslan", "performer": "Oliver Bennett" },
@@ -54,11 +54,11 @@
     "senior_myts": [
       "Holly Musgrave", "Natalie Bradshaw", "Sarah Russell", "Lucy Matthews",
       "Amy Matthews", "Elizabeth Allcock", "Rebecca Bate", "Oliver Bennett",
-      "Niamh Flynn", "Hannah Hurley", "Tom Slade", "Kelly Slade",
+      "Niamh Flynn", "Hannah Hurley", "Thomas Slade", "Kelly Slade",
       "Stephanie Golding", "Amber Walton", "Scott Bagnall", "Emily Phillips",
       "Lauren Moseley", "Amy Oakden", "Emily Kimber", "Imogen Bloxham",
       "Eloise Beeching", "Emily Illingworth", "Alex Smith", "Samantha Wylie",
-      "David Anderson", "Abbie Venables", "Holly Garratley", "Nicole Roberts",
+      "David Anderson", "Abigail Venables", "Holly Garratley", "Nicole Roberts",
       "Jonathon Luck", "Jasmine Erdwin"
     ],
     "note": "Junior/Senior MYTS lists are the full company breakdown printed alongside the cast list; several named principals also appear in these lists."
@@ -86,7 +86,7 @@
     { "role": "Properties", "people": ["Kerry Roberts", "Mandy Allcock", "Michelle Cox"] },
     { "role": "Audio/Visual", "person": "Michael Hayes" },
     { "role": "Technical", "person": "Andrew Ridal" },
-    { "role": "Publicity", "people": ["Dave Slade", "Michelle Cox"] },
+    { "role": "Publicity", "people": ["David Slade", "Michelle Cox"] },
     { "role": "Raffle Organiser", "person": "Cath Jackson" },
     { "role": "Programme (compiled)", "person": "Claire Saunders" },
     { "role": "Programme Photographs", "person": "Michelle Cox" },
@@ -97,7 +97,7 @@
       "Chairman": "Tim Downes",
       "Vice-Chairman": "Diane Bowen",
       "Secretary": "Katie Hayes",
-      "Treasurer": "Dave Slade",
+      "Treasurer": "David Slade",
       "Assistant Treasurer": "Michelle Cox",
       "Committee Members": ["Ben Biddle", "Andrew Ridal", "Calum Robarts", "Mark Hawley"]
     },
