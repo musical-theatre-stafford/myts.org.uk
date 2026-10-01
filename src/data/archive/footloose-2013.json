@@ -42,23 +42,9 @@
     { "character": "Jeter",             "performer": "Lewis Warren" },
     { "character": "Bickle",            "performer": "Joshua Bennett" },
     { "character": "Garvin",            "performer": "Charlie Bishop" },
-    { "character": "Cowboy Bobbie",     "performer": "Roxanne Warrilow" }
+    { "character": "Cowboy Bobbie",     "performer": "Roxanne Warrilow" },
+    { "character": "Cast Band",         "performer": "Jack Anthony, Thomas Hawley, Katie Lord, Hannah Smith, Alex Stewart, Eleanor Walker, Emilia Harrison, Jac Norris, Sarah Russell, Roxanne Warrilow" }
   ],
-  "cast_band": {
-    "musicians": [
-      { "instrument": "Guitar 2",    "player": "Jack Anthony" },
-      { "instrument": "Keyboard 1",  "player": "Thomas Hawley" },
-      { "instrument": "Keyboard 2",  "player": "Katie Lord" },
-      { "instrument": "Reeds",       "player": "Hannah Smith" },
-      { "instrument": null,          "player": "Alex Stewart" },
-      { "instrument": null,          "player": "Eleanor Walker" },
-      { "instrument": null,          "player": "Emilia Harrison" },
-      { "instrument": null,          "player": "Jac Norris" },
-      { "instrument": null,          "player": "Sarah Russell" },
-      { "instrument": null,          "player": "Roxanne Warrilow" }
-    ],
-    "note": "The 'Cast Band' section listed people alongside instruments; the OCR order suggests some names may not have instrument labels aligned — verify against the printed page."
-  },
   "band": {
     "musicians": [
       { "instrument": "Bass",       "player": "Jon Burr" },
@@ -109,7 +95,6 @@
       { "scene": 4, "title": "I Can't Stand Still" },
       { "scene": 5, "title": "Learning to be Silent" },
       { "scene": 6, "title": "Holding Out for a Hero" },
-      { "scene": 7, "title": "Somebody's Eyes" },
       { "scene": 7, "title": "Somebody's Eyes (Reprise)" },
       { "scene": 8, "title": "Somebody's Eyes" },
       { "scene": 8, "title": "Heaven Help Me" },
@@ -125,7 +110,7 @@
       { "scene": 6, "title": "Heaven Help Me (Reprise)" },
       { "scene": 6, "title": "Can You Find It in Your Heart? (Reprise)" },
       { "scene": 7, "title": "Footloose Finale" },
-      { "scene": null, "title": "Megamix" }
+      { "scene": 7, "title": "Megamix" }
     ]
   }
 }
