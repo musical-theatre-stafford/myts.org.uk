@@ -44,21 +44,12 @@
     { "character": "Garvin",            "performer": "Charlie Bishop" },
     { "character": "Cowboy Bobbie",     "performer": "Roxanne Warrilow" }
   ],
-  "cast_band": {
-    "musicians": [
-      { "instrument": "Guitar 2",    "player": "Jack Anthony" },
-      { "instrument": "Keyboard 1",  "player": "Thomas Hawley" },
-      { "instrument": "Keyboard 2",  "player": "Katie Lord" },
-      { "instrument": "Reeds",       "player": "Hannah Smith" },
-      { "instrument": null,          "player": "Alex Stewart" },
-      { "instrument": null,          "player": "Eleanor Walker" },
-      { "instrument": null,          "player": "Emilia Harrison" },
-      { "instrument": null,          "player": "Jac Norris" },
-      { "instrument": null,          "player": "Sarah Russell" },
-      { "instrument": null,          "player": "Roxanne Warrilow" }
-    ],
-    "note": "The 'Cast Band' section listed people alongside instruments; the OCR order suggests some names may not have instrument labels aligned — verify against the printed page."
-  },
+  "cast_band": [
+    "Jack Anthony", "Thomas Hawley", "Katie Lord", "Hannah Smith",
+    "Alex Stewart", "Eleanor Walker", "Emilia Harrison", "Jac Norris",
+    "Sarah Russell", "Roxanne Warrilow"
+  ],
+  "cast_band_notes": "Cast members who played in the on-stage band. The programme lists names only, without instruments.",
   "band": {
     "musicians": [
       { "instrument": "Bass",       "player": "Jon Burr" },
