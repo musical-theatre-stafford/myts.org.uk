@@ -97,9 +97,14 @@ jobs:
           fi
           echo "::endgroup::"
 
+          # Only the file types the site uses (photos + programme PDFs) are
+          # mirrored; anything else in the Drive (videos, HEIC, docs, …) is skipped.
+          FILTERS=(--ignore-case --filter "- _*/**" --filter "- .*"
+                   --filter "+ *.{jpg,jpeg,png,pdf}" --filter "- *")
+
           echo "::group::Mirror originals Drive → R2 (only changed files move)"
           rclone sync "gdrive:${MEDIA_PATH}" "r2:myts-media" \
-            --exclude "_*/**" --exclude ".*" --checksum --max-delete 200 \
+            "${FILTERS[@]}" --checksum --max-delete 200 \
             --transfers 16 --checkers 24 --fast-list --stats 30s -v 2>&1 | tee /tmp/orig.log
           echo "::endgroup::"
 
@@ -115,7 +120,7 @@ jobs:
           # read dimensions for the manifest. Fresh ./_myts-web ⇒ everything is
           # regenerated, so rotated/edited photos get correct new derivatives.
           rclone copy "r2:myts-media" ./MYTS \
-            --exclude "_*/**" --fast-list --transfers 24 --checkers 24 --stats 30s
+            "${FILTERS[@]}" --fast-list --transfers 24 --checkers 24 --stats 30s
           npm ci
           node scripts/media-ingest.mjs \
             --root ./MYTS --out ./_myts-web --manifest src/data/photo-manifest.json
