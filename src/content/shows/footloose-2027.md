@@ -3,6 +3,7 @@ title: Footloose
 dates_start: 2027-07-14
 dates_end: 2027-07-17
 venue: Stafford Gatehouse Theatre
+ticket_url: https://www.gatehousetheatre.co.uk/whatson-event/musical-theatre-stafford-footloose/
 poster: ./posters/footloose-2027.png
 featured: false
 blurb: MYTS brings the hit musical Footloose to Stafford Gatehouse Theatre.
